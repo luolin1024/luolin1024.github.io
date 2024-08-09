@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Java/Spring on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/java/spring/</link>
+    <description>Recent content in Java/Spring on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://luolin1024.github.io/tags/java/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>feign、ribbon、hystrix分析</title>
+      <link>https://luolin1024.github.io/2024/02/feignribbonhystrix%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/feignribbonhystrix%E5%88%86%E6%9E%90/</guid>
+      <description>feign、ribbon、hystrix三者之间的关系 如果微服务项目加上了spring-cloud-starter-netflix-hyst</description>
+    </item>
+    <item>
+      <title>feign、ribbon、hystrix分析</title>
+      <link>https://luolin1024.github.io/2024/02/feignribbonhystrix%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/feignribbonhystrix%E5%88%86%E6%9E%90/</guid>
+      <description>feign、ribbon、hystrix三者之间的关系 如果微服务项目加上了spring-cloud-starter-netflix-hyst</description>
+    </item>
+    <item>
+      <title>Feign调用接口报错情况分析</title>
+      <link>https://luolin1024.github.io/2024/02/feign%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/feign%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/</guid>
+      <description>报错405 这两天遇到了一个FeignClient和GetMapping组合报错405请求方法错误，在写代码的时候，遇到一个情况，在使用Fei</description>
+    </item>
+    <item>
+      <title>Feign调用接口报错情况分析</title>
+      <link>https://luolin1024.github.io/2024/02/feign%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/feign%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/</guid>
+      <description>报错405 这两天遇到了一个FeignClient和GetMapping组合报错405请求方法错误，在写代码的时候，遇到一个情况，在使用Fei</description>
+    </item>
+    <item>
+      <title>Redission分布式锁实战</title>
+      <link>https://luolin1024.github.io/2024/02/redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E6%88%98/</guid>
+      <description>背景 通过springboot整合Redission实现分布式锁 可重入锁 可重入锁，也叫做递归锁，是指在一个线程中可以多次获取同一把锁，比如：一</description>
+    </item>
+    <item>
+      <title>Redission分布式锁实战</title>
+      <link>https://luolin1024.github.io/2024/02/redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E6%88%98/</guid>
+      <description>背景 通过springboot整合Redission实现分布式锁 可重入锁 可重入锁，也叫做递归锁，是指在一个线程中可以多次获取同一把锁，比如：一</description>
+    </item>
+    <item>
+      <title>Spring AOP注解常见问题</title>
+      <link>https://luolin1024.github.io/2024/02/spring-aop%E6%B3%A8%E8%A7%A3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-aop%E6%B3%A8%E8%A7%A3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>[[Java动态代理]] [[Java注解与自定义注解]] [[Spring中利用AOP使用自定义注解]] 使用 @Transactional , @Async 等Spring AOP注解不生</description>
+    </item>
+    <item>
+      <title>Spring AOP注解常见问题</title>
+      <link>https://luolin1024.github.io/2024/02/spring-aop%E6%B3%A8%E8%A7%A3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-aop%E6%B3%A8%E8%A7%A3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>[[Java动态代理]] [[Java注解与自定义注解]] [[Spring中利用AOP使用自定义注解]] 使用 @Transactional , @Async 等Spring AOP注解不生</description>
+    </item>
+    <item>
+      <title>Spring Bean初始化</title>
+      <link>https://luolin1024.github.io/2024/02/spring-bean%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-bean%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
+      <description>scan&amp;mdash;beanDefinition&amp;mdash;-map 遍历map validate 得到class 推断构造方法 反射 实例化这个对象 合并beanDefinition 提前暴露一个bean工厂对象 填充属性&amp;mdash;</description>
+    </item>
+    <item>
+      <title>Spring Bean初始化</title>
+      <link>https://luolin1024.github.io/2024/02/spring-bean%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-bean%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
+      <description>scan&amp;mdash;beanDefinition&amp;mdash;-map 遍历map validate 得到class 推断构造方法 反射 实例化这个对象 合并beanDefinition 提前暴露一个bean工厂对象 填充属性&amp;mdash;</description>
+    </item>
+    <item>
+      <title>Spring 中当前类方法调用本类其他方法注意事项</title>
+      <link>https://luolin1024.github.io/2024/02/spring-%E4%B8%AD%E5%BD%93%E5%89%8D%E7%B1%BB%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E6%9C%AC%E7%B1%BB%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-%E4%B8%AD%E5%BD%93%E5%89%8D%E7%B1%BB%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E6%9C%AC%E7%B1%BB%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>加入存在类AServiceImpl中存在方法a()，没有事务注解（没有被spring事务管理管理），调用本类中方法b(),而b()是使用了事</description>
+    </item>
+    <item>
+      <title>Spring 中当前类方法调用本类其他方法注意事项</title>
+      <link>https://luolin1024.github.io/2024/02/spring-%E4%B8%AD%E5%BD%93%E5%89%8D%E7%B1%BB%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E6%9C%AC%E7%B1%BB%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-%E4%B8%AD%E5%BD%93%E5%89%8D%E7%B1%BB%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E6%9C%AC%E7%B1%BB%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>加入存在类AServiceImpl中存在方法a()，没有事务注解（没有被spring事务管理管理），调用本类中方法b(),而b()是使用了事</description>
+    </item>
+    <item>
+      <title>Spring5 源码阅读环境搭建</title>
+      <link>https://luolin1024.github.io/2024/02/spring5-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring5-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>这一阵子在读spring源码，但是网上的文章，构建spring源码大都有问题，导致我构建源码的时候出现了很多问题，所以我自己重新构建了一下。</description>
+    </item>
+    <item>
+      <title>Spring5 源码阅读环境搭建</title>
+      <link>https://luolin1024.github.io/2024/02/spring5-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring5-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>这一阵子在读spring源码，但是网上的文章，构建spring源码大都有问题，导致我构建源码的时候出现了很多问题，所以我自己重新构建了一下。</description>
+    </item>
+    <item>
+      <title>SpringBoot yaml日志级别配置</title>
+      <link>https://luolin1024.github.io/2024/02/springboot-yaml%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot-yaml%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB%E9%85%8D%E7%BD%AE/</guid>
+      <description>本来只是想要学习一些SSM框架的东西，自己测试一下，带着怎么快速怎么来的于是就用SpringBoot呗，结果刚写完代码刚点击启动就莫名其妙开</description>
+    </item>
+    <item>
+      <title>SpringBoot yaml日志级别配置</title>
+      <link>https://luolin1024.github.io/2024/02/springboot-yaml%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot-yaml%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB%E9%85%8D%E7%BD%AE/</guid>
+      <description>本来只是想要学习一些SSM框架的东西，自己测试一下，带着怎么快速怎么来的于是就用SpringBoot呗，结果刚写完代码刚点击启动就莫名其妙开</description>
+    </item>
+    <item>
+      <title>SpringBoot事务自定义提交后执行</title>
+      <link>https://luolin1024.github.io/2024/02/springboot%E4%BA%8B%E5%8A%A1%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%90%E4%BA%A4%E5%90%8E%E6%89%A7%E8%A1%8C/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot%E4%BA%8B%E5%8A%A1%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%90%E4%BA%A4%E5%90%8E%E6%89%A7%E8%A1%8C/</guid>
+      <description>背景 在SpringBoot通常会使用到事务注解快速启动一个事务，但是在一个大型项目中，往往会存在一些流程上的逻辑需要在事务提交之后新启一个方</description>
+    </item>
+    <item>
+      <title>SpringBoot事务自定义提交后执行</title>
+      <link>https://luolin1024.github.io/2024/02/springboot%E4%BA%8B%E5%8A%A1%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%90%E4%BA%A4%E5%90%8E%E6%89%A7%E8%A1%8C/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot%E4%BA%8B%E5%8A%A1%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%90%E4%BA%A4%E5%90%8E%E6%89%A7%E8%A1%8C/</guid>
+      <description>背景 在SpringBoot通常会使用到事务注解快速启动一个事务，但是在一个大型项目中，往往会存在一些流程上的逻辑需要在事务提交之后新启一个方</description>
+    </item>
+    <item>
+      <title>SpringBoot异步线程</title>
+      <link>https://luolin1024.github.io/2024/02/springboot%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/</guid>
+      <description>线程池参数含义: corePoolSize：核心线程数 核心线程会一直存活，及时没有任务需要执行 当线程数小于核心线程数时，即使有线程空闲，线程池</description>
+    </item>
+    <item>
+      <title>SpringBoot异步线程</title>
+      <link>https://luolin1024.github.io/2024/02/springboot%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/</guid>
+      <description>线程池参数含义: corePoolSize：核心线程数 核心线程会一直存活，及时没有任务需要执行 当线程数小于核心线程数时，即使有线程空闲，线程池</description>
+    </item>
+    <item>
+      <title>Spring中Bean的生命周期</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%B8%ADbean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%B8%ADbean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>前言 这其实是一道面试题，是我在面试百度的时候被问到的，当时没有答出来(因为自己真的很菜)，后来在网上寻找答案，看到也是一头雾水，直到看到了《</description>
+    </item>
+    <item>
+      <title>Spring中Bean的生命周期</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%B8%ADbean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%B8%ADbean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>前言 这其实是一道面试题，是我在面试百度的时候被问到的，当时没有答出来(因为自己真的很菜)，后来在网上寻找答案，看到也是一头雾水，直到看到了《</description>
+    </item>
+    <item>
+      <title>Spring中利用AOP使用自定义注解</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%B8%AD%E5%88%A9%E7%94%A8aop%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%B8%AD%E5%88%A9%E7%94%A8aop%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</guid>
+      <description>使用spring时，aop可以大幅度减少我们的工作量，这里主要介绍一些spring中aop如何切注解。 自定义注解： @Target({ElementType.METHOD}) @Retention(RetentionPolicy.RUNTIME) public @interface MyAnnotation { String value(); } 编写切面</description>
+    </item>
+    <item>
+      <title>Spring中利用AOP使用自定义注解</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%B8%AD%E5%88%A9%E7%94%A8aop%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%B8%AD%E5%88%A9%E7%94%A8aop%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</guid>
+      <description>使用spring时，aop可以大幅度减少我们的工作量，这里主要介绍一些spring中aop如何切注解。 自定义注解： @Target({ElementType.METHOD}) @Retention(RetentionPolicy.RUNTIME) public @interface MyAnnotation { String value(); } 编写切面</description>
+    </item>
+    <item>
+      <title>Spring事务以及事务嵌套</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%BA%8B%E5%8A%A1%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%BA%8B%E5%8A%A1%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/</guid>
+      <description>Spring事务基本知识点 事务的ACID 事务是区分文件存储系统与NoSql数据库重要特性之一，其存在的意义是为了保证即使在并发情况下也能正确</description>
+    </item>
+    <item>
+      <title>Spring事务以及事务嵌套</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%BA%8B%E5%8A%A1%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%BA%8B%E5%8A%A1%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/</guid>
+      <description>Spring事务基本知识点 事务的ACID 事务是区分文件存储系统与NoSql数据库重要特性之一，其存在的意义是为了保证即使在并发情况下也能正确</description>
+    </item>
+    <item>
+      <title>Spring组件</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E7%BB%84%E4%BB%B6/</guid>
+      <description>spring容器注册组件 通过使用注解方式向spring容器中添加组件是十分简单的，大体有如下方式： 在config类中通过添加@Bean来添加</description>
+    </item>
+    <item>
+      <title>Spring组件</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E7%BB%84%E4%BB%B6/</guid>
+      <description>spring容器注册组件 通过使用注解方式向spring容器中添加组件是十分简单的，大体有如下方式： 在config类中通过添加@Bean来添加</description>
+    </item>
+    <item>
+      <title>Spring结构组成</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/</guid>
+      <description>DefaultListableBeanFactory 类图 AliasRegistry：定义对alias的简单增删改操作 SimpleAliasRegistry：主要使用map作为alias的缓存</description>
+    </item>
+    <item>
+      <title>Spring结构组成</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/</guid>
+      <description>DefaultListableBeanFactory 类图 AliasRegistry：定义对alias的简单增删改操作 SimpleAliasRegistry：主要使用map作为alias的缓存</description>
+    </item>
+    <item>
+      <title>循环依赖和Spring循环依赖</title>
+      <link>https://luolin1024.github.io/2024/02/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%92%8Cspring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%92%8Cspring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
+      <description>循环依赖 对于java来讲，我们一般都是通过set来达到循环依赖的效果，比如我们存在两个类A、B，这两个类中互有属性： class A{ private B b; public B getB() { return b; }</description>
+    </item>
+    <item>
+      <title>循环依赖和Spring循环依赖</title>
+      <link>https://luolin1024.github.io/2024/02/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%92%8Cspring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%92%8Cspring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
+      <description>循环依赖 对于java来讲，我们一般都是通过set来达到循环依赖的效果，比如我们存在两个类A、B，这两个类中互有属性： class A{ private B b; public B getB() { return b; }</description>
+    </item>
+    <item>
+      <title>记一次事务的坑：Transaction rolled back because it has been marked as rollback-only</title>
+      <link>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</guid>
+      <description>问题背景 最近在项目中发现了一则报错：“org.springframework.transaction.UnexpectedRollbackE</description>
+    </item>
+    <item>
+      <title>记一次事务的坑：Transaction rolled back because it has been marked as rollback-only</title>
+      <link>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</guid>
+      <description>问题背景 最近在项目中发现了一则报错：“org.springframework.transaction.UnexpectedRollbackE</description>
+    </item>
+  </channel>
+</rss>

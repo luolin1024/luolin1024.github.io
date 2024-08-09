@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>重复数据 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE/</link>
+    <description>Recent content in 重复数据 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:49:45 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>位图BitMap</title>
+      <link>https://luolin1024.github.io/2024/03/%E4%BD%8D%E5%9B%BEbitmap/</link>
+      <pubDate>Sun, 03 Mar 2024 17:49:55 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/03/%E4%BD%8D%E5%9B%BEbitmap/</guid>
+      <description>什么是BitMap BitMap算法的核心思想在于用bit数组记录0/1两种状态，然后再将具体数据映射到这个比特数组的具体位置，这个比特位表示</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Java/Java基础 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/java/java%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in Java/Java基础 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://luolin1024.github.io/tags/java/java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java线程池结合ThreadLocal的用法实例</title>
+      <link>https://luolin1024.github.io/2024/02/java%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%BB%93%E5%90%88threadlocal%E7%9A%84%E7%94%A8%E6%B3%95%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/java%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%BB%93%E5%90%88threadlocal%E7%9A%84%E7%94%A8%E6%B3%95%E5%AE%9E%E4%BE%8B/</guid>
+      <description>今天有一个任务：向数据库中添加百万条数据用来做测试，考虑到单线程插入数据可能要花很久的时间，于是想到了用线程池来进行插入操作，但是里面有个一</description>
+    </item>
+    <item>
+      <title>Java线程池结合ThreadLocal的用法实例</title>
+      <link>https://luolin1024.github.io/2024/02/java%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%BB%93%E5%90%88threadlocal%E7%9A%84%E7%94%A8%E6%B3%95%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/java%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%BB%93%E5%90%88threadlocal%E7%9A%84%E7%94%A8%E6%B3%95%E5%AE%9E%E4%BE%8B/</guid>
+      <description>今天有一个任务：向数据库中添加百万条数据用来做测试，考虑到单线程插入数据可能要花很久的时间，于是想到了用线程池来进行插入操作，但是里面有个一</description>
+    </item>
+    <item>
+      <title>Object源码分析</title>
+      <link>https://luolin1024.github.io/2024/02/object%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/object%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+      <description>package java.lang; public class Object { private static native void registerNatives(); static { // 对象初始化时自动调用此方法 registerNatives(); } /** * 返回此对象的运行时类 * * @return The {@code Class} object that represents the runtime * class of this object. * @jls 15.8.2 Class Literals */ public final native Class&amp;lt;?&amp;gt; getClass(); /** *</description>
+    </item>
+    <item>
+      <title>Object源码分析</title>
+      <link>https://luolin1024.github.io/2024/02/object%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/object%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+      <description>package java.lang; public class Object { private static native void registerNatives(); static { // 对象初始化时自动调用此方法 registerNatives(); } /** * 返回此对象的运行时类 * * @return The {@code Class} object that represents the runtime * class of this object. * @jls 15.8.2 Class Literals */ public final native Class&amp;lt;?&amp;gt; getClass(); /** *</description>
+    </item>
+    <item>
+      <title>ThreadLocal和InheritableThreadLocal源码分析</title>
+      <link>https://luolin1024.github.io/2024/02/threadlocal%E5%92%8Cinheritablethreadlocal%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/threadlocal%E5%92%8Cinheritablethreadlocal%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+      <description>ThreadLocal分析 什么是ThreadLocal ThreadLocal是一种变量类型，与普通的局部变量和全局变量所不同的是，Threa</description>
+    </item>
+    <item>
+      <title>ThreadLocal和InheritableThreadLocal源码分析</title>
+      <link>https://luolin1024.github.io/2024/02/threadlocal%E5%92%8Cinheritablethreadlocal%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/threadlocal%E5%92%8Cinheritablethreadlocal%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+      <description>ThreadLocal分析 什么是ThreadLocal ThreadLocal是一种变量类型，与普通的局部变量和全局变量所不同的是，Threa</description>
+    </item>
+    <item>
+      <title>Java8 Stream</title>
+      <link>https://luolin1024.github.io/2023/02/java8-stream/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java8-stream/</guid>
+      <description>java Stream是什么 首先，我们来看下java怎么描述Stream的： A sequence of elements supporting sequential and parallel aggregate operations. 其实学习stream之前我以为stream式很难的，</description>
+    </item>
+    <item>
+      <title>Java8 Stream</title>
+      <link>https://luolin1024.github.io/2023/02/java8-stream/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java8-stream/</guid>
+      <description>java Stream是什么 首先，我们来看下java怎么描述Stream的： A sequence of elements supporting sequential and parallel aggregate operations. 其实学习stream之前我以为stream式很难的，</description>
+    </item>
+    <item>
+      <title>Java8 函数式编程和Lambda</title>
+      <link>https://luolin1024.github.io/2023/02/java8-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%92%8Clambda/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java8-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%92%8Clambda/</guid>
+      <description>lambda 初识lambda表达式 一个简单的方法，比较两个Integer： public void Test1() { Comparator&amp;lt;Integer&amp;gt; com = new Comparator&amp;lt;Integer&amp;gt;() { @Override public int compare(Integer o1, Integer o2) { return Integer.compare(o1, o2); } }; TreeSet&amp;lt;Integer&amp;gt; treeSet = new TreeSet&amp;lt;&amp;gt;(com); } 下面的这个方法与上</description>
+    </item>
+    <item>
+      <title>Java8 函数式编程和Lambda</title>
+      <link>https://luolin1024.github.io/2023/02/java8-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%92%8Clambda/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java8-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%92%8Clambda/</guid>
+      <description>lambda 初识lambda表达式 一个简单的方法，比较两个Integer： public void Test1() { Comparator&amp;lt;Integer&amp;gt; com = new Comparator&amp;lt;Integer&amp;gt;() { @Override public int compare(Integer o1, Integer o2) { return Integer.compare(o1, o2); } }; TreeSet&amp;lt;Integer&amp;gt; treeSet = new TreeSet&amp;lt;&amp;gt;(com); } 下面的这个方法与上</description>
+    </item>
+    <item>
+      <title>Java传参机制</title>
+      <link>https://luolin1024.github.io/2023/02/java%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6/</guid>
+      <description>首先看下java中的参数传递机制: 基本数据类型传值（未传递地址）方式： class Main{ public static void main(String[] args) { Main main = new Main(); int a = 20; System.out.println</description>
+    </item>
+    <item>
+      <title>Java传参机制</title>
+      <link>https://luolin1024.github.io/2023/02/java%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6/</guid>
+      <description>首先看下java中的参数传递机制: 基本数据类型传值（未传递地址）方式： class Main{ public static void main(String[] args) { Main main = new Main(); int a = 20; System.out.println</description>
+    </item>
+    <item>
+      <title>Java动态代理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</guid>
+      <description>Java动态代理 动态代理 实现方式一，JDK动态代理 public class Main { public static void main(String[] args) { MyInvocationHandler myInvocationHandler = new MyInvocationHandler(); Hello hello = (Hello) myInvocationHandler.newProxy(new HelloWorld()); hello.morning(&amp;#34;lin&amp;#34;); } } // 目标接口 public interface Hello { void morning(String name); } // 目标类 public class HelloWorld implements</description>
+    </item>
+    <item>
+      <title>Java动态代理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</guid>
+      <description>Java动态代理 动态代理 实现方式一，JDK动态代理 public class Main { public static void main(String[] args) { MyInvocationHandler myInvocationHandler = new MyInvocationHandler(); Hello hello = (Hello) myInvocationHandler.newProxy(new HelloWorld()); hello.morning(&amp;#34;lin&amp;#34;); } } // 目标接口 public interface Hello { void morning(String name); } // 目标类 public class HelloWorld implements</description>
+    </item>
+    <item>
+      <title>Java反射</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84/</guid>
+      <description>在说反射之前，必须说一句，所谓java框架（比如大名鼎鼎的Spring）大多数都是动态代理+注解完成的，而动态代理（动态代理模式以及静态代理</description>
+    </item>
+    <item>
+      <title>Java反射</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84/</guid>
+      <description>在说反射之前，必须说一句，所谓java框架（比如大名鼎鼎的Spring）大多数都是动态代理+注解完成的，而动态代理（动态代理模式以及静态代理</description>
+    </item>
+    <item>
+      <title>Java反射对父子类属性的处理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E5%AF%B9%E7%88%B6%E5%AD%90%E7%B1%BB%E5%B1%9E%E6%80%A7%E7%9A%84%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E5%AF%B9%E7%88%B6%E5%AD%90%E7%B1%BB%E5%B1%9E%E6%80%A7%E7%9A%84%E5%A4%84%E7%90%86/</guid>
+      <description>class Person implements Cloneable{ String name; int age; @Override public String toString() { return &amp;#34;Person{&amp;#34; + &amp;#34;name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + &amp;#34;, age=&amp;#34; + age + &amp;#39;}&amp;#39;; } public Person(String name, int age) { this.name = name; this.age = age; } public Person(int age, String name) { this.name = name; this.age = age; } public Person() { } public String getName() { return name; } public void setName(String name)</description>
+    </item>
+    <item>
+      <title>Java反射对父子类属性的处理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E5%AF%B9%E7%88%B6%E5%AD%90%E7%B1%BB%E5%B1%9E%E6%80%A7%E7%9A%84%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E5%AF%B9%E7%88%B6%E5%AD%90%E7%B1%BB%E5%B1%9E%E6%80%A7%E7%9A%84%E5%A4%84%E7%90%86/</guid>
+      <description>class Person implements Cloneable{ String name; int age; @Override public String toString() { return &amp;#34;Person{&amp;#34; + &amp;#34;name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + &amp;#34;, age=&amp;#34; + age + &amp;#39;}&amp;#39;; } public Person(String name, int age) { this.name = name; this.age = age; } public Person(int age, String name) { this.name = name; this.age = age; } public Person() { } public String getName() { return name; } public void setName(String name)</description>
+    </item>
+    <item>
+      <title>Java反射获取父类信息</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%88%B6%E7%B1%BB%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%88%B6%E7%B1%BB%E4%BF%A1%E6%81%AF/</guid>
+      <description>取本类和父类的所有成员变量 要取本类和基类的所有成员变量，Class类中提供的两种获取类中成员变量的方法都不能直接实现这个需求，但是可以通过简</description>
+    </item>
+    <item>
+      <title>Java反射获取父类信息</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%88%B6%E7%B1%BB%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%88%B6%E7%B1%BB%E4%BF%A1%E6%81%AF/</guid>
+      <description>取本类和父类的所有成员变量 要取本类和基类的所有成员变量，Class类中提供的两种获取类中成员变量的方法都不能直接实现这个需求，但是可以通过简</description>
+    </item>
+    <item>
+      <title>Java变量</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%98%E9%87%8F/</guid>
+      <description>1.变量 1.1变量声明 //1、单变量声明,类型放在变量名之后，可以为任意类型 var 变量名 类型 var v1,v2,v3 string //多变量同类型声明 //2、多变量声明 var { v1 int</description>
+    </item>
+    <item>
+      <title>Java变量</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%98%E9%87%8F/</guid>
+      <description>1.变量 1.1变量声明 //1、单变量声明,类型放在变量名之后，可以为任意类型 var 变量名 类型 var v1,v2,v3 string //多变量同类型声明 //2、多变量声明 var { v1 int</description>
+    </item>
+    <item>
+      <title>Java可变参数</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/</guid>
+      <description>java可变参数列表 从java5开始，java支持一种参数写法：Java类型后面三个点(如String…)，叫可变长度参数列表。向其中传入参</description>
+    </item>
+    <item>
+      <title>Java可变参数</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/</guid>
+      <description>java可变参数列表 从java5开始，java支持一种参数写法：Java类型后面三个点(如String…)，叫可变长度参数列表。向其中传入参</description>
+    </item>
+    <item>
+      <title>Java异常</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%BC%82%E5%B8%B8/</guid>
+      <description>Throwable throw new Exception()既代表 java 运行进入了一个新的分支，不再执行new Exception()后面的语句了，之后再来执行finally中的</description>
+    </item>
+    <item>
+      <title>Java异常</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%BC%82%E5%B8%B8/</guid>
+      <description>Throwable throw new Exception()既代表 java 运行进入了一个新的分支，不再执行new Exception()后面的语句了，之后再来执行finally中的</description>
+    </item>
+    <item>
+      <title>Java排序</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%8E%92%E5%BA%8F/</guid>
+      <description>在java中经常会使用到排序，通常使用的java内置提供的排序方式： Arrays.sort（） Collection.sort() Collections.sort() Stream中使用sort 对一批对象进行排</description>
+    </item>
+    <item>
+      <title>Java排序</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%8E%92%E5%BA%8F/</guid>
+      <description>在java中经常会使用到排序，通常使用的java内置提供的排序方式： Arrays.sort（） Collection.sort() Collections.sort() Stream中使用sort 对一批对象进行排</description>
+    </item>
+    <item>
+      <title>Java日期处理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/</guid>
+      <description>Calendar类 使用场景 public class CalendarUtils { /** * 获取本月第x天 * @return */ public static Date getDayOfCurrentMonth(Calendar c, int x) { // 设置时间为本月第一天 c.set(Calendar.DAY_OF_MONTH, x); // 将小时至0 c.set(Calendar.HOUR_OF_DAY, 0); // 将分钟至0 c.set(Calendar.MINUTE, 0); // 将秒至</description>
+    </item>
+    <item>
+      <title>Java日期处理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/</guid>
+      <description>Calendar类 使用场景 public class CalendarUtils { /** * 获取本月第x天 * @return */ public static Date getDayOfCurrentMonth(Calendar c, int x) { // 设置时间为本月第一天 c.set(Calendar.DAY_OF_MONTH, x); // 将小时至0 c.set(Calendar.HOUR_OF_DAY, 0); // 将分钟至0 c.set(Calendar.MINUTE, 0); // 将秒至</description>
+    </item>
+    <item>
+      <title>Java枚举</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%9E%9A%E4%B8%BE/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%9E%9A%E4%B8%BE/</guid>
+      <description>JDK1.5之前的枚举 在JDK1.5之前是没有enum这个关键字的，那么那个时代是怎么实现枚举的呢？主要是通过私有化构造器，然后在类里面创建</description>
+    </item>
+    <item>
+      <title>Java枚举</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%9E%9A%E4%B8%BE/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%9E%9A%E4%B8%BE/</guid>
+      <description>JDK1.5之前的枚举 在JDK1.5之前是没有enum这个关键字的，那么那个时代是怎么实现枚举的呢？主要是通过私有化构造器，然后在类里面创建</description>
+    </item>
+    <item>
+      <title>Java泛型</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B3%9B%E5%9E%8B/</guid>
+      <description>概述 泛型在java中有很重要的地位，在面向对象编程及各种设计模式中有非常广泛的应用。 什么是泛型？为什么要使用泛型？Java泛型（generi</description>
+    </item>
+    <item>
+      <title>Java泛型</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B3%9B%E5%9E%8B/</guid>
+      <description>概述 泛型在java中有很重要的地位，在面向对象编程及各种设计模式中有非常广泛的应用。 什么是泛型？为什么要使用泛型？Java泛型（generi</description>
+    </item>
+    <item>
+      <title>Java注解与自定义注解</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B3%A8%E8%A7%A3%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B3%A8%E8%A7%A3%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</guid>
+      <description>随着spring的流行，java注解的使用成为了java工程师必不可少的技能。 注解基本知识 元注解：@Retention、 @Target、 @D</description>
+    </item>
+    <item>
+      <title>Java注解与自定义注解</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B3%A8%E8%A7%A3%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B3%A8%E8%A7%A3%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</guid>
+      <description>随着spring的流行，java注解的使用成为了java工程师必不可少的技能。 注解基本知识 元注解：@Retention、 @Target、 @D</description>
+    </item>
+    <item>
+      <title>Java浅拷贝和深拷贝</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</guid>
+      <description>关于浅拷贝和深拷贝，简单来说就是创建一个和已知对象一模一样的对象。深入了解浅拷贝和深拷贝，对于Java中的值传递或者引用传递将会有更深的理解</description>
+    </item>
+    <item>
+      <title>Java浅拷贝和深拷贝</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</guid>
+      <description>关于浅拷贝和深拷贝，简单来说就是创建一个和已知对象一模一样的对象。深入了解浅拷贝和深拷贝，对于Java中的值传递或者引用传递将会有更深的理解</description>
+    </item>
+    <item>
+      <title>Java重载和重写</title>
+      <link>https://luolin1024.github.io/2023/02/java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99/</guid>
+      <description>重载(Overload) 重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。 注意：在一个类里</description>
+    </item>
+    <item>
+      <title>Java重载和重写</title>
+      <link>https://luolin1024.github.io/2023/02/java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99/</guid>
+      <description>重载(Overload) 重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。 注意：在一个类里</description>
+    </item>
+    <item>
+      <title>Java面向对象</title>
+      <link>https://luolin1024.github.io/2023/02/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>什么是面向对象？这大概是java中最重要的一部分了，写这篇文章主要是自己之前java基础不怎么样，然后今天看了一些关于面向对象和多态的文章，</description>
+    </item>
+    <item>
+      <title>Java面向对象</title>
+      <link>https://luolin1024.github.io/2023/02/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>什么是面向对象？这大概是java中最重要的一部分了，写这篇文章主要是自己之前java基础不怎么样，然后今天看了一些关于面向对象和多态的文章，</description>
+    </item>
+    <item>
+      <title>多线程编程</title>
+      <link>https://luolin1024.github.io/2023/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</guid>
+      <description>概念梳理 并行 多个线程在同一时间在CPU上运行。 并发表示一会做这个事情，一会做另一个事情，存在着调度。单核 CPU 不可能存在并行（微观上）。 临界区临</description>
+    </item>
+    <item>
+      <title>多线程编程</title>
+      <link>https://luolin1024.github.io/2023/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</guid>
+      <description>概念梳理 并行 多个线程在同一时间在CPU上运行。 并发表示一会做这个事情，一会做另一个事情，存在着调度。单核 CPU 不可能存在并行（微观上）。 临界区临</description>
+    </item>
+  </channel>
+</rss>

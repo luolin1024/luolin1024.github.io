@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>效率工具 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 效率工具 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 07 Aug 2024 01:15:29 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Excel使用&amp;连接符批量</title>
+      <link>https://luolin1024.github.io/2024/02/excel%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E7%AC%A6%E6%89%B9%E9%87%8F/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/excel%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E7%AC%A6%E6%89%B9%E9%87%8F/</guid>
+      <description>Excel使用&amp;amp;连接符批量 示例输入： =&amp;#34;insert into ssta_line_limit(tenant_id, settle_config_id, document_type, enable_flag) value(&amp;#34;&amp;amp;B2&amp;amp;&amp;#34;, &amp;#34;&amp;amp;A2&amp;amp;&amp;#34;, &amp;#39;INVOICE&amp;#39;, 0);&amp;#34; 实现效果：</description>
+    </item>
+    <item>
+      <title>Git操作手册</title>
+      <link>https://luolin1024.github.io/2024/02/git%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/git%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</guid>
+      <description>关于git的一些介绍以及大部分用法，可以参考官方文档,本文只记录一些常用操作和一些比较难的操作。 git fetch和git pull对比 先用一张图来</description>
+    </item>
+    <item>
+      <title>win10下idea终端中使用git中文乱码解决方案</title>
+      <link>https://luolin1024.github.io/2024/02/win10%E4%B8%8Bidea%E7%BB%88%E7%AB%AF%E4%B8%AD%E4%BD%BF%E7%94%A8git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/win10%E4%B8%8Bidea%E7%BB%88%E7%AB%AF%E4%B8%AD%E4%BD%BF%E7%94%A8git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>Axure9激活 Licensee:Freecrackdownload.comKey:5vYpJgQZ431X/G5kp6jpOO8Vi3TySCBnAslTcNcKkszfPH7jaM4eKM8CrALBcEC1 Windows通过cmd查看网络端口占用情况 对于一些使用java后端服务在没有关闭端口的情况下被关闭，则可能导致端口一直占</description>
+    </item>
+    <item>
+      <title>语雀迁移至Obsidian</title>
+      <link>https://luolin1024.github.io/2024/02/%E8%AF%AD%E9%9B%80%E8%BF%81%E7%A7%BB%E8%87%B3obsidian/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E8%AF%AD%E9%9B%80%E8%BF%81%E7%A7%BB%E8%87%B3obsidian/</guid>
+      <description>背景 本人从2020年初开始使用语雀，在这段时间中通过语雀做了大量的笔记，也写了一些自己的博客，十分感谢语雀，给了我一个干净整洁的mark在线</description>
+    </item>
+    <item>
+      <title>高效率Idea</title>
+      <link>https://luolin1024.github.io/2024/02/%E9%AB%98%E6%95%88%E7%8E%87idea/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E9%AB%98%E6%95%88%E7%8E%87idea/</guid>
+      <description>M1 破解Idea2024.1 下载ja-netfilter并进行配置 ja-netfilter 发行版 - Gitee.com 下载到本地，将解压后的文件夹放到合适的位置，编辑以下三个文件 dns.conf [DNS]</description>
+    </item>
+    <item>
+      <title>5W2H问题分析法</title>
+      <link>https://luolin1024.github.io/2023/04/5w2h%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E6%B3%95/</link>
+      <pubDate>Thu, 06 Apr 2023 08:19:12 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/04/5w2h%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E6%B3%95/</guid>
+      <description>背景 5W2H分析法由第二世界大战中美国陆军兵器修理部首创。它简单、方便，易于理解、使用，被广泛用于企业管理和技术活动，对于决策和执行性的活动</description>
+    </item>
+  </channel>
+</rss>

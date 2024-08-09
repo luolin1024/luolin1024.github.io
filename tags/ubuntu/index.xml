@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ubuntu on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 May 2024 14:32:28 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ubuntu22 添加用户并赋sudo权限</title>
+      <link>https://luolin1024.github.io/2024/04/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/</link>
+      <pubDate>Tue, 09 Apr 2024 00:19:26 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/04/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/</guid>
+      <description>添加用户 adduser username 添加sudo权限 usermod -G sudo username 添加root权限 sudo vim /etc/sudoers # User privilege specification root ALL=(ALL) ALL username ALL=(ALL) ALL 保存退出，username 用户就拥有了root权限。</description>
+    </item>
+    <item>
+      <title>ubuntu22 搭建LNMP环境</title>
+      <link>https://luolin1024.github.io/2024/04/ubuntu22-%E6%90%AD%E5%BB%BAlnmp%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 02 Apr 2024 01:54:47 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/04/ubuntu22-%E6%90%AD%E5%BB%BAlnmp%E7%8E%AF%E5%A2%83/</guid>
+      <description>本文介绍Ubuntu 22.04手动搭建LNMP环境并做基础配置。nginx和php使用Ondřej Surý的ppa源进行安装和升级，mysq</description>
+    </item>
+  </channel>
+</rss>

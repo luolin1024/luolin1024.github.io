@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>面向对象 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+    <description>Recent content in 面向对象 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:56:14 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java面向对象</title>
+      <link>https://luolin1024.github.io/2023/02/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>什么是面向对象？这大概是java中最重要的一部分了，写这篇文章主要是自己之前java基础不怎么样，然后今天看了一些关于面向对象和多态的文章，</description>
+    </item>
+  </channel>
+</rss>

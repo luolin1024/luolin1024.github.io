@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GoLang on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/golang/</link>
+    <description>Recent content in GoLang on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:51:59 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据类型</title>
+      <link>https://luolin1024.github.io/2024/02/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>类型 1. 基础类型 1.1. 布尔类型 //布尔类型的关键字为bool,值为true或false，不可写为0或1 var v1 bool v1=true //接受表达式判断赋值，不支持自动或</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Java/Mybatis on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/java/mybatis/</link>
+    <description>Recent content in Java/Mybatis on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://luolin1024.github.io/tags/java/mybatis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MyBatis中的一对一，一对多，多对多关联映射查询</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E4%B8%AD%E7%9A%84%E4%B8%80%E5%AF%B9%E4%B8%80%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E4%B8%AD%E7%9A%84%E4%B8%80%E5%AF%B9%E4%B8%80%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84%E6%9F%A5%E8%AF%A2/</guid>
+      <description>MyBatis中的一对一，一对多，多对多关联映射查询 一对多（嵌套结果） 将结果嵌套，在collection标签中加入对应的行表列映射： &amp;lt;resultMap id=&amp;#34;BaseResultMap&amp;#34; type=&amp;#34;com.luolin.springssm.model.Student&amp;#34;&amp;gt; &amp;lt;!--</description>
+    </item>
+    <item>
+      <title>MyBatis中的一对一，一对多，多对多关联映射查询</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E4%B8%AD%E7%9A%84%E4%B8%80%E5%AF%B9%E4%B8%80%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E4%B8%AD%E7%9A%84%E4%B8%80%E5%AF%B9%E4%B8%80%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84%E6%9F%A5%E8%AF%A2/</guid>
+      <description>MyBatis中的一对一，一对多，多对多关联映射查询 一对多（嵌套结果） 将结果嵌套，在collection标签中加入对应的行表列映射： &amp;lt;resultMap id=&amp;#34;BaseResultMap&amp;#34; type=&amp;#34;com.luolin.springssm.model.Student&amp;#34;&amp;gt; &amp;lt;!--</description>
+    </item>
+    <item>
+      <title>MyBatis入门篇</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E5%85%A5%E9%97%A8%E7%AF%87/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E5%85%A5%E9%97%A8%E7%AF%87/</guid>
+      <description>持久层解决方案 JDBC技术：Connection; PreparedStatement; ResultSet Spring的JdbcTemplate: Spring中对jdbc的简单封装 Apache</description>
+    </item>
+    <item>
+      <title>MyBatis入门篇</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E5%85%A5%E9%97%A8%E7%AF%87/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E5%85%A5%E9%97%A8%E7%AF%87/</guid>
+      <description>持久层解决方案 JDBC技术：Connection; PreparedStatement; ResultSet Spring的JdbcTemplate: Spring中对jdbc的简单封装 Apache</description>
+    </item>
+    <item>
+      <title>MyBatis提升篇</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E6%8F%90%E5%8D%87%E7%AF%87/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E6%8F%90%E5%8D%87%E7%AF%87/</guid>
+      <description>对于开发人员来讲，mybatis作为一个框架需要做到哪些事情呢？ 根据技术简单的配置好配置文件即可连接数据库，框架需要读取配置文件； 框架根据写</description>
+    </item>
+    <item>
+      <title>MyBatis提升篇</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E6%8F%90%E5%8D%87%E7%AF%87/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E6%8F%90%E5%8D%87%E7%AF%87/</guid>
+      <description>对于开发人员来讲，mybatis作为一个框架需要做到哪些事情呢？ 根据技术简单的配置好配置文件即可连接数据库，框架需要读取配置文件； 框架根据写</description>
+    </item>
+    <item>
+      <title>使用PageHelper分页失效</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%BD%BF%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E5%A4%B1%E6%95%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%BD%BF%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E5%A4%B1%E6%95%88/</guid>
+      <description>mybatis mapper中的注释，查询条件中的注释不建议使用 &amp;ndash;注释符，因为一旦出现后续没有查询条件时，pageHelper分页拼接的sql</description>
+    </item>
+    <item>
+      <title>使用PageHelper分页失效</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%BD%BF%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E5%A4%B1%E6%95%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%BD%BF%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E5%A4%B1%E6%95%88/</guid>
+      <description>mybatis mapper中的注释，查询条件中的注释不建议使用 &amp;ndash;注释符，因为一旦出现后续没有查询条件时，pageHelper分页拼接的sql</description>
+    </item>
+  </channel>
+</rss>

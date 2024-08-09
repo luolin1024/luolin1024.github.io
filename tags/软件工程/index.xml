@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>软件工程 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link>
+    <description>Recent content in 软件工程 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:48:17 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clean Code</title>
+      <link>https://luolin1024.github.io/2024/02/clean-code/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/clean-code/</guid>
+      <description>把系统当作故事来写 有意义的命名 尽量避免误导，即使用类似命名表达完全不一样的意思。避免双关语，即同一个名称表达两种意思。 不需要使用a，the等</description>
+    </item>
+    <item>
+      <title>UML统一建模语言</title>
+      <link>https://luolin1024.github.io/2024/02/uml%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/uml%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80/</guid>
+      <description>概述 UML是什么 UML 是一种为面向对象开发系统的产品进行说明、可视化、和编制文档的标准语言；作为一种模型语言，它使开发人员专注于建立产品的模型和</description>
+    </item>
+  </channel>
+</rss>

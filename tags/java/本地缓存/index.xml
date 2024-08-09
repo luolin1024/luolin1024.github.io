@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Java/本地缓存 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/java/%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98/</link>
+    <description>Recent content in Java/本地缓存 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://luolin1024.github.io/tags/java/%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java本地缓存</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98/</guid>
+      <description>前言 对一个java后台开发者而言，提到缓存，第一反应就是redis和memcache。利用这类缓存足以解决大多数的性能问题了，并且java针</description>
+    </item>
+    <item>
+      <title>Java本地缓存</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98/</guid>
+      <description>前言 对一个java后台开发者而言，提到缓存，第一反应就是redis和memcache。利用这类缓存足以解决大多数的性能问题了，并且java针</description>
+    </item>
+  </channel>
+</rss>

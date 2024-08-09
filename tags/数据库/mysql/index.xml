@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>数据库/Mysql on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/</link>
+    <description>Recent content in 数据库/Mysql on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://luolin1024.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mysql rc隔离级别下的死锁分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql-rc%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E4%B8%8B%E7%9A%84%E6%AD%BB%E9%94%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql-rc%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E4%B8%8B%E7%9A%84%E6%AD%BB%E9%94%81%E5%88%86%E6%9E%90/</guid>
+      <description>问题背景 https://fanlv.fun/2021/02/11/mysql-insert-lock/ https://blog.csdn.net/qq_42524262/article/details/123189023</description>
+    </item>
+    <item>
+      <title>Mysql rc隔离级别下的死锁分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql-rc%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E4%B8%8B%E7%9A%84%E6%AD%BB%E9%94%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql-rc%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E4%B8%8B%E7%9A%84%E6%AD%BB%E9%94%81%E5%88%86%E6%9E%90/</guid>
+      <description>问题背景 https://fanlv.fun/2021/02/11/mysql-insert-lock/ https://blog.csdn.net/qq_42524262/article/details/123189023</description>
+    </item>
+    <item>
+      <title>MySQL 为什么使用 B&#43; 树来作索引，对比 B 树它的优点和缺点是什么？</title>
+      <link>https://luolin1024.github.io/2024/02/mysql-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-b-%E6%A0%91%E6%9D%A5%E4%BD%9C%E7%B4%A2%E5%BC%95%E5%AF%B9%E6%AF%94-b-%E6%A0%91%E5%AE%83%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-b-%E6%A0%91%E6%9D%A5%E4%BD%9C%E7%B4%A2%E5%BC%95%E5%AF%B9%E6%AF%94-b-%E6%A0%91%E5%AE%83%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+      <description>索引的本质 索引是帮助MySQL高效获取数据的排好序的数据结构 索引数据结构 二叉树 红黑树 Hash表 B-Tree 索引的建立就是数据排序的过程 为什么二叉树不适</description>
+    </item>
+    <item>
+      <title>MySQL 为什么使用 B&#43; 树来作索引，对比 B 树它的优点和缺点是什么？</title>
+      <link>https://luolin1024.github.io/2024/02/mysql-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-b-%E6%A0%91%E6%9D%A5%E4%BD%9C%E7%B4%A2%E5%BC%95%E5%AF%B9%E6%AF%94-b-%E6%A0%91%E5%AE%83%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-b-%E6%A0%91%E6%9D%A5%E4%BD%9C%E7%B4%A2%E5%BC%95%E5%AF%B9%E6%AF%94-b-%E6%A0%91%E5%AE%83%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+      <description>索引的本质 索引是帮助MySQL高效获取数据的排好序的数据结构 索引数据结构 二叉树 红黑树 Hash表 B-Tree 索引的建立就是数据排序的过程 为什么二叉树不适</description>
+    </item>
+    <item>
+      <title>MySql大表更新方案</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E5%A4%A7%E8%A1%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E5%A4%A7%E8%A1%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</guid>
+      <description>前言 随着业务的发展，用户对系统需求变得越来越多，这就要求系统能够快速更新迭代以满足业务需求，通常系统版本发布时，都要先执行数据库的DDL变更</description>
+    </item>
+    <item>
+      <title>MySql大表更新方案</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E5%A4%A7%E8%A1%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E5%A4%A7%E8%A1%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</guid>
+      <description>前言 随着业务的发展，用户对系统需求变得越来越多，这就要求系统能够快速更新迭代以满足业务需求，通常系统版本发布时，都要先执行数据库的DDL变更</description>
+    </item>
+    <item>
+      <title>MySql性能优化基本知识</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
+      <description>Mysql分层、存储引擎 常用引擎对比：InnoDB:事务优先(适合高并发操作，使用行锁) MyISAM:性能优先（使用表锁） 可以使用show e</description>
+    </item>
+    <item>
+      <title>MySql性能优化基本知识</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
+      <description>Mysql分层、存储引擎 常用引擎对比：InnoDB:事务优先(适合高并发操作，使用行锁) MyISAM:性能优先（使用表锁） 可以使用show e</description>
+    </item>
+    <item>
+      <title>MySQL死锁日志查看与分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E6%AD%BB%E9%94%81%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E6%AD%BB%E9%94%81%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%88%86%E6%9E%90/</guid>
+      <description>前言 本文主要介绍在MySql数据库中如何进行基本的死锁分析，尤其是针对线上环境死锁，但是仅仅通过日志可能不是很好分析具体死锁原因的，只能通过</description>
+    </item>
+    <item>
+      <title>MySQL死锁日志查看与分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E6%AD%BB%E9%94%81%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E6%AD%BB%E9%94%81%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%88%86%E6%9E%90/</guid>
+      <description>前言 本文主要介绍在MySql数据库中如何进行基本的死锁分析，尤其是针对线上环境死锁，但是仅仅通过日志可能不是很好分析具体死锁原因的，只能通过</description>
+    </item>
+    <item>
+      <title>MySQL索引数据结构分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</guid>
+      <description>MySQL索引数据结构分析 摘要 本文讨论MySQL数据库索引数据结构相关的一些话题，重点在于常用的B+Tree索引以及性能十分高的Hash索引</description>
+    </item>
+    <item>
+      <title>MySQL索引数据结构分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</guid>
+      <description>MySQL索引数据结构分析 摘要 本文讨论MySQL数据库索引数据结构相关的一些话题，重点在于常用的B+Tree索引以及性能十分高的Hash索引</description>
+    </item>
+    <item>
+      <title>Sql中count(1)、count(%2A)和count(字段名)的区别</title>
+      <link>https://luolin1024.github.io/2024/02/sql%E4%B8%ADcount1count%E5%92%8Ccount%E5%AD%97%E6%AE%B5%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/sql%E4%B8%ADcount1count%E5%92%8Ccount%E5%AD%97%E6%AE%B5%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>测试实例 count(1)测试，sql语句如下： select count(1) from ums_member; 结果如下： count(*)测试，sql语句如下： select count(*) from ums_member; 结果如下： count(主键)测</description>
+    </item>
+    <item>
+      <title>Sql中count(1)、count(%2A)和count(字段名)的区别</title>
+      <link>https://luolin1024.github.io/2024/02/sql%E4%B8%ADcount1count%E5%92%8Ccount%E5%AD%97%E6%AE%B5%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/sql%E4%B8%ADcount1count%E5%92%8Ccount%E5%AD%97%E6%AE%B5%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>测试实例 count(1)测试，sql语句如下： select count(1) from ums_member; 结果如下： count(*)测试，sql语句如下： select count(*) from ums_member; 结果如下： count(主键)测</description>
+    </item>
+    <item>
+      <title>Sql联表查询</title>
+      <link>https://luolin1024.github.io/2024/02/sql%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/sql%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/</guid>
+      <description>sql中的join（本文仅介绍left join、right join、join on，图片是网上找的，原作者如果不允许使用请联系我）如下： 测试数</description>
+    </item>
+    <item>
+      <title>Sql联表查询</title>
+      <link>https://luolin1024.github.io/2024/02/sql%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/sql%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/</guid>
+      <description>sql中的join（本文仅介绍left join、right join、join on，图片是网上找的，原作者如果不允许使用请联系我）如下： 测试数</description>
+    </item>
+    <item>
+      <title>一次诡异的sql索引失效分析</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%B8%80%E6%AC%A1%E8%AF%A1%E5%BC%82%E7%9A%84sql%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%B8%80%E6%AC%A1%E8%AF%A1%E5%BC%82%E7%9A%84sql%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90/</guid>
+      <description>这两天在公司优化一个sql的时候碰到了一个诡异的事——一个表中的一个唯一性索引在更换了最左边的字段后，根据最左边字段为where后面的查询条</description>
+    </item>
+    <item>
+      <title>一次诡异的sql索引失效分析</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%B8%80%E6%AC%A1%E8%AF%A1%E5%BC%82%E7%9A%84sql%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%B8%80%E6%AC%A1%E8%AF%A1%E5%BC%82%E7%9A%84sql%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90/</guid>
+      <description>这两天在公司优化一个sql的时候碰到了一个诡异的事——一个表中的一个唯一性索引在更换了最左边的字段后，根据最左边字段为where后面的查询条</description>
+    </item>
+    <item>
+      <title>为啥阿里巴巴不建议MySQL使用Text类型？</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%B8%BA%E5%95%A5%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%B8%8D%E5%BB%BA%E8%AE%AEmysql%E4%BD%BF%E7%94%A8text%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%B8%BA%E5%95%A5%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%B8%8D%E5%BB%BA%E8%AE%AEmysql%E4%BD%BF%E7%94%A8text%E7%B1%BB%E5%9E%8B/</guid>
+      <description>前言 众所周知，MySQL广泛应用于互联网的OLTP（联机事务处理过程）业务系统中，在大厂开发规范中，经常会看到一条&amp;quot;不建议使用te</description>
+    </item>
+    <item>
+      <title>为啥阿里巴巴不建议MySQL使用Text类型？</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%B8%BA%E5%95%A5%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%B8%8D%E5%BB%BA%E8%AE%AEmysql%E4%BD%BF%E7%94%A8text%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%B8%BA%E5%95%A5%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%B8%8D%E5%BB%BA%E8%AE%AEmysql%E4%BD%BF%E7%94%A8text%E7%B1%BB%E5%9E%8B/</guid>
+      <description>前言 众所周知，MySQL广泛应用于互联网的OLTP（联机事务处理过程）业务系统中，在大厂开发规范中，经常会看到一条&amp;quot;不建议使用te</description>
+    </item>
+    <item>
+      <title>查询mysql中的所有索引</title>
+      <link>https://luolin1024.github.io/2024/02/%E6%9F%A5%E8%AF%A2mysql%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E6%9F%A5%E8%AF%A2mysql%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A2%E5%BC%95/</guid>
+      <description>mysql查看所有表的索引: SELECT a.TABLE_SCHEMA, a.TABLE_NAME, a.index_name, GROUP_CONCAT(column_name ORDER BY seq_in_index) AS `Columns` FROM information_schema.statistics a GROUP BY a.TABLE_SCHEMA,a.TABLE_NAME,a.index_name 查询索引： select * from (SELECT a.TABLE_SCHEMA, a.TABLE_NAME, a.index_name, GROUP_CONCAT(column_name ORDER BY seq_in_index) AS `Columns` FROM information_schema.statistics a GROUP BY a.TABLE_SCHEMA,a.TABLE_NAME,a.index_name) as b where b.index_name like &amp;#39;%req_id_3%&amp;#39;</description>
+    </item>
+    <item>
+      <title>查询mysql中的所有索引</title>
+      <link>https://luolin1024.github.io/2024/02/%E6%9F%A5%E8%AF%A2mysql%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E6%9F%A5%E8%AF%A2mysql%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A2%E5%BC%95/</guid>
+      <description>mysql查看所有表的索引: SELECT a.TABLE_SCHEMA, a.TABLE_NAME, a.index_name, GROUP_CONCAT(column_name ORDER BY seq_in_index) AS `Columns` FROM information_schema.statistics a GROUP BY a.TABLE_SCHEMA,a.TABLE_NAME,a.index_name 查询索引： select * from (SELECT a.TABLE_SCHEMA, a.TABLE_NAME, a.index_name, GROUP_CONCAT(column_name ORDER BY seq_in_index) AS `Columns` FROM information_schema.statistics a GROUP BY a.TABLE_SCHEMA,a.TABLE_NAME,a.index_name) as b where b.index_name like &amp;#39;%req_id_3%&amp;#39;</description>
+    </item>
+    <item>
+      <title>记一次事务的坑：Transaction rolled back because it has been marked as rollback-only</title>
+      <link>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</guid>
+      <description>问题背景 最近在项目中发现了一则报错：“org.springframework.transaction.UnexpectedRollbackE</description>
+    </item>
+    <item>
+      <title>记一次事务的坑：Transaction rolled back because it has been marked as rollback-only</title>
+      <link>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</guid>
+      <description>问题背景 最近在项目中发现了一则报错：“org.springframework.transaction.UnexpectedRollbackE</description>
+    </item>
+  </channel>
+</rss>

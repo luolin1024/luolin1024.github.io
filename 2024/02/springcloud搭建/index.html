@@ -1,0 +1,305 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>SpringCloud搭建 | luolin1024</title><meta name=keywords content="分布式系统架构设计"><meta name=description content="SpringCloud简介 Spring Cloud是一系列框架的有序集合。它利用SpringBoot的开发便利性巧妙地简化了分布式系统基础设施的开发，如"><meta name=author content="luolin"><link rel=canonical href=https://luolin1024.github.io/2024/02/springcloud%E6%90%AD%E5%BB%BA/><meta name=google-site-verification content="XYZabc"><meta name=yandex-verification content="XYZabc"><meta name=msvalidate.01 content="XYZabc"><script defer src=https://blogumicounter.luolin.online/script.js data-website-id=c8850e2c-16aa-465e-aa6f-5392c9397317></script>
+<script src=/js/umami-stats.js></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=https://luolin1024.github.io/signal.png><link rel=icon type=image/png sizes=16x16 href=https://luolin1024.github.io/signal.png><link rel=icon type=image/png sizes=32x32 href=https://luolin1024.github.io/signal.png><link rel=apple-touch-icon href=https://luolin1024.github.io/signal.png><link rel=mask-icon href=https://luolin1024.github.io/signal.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><html><head><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css><link rel=stylesheet href=https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/style.css><style>body{font-family:lxgw wenkai lite,sans-serif;font-family:lxgw wenkai screen,sans-serif}</style></head></html><meta property="og:title" content="SpringCloud搭建"><meta property="og:description" content="SpringCloud简介 Spring Cloud是一系列框架的有序集合。它利用SpringBoot的开发便利性巧妙地简化了分布式系统基础设施的开发，如"><meta property="og:type" content="article"><meta property="og:url" content="https://luolin1024.github.io/2024/02/springcloud%E6%90%AD%E5%BB%BA/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-02-21T11:30:51+08:00"><meta property="article:modified_time" content="2024-03-21T00:54:20+08:00"><meta property="og:site_name" content="luolin的博客"><meta name=twitter:card content="summary"><meta name=twitter:title content="SpringCloud搭建"><meta name=twitter:description content="SpringCloud简介 Spring Cloud是一系列框架的有序集合。它利用SpringBoot的开发便利性巧妙地简化了分布式系统基础设施的开发，如"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://luolin1024.github.io/posts/"},{"@type":"ListItem","position":2,"name":"SpringCloud搭建","item":"https://luolin1024.github.io/2024/02/springcloud%E6%90%AD%E5%BB%BA/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"SpringCloud搭建","name":"SpringCloud搭建","description":"SpringCloud简介 Spring Cloud是一系列框架的有序集合。它利用SpringBoot的开发便利性巧妙地简化了分布式系统基础设施的开发，如","keywords":["分布式系统架构设计"],"articleBody":"SpringCloud简介 Spring Cloud是一系列框架的有序集合。它利用SpringBoot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务注册中心、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用SpringBoot的开发风格做到一键启动和部署。SpringCloud将目前各家公司开发的比较成熟、经得起考验的服务框架组合起来，通过SpringBoot风格进行再封装屏蔽掉复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包。微服务是可以独立部署、水平扩展、独立访问（或者有独立的数据库）的服务单元，springcloud就是这些微服务的大管家，采用了微服务这种架构之后，项目的数量会非常多，springcloud需要管理好这些微服务。\n本文主要将通过手动搭建一个Spring Cloud分布式项目学习SpringCloud中的各个组件。\n本文采用Idea搭建SpringCloud项目，文中使用的工程和服务都是整个项目的模块。结构类如下： Maven主工程 基于对maven依赖管理的考虑，新建一个maven主工程，主要用来约定整个工程项目中的所有服务使用到的依赖版本。新建服务spring-cloud-parent，pom.xml如下\n\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e ","wordCount":"3612","inLanguage":"en","datePublished":"2024-02-21T11:30:51+08:00","dateModified":"2024-03-21T00:54:20+08:00","author":{"@type":"Person","name":"luolin"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://luolin1024.github.io/2024/02/springcloud%E6%90%AD%E5%BB%BA/"},"publisher":{"@type":"Organization","name":"luolin1024","logo":{"@type":"ImageObject","url":"https://luolin1024.github.io/signal.png"}}}</script></head><body id=top><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://luolin1024.github.io/ accesskey=h title="luolin的博客 (Alt + H)">luolin的博客</a><div class=logo-switches></div></div><ul id=menu><li><a href=https://luolin1024.github.io/posts title=📚文章><span>📚文章</span></a></li><li><a href=https://luolin1024.github.io/archives/ title=⏱时间轴><span>⏱时间轴</span></a></li><li><a href=https://luolin1024.github.io/search/ title="🔍搜索 (Alt + /)" accesskey=/><span>🔍搜索</span></a></li><li><a href=https://luolin1024.github.io/tags title=🔖标签><span>🔖标签</span></a></li><li><a href=https://luolin1024.github.io/about title=🙋🏻‍♂️关于><span>🙋🏻‍♂️关于</span></a></li><li><a href=https://luolin1024.github.io/links title=🤝友链><span>🤝友链</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://luolin1024.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://luolin1024.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">SpringCloud搭建</h1><div class=post-meta><span title='2024-02-21 11:30:51 +0800 +0800'>2024-21-21</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;3612 words&nbsp;·&nbsp;luolin
+本文总阅读量 <span id=busuanzi_value_page_pv></span> 次
+本文总访客量 <span id=busuanzi_value_page_uv></span> 人</div></header><aside id=toc-container class="toc-container wide"><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#springcloud%e7%ae%80%e4%bb%8b aria-label=SpringCloud简介>SpringCloud简介</a></li><li><a href=#maven%e4%b8%bb%e5%b7%a5%e7%a8%8b aria-label=Maven主工程>Maven主工程</a></li><li><a href=#%e6%9c%8d%e5%8a%a1%e6%b3%a8%e5%86%8c%e4%b8%8e%e5%8f%91%e7%8e%b0eureka aria-label=服务注册与发现——Eureka>服务注册与发现——Eureka</a><ul><li><a href=#%e6%b3%a8%e5%86%8c%e4%b8%ad%e5%bf%83 aria-label=注册中心>注册中心</a></li><li><a href=#%e6%9c%8d%e5%8a%a1%e6%8f%90%e4%be%9b%e8%80%85%e5%92%8c%e6%9c%8d%e5%8a%a1%e6%b6%88%e8%b4%b9%e8%80%85 aria-label=服务提供者和服务消费者>服务提供者和服务消费者</a></li></ul></li><li><a href=#%e6%9c%8d%e5%8a%a1%e9%97%b4%e9%80%9a%e8%ae%af%e4%b8%8e%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1 aria-label=服务间通讯与负载均衡>服务间通讯与负载均衡</a><ul><li><a href=#ribbonresttemplate aria-label=Ribbon+RestTemplate>Ribbon+RestTemplate</a><ul><li><a href=#%e6%ad%a4%e6%97%b6%e7%9a%84%e6%9e%b6%e6%9e%84 aria-label=此时的架构>此时的架构</a></li></ul></li><li><a href=#feign%e8%b0%83%e7%94%a8 aria-label=Feign调用>Feign调用</a></li></ul></li><li><a href=#hystrix-%e6%96%ad%e8%b7%af%e5%99%a8 aria-label="Hystrix 断路器">Hystrix 断路器</a><ul><li><a href=#ribbon-%e4%bd%bf%e7%94%a8%e7%9f%ad%e8%b7%af%e5%99%a8 aria-label="ribbon 使用短路器">ribbon 使用短路器</a></li><li><a href=#feign%e4%bd%bf%e7%94%a8%e6%96%ad%e8%b7%af%e5%99%a8 aria-label=feign使用断路器>feign使用断路器</a></li></ul></li><li><a href=#%e8%b7%af%e7%94%b1%e7%bd%91%e5%85%b3-zuul aria-label="路由网关 Zuul">路由网关 Zuul</a></li></ul></div></details></div></aside><script>let activeElement,elements;window.addEventListener("DOMContentLoaded",function(){checkTocPosition(),elements=document.querySelectorAll("h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]"),activeElement=elements[0];const t=encodeURI(activeElement.getAttribute("id")).toLowerCase();document.querySelector(`.inner ul li a[href="#${t}"]`).classList.add("active")},!1),window.addEventListener("resize",function(){checkTocPosition()},!1),window.addEventListener("scroll",()=>{activeElement=Array.from(elements).find(e=>{if(getOffsetTop(e)-window.pageYOffset>0&&getOffsetTop(e)-window.pageYOffset<window.innerHeight/2)return e})||activeElement,elements.forEach(e=>{const t=encodeURI(e.getAttribute("id")).toLowerCase();e===activeElement?document.querySelector(`.inner ul li a[href="#${t}"]`).classList.add("active"):document.querySelector(`.inner ul li a[href="#${t}"]`).classList.remove("active")})},!1);const main=parseInt(getComputedStyle(document.body).getPropertyValue("--article-width"),10),toc=parseInt(getComputedStyle(document.body).getPropertyValue("--toc-width"),10),gap=parseInt(getComputedStyle(document.body).getPropertyValue("--gap"),10);function checkTocPosition(){const e=document.body.scrollWidth;e-main-toc*2-gap*4>0?document.getElementById("toc-container").classList.add("wide"):document.getElementById("toc-container").classList.remove("wide")}function getOffsetTop(e){if(!e.getClientRects().length)return 0;let t=e.getBoundingClientRect(),n=e.ownerDocument.defaultView;return t.top+n.pageYOffset}</script><div class=post-content><h3 id=springcloud简介>SpringCloud简介<a hidden class=anchor aria-hidden=true href=#springcloud简介>#</a></h3><p>Spring Cloud是一系列框架的有序集合。它利用SpringBoot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务注册中心、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用SpringBoot的开发风格做到一键启动和部署。SpringCloud将目前各家公司开发的比较成熟、经得起考验的服务框架组合起来，通过SpringBoot风格进行再封装屏蔽掉复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包。微服务是可以独立部署、水平扩展、独立访问（或者有独立的数据库）的服务单元，springcloud就是这些微服务的大管家，采用了微服务这种架构之后，项目的数量会非常多，springcloud需要管理好这些微服务。</p><blockquote><p>本文主要将通过手动搭建一个Spring Cloud分布式项目学习SpringCloud中的各个组件。</p></blockquote><p>本文采用Idea搭建SpringCloud项目，文中使用的工程和服务都是整个项目的模块。结构类如下：
+<img loading=lazy src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1597485539035-bbafbeb5-8ffc-414b-a83c-ade87b778bd0.png alt=image.png></p><h3 id=maven主工程>Maven主工程<a hidden class=anchor aria-hidden=true href=#maven主工程>#</a></h3><p>基于对maven依赖管理的考虑，新建一个maven主工程，主要用来约定整个工程项目中的所有服务使用到的依赖版本。新建服务spring-cloud-parent，pom.xml如下</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;project</span> <span class=na>xmlns=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+</span></span><span class=line><span class=cl>         <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class=line><span class=cl>         <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;modelVersion&gt;</span>4.0.0<span class=nt>&lt;/modelVersion&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;parent&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-parent<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;version&gt;</span>2.3.2.RELEASE<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;relativePath/&gt;</span> <span class=c>&lt;!-- lookup parent from repository --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/parent&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>com.lin<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-parent<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;version&gt;</span>1.0-SNAPSHOT<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;properties&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class=nt>&lt;/project.build.sourceEncoding&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;project.reporting.outputEncoding&gt;</span>UTF-8<span class=nt>&lt;/project.reporting.outputEncoding&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;java.version&gt;</span>1.8<span class=nt>&lt;/java.version&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;spring-cloud.version&gt;</span>Hoxton.SR6<span class=nt>&lt;/spring-cloud.version&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/properties&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;dependencies&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-test<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;scope&gt;</span>test<span class=nt>&lt;/scope&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;exclusions&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;exclusion&gt;</span>
+</span></span><span class=line><span class=cl>                    <span class=nt>&lt;groupId&gt;</span>org.junit.vintage<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>                    <span class=nt>&lt;artifactId&gt;</span>junit-vintage-engine<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;/exclusion&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/exclusions&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/dependencies&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;dependencyManagement&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;dependencies&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;version&gt;</span>${spring-cloud.version}<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/dependencies&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/dependencyManagement&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;build&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;plugins&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;plugin&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/plugin&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/plugins&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/build&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/project&gt;</span>
+</span></span></code></pre></div><p>*<strong>注意</strong>：本文后续所有服务pom.xml中的都使用如下配置</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;parent&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;groupId&gt;</span>com.lin<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;artifactId&gt;</span>spring-cloud-parent<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;version&gt;</span>1.0-SNAPSHOT<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/parent&gt;</span>
+</span></span></code></pre></div><h3 id=服务注册与发现eureka>服务注册与发现——Eureka<a hidden class=anchor aria-hidden=true href=#服务注册与发现eureka>#</a></h3><p>SpringCloud中的所有服务之间的交互都是基于注册中心，这里就用Eureka注册中心组件搭建服务。</p><h4 id=注册中心>注册中心<a hidden class=anchor aria-hidden=true href=#注册中心>#</a></h4><p>首先新建一个eureka-server服务，需要额外添加依赖<code>spring-cloud-starter-netflix-eureka-server</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-server<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>启动一个服务注册中心只需要在Springboot启动类上添加一个注解<code>@EnableEurekaServer</code></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@SpringBootApplication</span>
+</span></span><span class=line><span class=cl><span class=nd>@EnableEurekaServer</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>EurekaServerApplication</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>EurekaServerApplication</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>另外，我们还需要配置eureka使用的端口，registerWithEureka和fetchRegistry来标明这是一个eureka-server服务，配置好serviceUrl.defaultZone, application.yml文件内容如下：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>server</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>8761</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>eureka</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>instance</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>hostname</span><span class=p>:</span><span class=w> </span><span class=l>localhost</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>client</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>registerWithEureka</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>fetchRegistry</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>serviceUrl</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>defaultZone</span><span class=p>:</span><span class=w> </span><span class=l>http://${eureka.instance.hostname}:${server.port}/eureka/</span><span class=w>
+</span></span></span></code></pre></div><p>现在eureka-server服务已经配置完成，接下来就只要启动注册中心服务就好了。使用浏览器访问http://localhost:8761/ 可以看到如下界面
+<img loading=lazy src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1597484471259-9b2b8212-b531-4b70-8dba-28dd61cdbf29.png alt=image.png></p><h4 id=服务提供者和服务消费者>服务提供者和服务消费者<a hidden class=anchor aria-hidden=true href=#服务提供者和服务消费者>#</a></h4><p>其实相对eureka-server服务来说，其他的eureka-client服务本身既可以是服务提供者，也可以是服务消费者，所以我们把spring-cloud-starter-netflix-eureka-client和spring-boot-starter-web添加到parent主工程中，新建一个service-hi服务，</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-client<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-web<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>添加完依赖之后在SpringBoot启动类中添加 <code>@EnableDiscoveryClient</code> :</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@SpringBootApplication</span>
+</span></span><span class=line><span class=cl><span class=nd>@EnableDiscoveryClient</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ServiceHiApplication</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>ServiceHiApplication</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>接着需要配置spring.application.name和需要注册到eureka的地址eureka.client.serviceUrl.defaultZone, application.yml内容如下：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>server</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>8762</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>eureka</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>client</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>serviceUrl</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>defaultZone</span><span class=p>:</span><span class=w> </span><span class=l>http://localhost:8761/eureka/</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>application</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>service-a</span><span class=w>
+</span></span></span></code></pre></div><p>添加一个Controller接口提供给其他服务，HelloController类：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@RestController</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>HelloController</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@Value</span><span class=o>(</span><span class=s>&#34;${server.port}&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>String</span> <span class=n>port</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@RequestMapping</span><span class=o>(</span><span class=s>&#34;/hi&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>String</span> <span class=nf>home</span><span class=o>(</span><span class=nd>@RequestParam</span><span class=o>(</span><span class=n>value</span> <span class=o>=</span> <span class=s>&#34;name&#34;</span><span class=o>,</span> <span class=n>defaultValue</span> <span class=o>=</span> <span class=s>&#34;forezp&#34;</span><span class=o>)</span> <span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s>&#34;hi &#34;</span> <span class=o>+</span> <span class=n>name</span> <span class=o>+</span> <span class=s>&#34; ,i am from port:&#34;</span> <span class=o>+</span> <span class=n>port</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>启动服务后使用浏览器访问 http://localhost:8761/ 就可以看到service-hi服务已经启动
+<img loading=lazy src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1597484337986-c896bed3-ba1b-4291-87ec-739ac70ec24e.png alt=image.png>
+再使用浏览器访问<a href="http://localhost:8762/hi?name=lin">http://localhost:8762/hi?name=lin</a>将会返回:</p><blockquote><p>hi lin ,i am from port:8762</p></blockquote><h3 id=服务间通讯与负载均衡>服务间通讯与负载均衡<a hidden class=anchor aria-hidden=true href=#服务间通讯与负载均衡>#</a></h3><p>在微服务架构中，业务都会被拆分成一个独立的服务，服务与服务直接的通讯是基于http restful的，Spring Cloud有两种服务调用方式，一种是Ribbon+RestTemplate，另一个是feign。</p><h4 id=ribbonresttemplate>Ribbon+RestTemplate<a hidden class=anchor aria-hidden=true href=#ribbonresttemplate>#</a></h4><p>在使用Ribbon之前，先启动eureka-server服务，再利用idea启动两个service-hi服务，端口分别为8762和8763，我们利用两个端口对应的service-hi服务模拟一个小的集群。基于上面小节所介绍的消费者服务搭建基础上新建一个service-ribbon服务，在pom.xml中添加ribbon依赖：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependencies&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-web<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-client<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-netflix-ribbon<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependencies&gt;</span>
+</span></span></code></pre></div><p>服务配置文件指定的服务的注册中心地址为<a href=http://localhost:8761/eureka/>http://localhost:8761/eureka/</a>,服务名为service-ribbon，端口为8764，配置文件application.yml如下：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>eureka</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>client</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>serviceUrl</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>defaultZone</span><span class=p>:</span><span class=w> </span><span class=l>http://localhost:8761/eureka/</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>server</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>8764</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>application</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>service-ribbon</span><span class=w>
+</span></span></span></code></pre></div><p>使用RestTemplate实现服务间远程调用需要将RestTemplate添加到spring ioc容器中，可以直接在启动类上注入RestTemplate bean或者在Configuration类中注入RestTemplate bean；并通过@LoadBalanced注解表明RestTemplate开启负载均衡的功能。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@SpringBootApplication</span>
+</span></span><span class=line><span class=cl><span class=nd>@EnableDiscoveryClient</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ServiceRibbonApplication</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>ServiceRibbonApplication</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm>     * 将RestTemplate添加到spring ioc容器里面
+</span></span></span><span class=line><span class=cl><span class=cm>     * @return
+</span></span></span><span class=line><span class=cl><span class=cm>     */</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@Bean</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@LoadBalanced</span>
+</span></span><span class=line><span class=cl>    <span class=n>RestTemplate</span> <span class=nf>restTemplate</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>new</span> <span class=n>RestTemplate</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>编写一个测试类HelloService，通过使用ioc容器中的RestTemplate调用service-hi服务中的"/hi"接口，这里可以直接永程序名替代具体的url地址，在ribbon中会先根据服务名来选择具体的服务实例，再根据服务实例在请求会用具体的url代替服务名，代码如下：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@Service</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>HelloService</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@Autowired</span>
+</span></span><span class=line><span class=cl>    <span class=n>RestTemplate</span> <span class=n>restTemplate</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>String</span> <span class=nf>hiService</span><span class=o>(</span><span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>restTemplate</span><span class=o>.</span><span class=na>getForObject</span><span class=o>(</span><span class=s>&#34;http://SERVICE-HI/hi?name=&#34;</span><span class=o>+</span><span class=n>name</span><span class=o>,</span><span class=n>String</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>编写一个HelloController类，在HelloController中调用HelloService：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@RestController</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>HelloController</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@Autowired</span>
+</span></span><span class=line><span class=cl>    <span class=n>HelloService</span> <span class=n>helloService</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@GetMapping</span><span class=o>(</span><span class=n>value</span> <span class=o>=</span> <span class=s>&#34;/hi&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>String</span> <span class=nf>hi</span><span class=o>(</span><span class=nd>@RequestParam</span> <span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>helloService</span><span class=o>.</span><span class=na>hiService</span><span class=o>(</span> <span class=n>name</span> <span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>此时使用浏览器多次访问 <code>http://localhost:8764/hi?name=lin</code>，浏览器交替显示：</p><blockquote><p>hi lin ,i am from port:8762
+hi lin ,i am from port:8763</p></blockquote><h5 id=此时的架构>此时的架构<a hidden class=anchor aria-hidden=true href=#此时的架构>#</a></h5><ol><li>一个服务注册中心，eureka server,端口为8761</li><li>service-hi工程跑了两个实例，端口分别为8762,8763，分别向服务注册中心注册</li><li>service-ribbon端口为8764，向服务注册中心注册</li><li>当service-ribbon通过RestTemplate调用service-hi的hi接口时，因为用ribbon进行了负载均衡，会以轮询的方式调用service-hi：8762和8763两个端口的hi接口；</li></ol><h4 id=feign调用>Feign调用<a hidden class=anchor aria-hidden=true href=#feign调用>#</a></h4><p>在使用Feign之前，需要先了解feign是集成了ribbon的，feign的负载均衡策略默认为ribbon的轮询策略，也就是说在通过feign调用接口可以实现和ribbon一样的效果，接着在项目中新建service-feign服务，添加spring-cloud-starter-openfeign依赖：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependencies&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-openfeign<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&lt;/dependency&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependencies&gt;</span>
+</span></span></code></pre></div><p>想要使用feign必须启动类上添加注解@EnableFeignClients</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@SpringBootApplication</span>
+</span></span><span class=line><span class=cl><span class=nd>@EnableDiscoveryClient</span>
+</span></span><span class=line><span class=cl><span class=nd>@EnableFeignClients</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>ServiceFeignApplication</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>ServiceFeignApplication</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>service-feign服务同样需要配置eureka.client.serviceUrl.defaultZone为eureka的地址</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>eureka</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>client</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>serviceUrl</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>defaultZone</span><span class=p>:</span><span class=w> </span><span class=l>http://localhost:8761/eureka/</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>server</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>8765</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>application</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>service-feign</span><span class=w>
+</span></span></span></code></pre></div><p>编写一个HelloService调用service-hi服务中的接口（之前小节所编写的接口）</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@FeignClient</span><span class=o>(</span><span class=n>value</span> <span class=o>=</span> <span class=s>&#34;service-hi&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>interface</span> <span class=nc>HelloService</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;/hi&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>String</span> <span class=nf>sayHiFromClientOne</span><span class=o>(</span><span class=nd>@RequestParam</span><span class=o>(</span><span class=n>value</span> <span class=o>=</span> <span class=s>&#34;name&#34;</span><span class=o>)</span> <span class=n>String</span> <span class=n>name</span><span class=o>);</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>另外在service-feign服务中添加一个Controller接口给外部调用</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@RestController</span><span class=o>(</span><span class=s>&#34;/hi&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>HelloController</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=nd>@Autowired</span>
+</span></span><span class=line><span class=cl>    <span class=kd>private</span> <span class=n>HelloService</span> <span class=n>helloService</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@GetMapping</span><span class=o>(</span><span class=n>value</span> <span class=o>=</span> <span class=s>&#34;/hi&#34;</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>String</span> <span class=nf>sayHi</span><span class=o>(</span><span class=nd>@RequestParam</span> <span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>helloService</span><span class=o>.</span><span class=na>sayHiFromClientOne</span><span class=o>(</span> <span class=n>name</span> <span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>使用浏览器访问接口 <a href="http://localhost:8765/hi?name=luo">http://localhost:8765/hi?name=luo</a>，交替返回如下内容：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>hi</span> <span class=n>luo</span> <span class=o>,</span><span class=n>i</span> <span class=n>am</span> <span class=n>from</span> <span class=n>port</span><span class=o>:</span><span class=mi>8762</span>
+</span></span><span class=line><span class=cl><span class=n>hi</span> <span class=n>luo</span> <span class=o>,</span><span class=n>i</span> <span class=n>am</span> <span class=n>from</span> <span class=n>port</span><span class=o>:</span><span class=mi>8763</span>
+</span></span></code></pre></div><h3 id=hystrix-断路器>Hystrix 断路器<a hidden class=anchor aria-hidden=true href=#hystrix-断路器>#</a></h3><p>在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播，会对整个微服务系统造成灾难性的严重后果，这就是服务故障的“雪崩”效应。为了解决这个问题，业界提出了断路器模型。</p><h4 id=ribbon-使用短路器>ribbon 使用短路器<a hidden class=anchor aria-hidden=true href=#ribbon-使用短路器>#</a></h4><blockquote><p>hi lin ,i am from port:8762</p></blockquote><blockquote><p>hi,lin,sorry,error!</p></blockquote><h4 id=feign使用断路器>feign使用断路器<a hidden class=anchor aria-hidden=true href=#feign使用断路器>#</a></h4><h3 id=路由网关-zuul>路由网关 Zuul<a hidden class=anchor aria-hidden=true href=#路由网关-zuul>#</a></h3><p>Zuul的主要功能是路由转发和过滤器。路由功能是微服务的一部分，比如／api/user转发到到user服务，/api/shop转发到到shop服务。zuul默认和Ribbon结合实现了负载均衡的功能。</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://luolin1024.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/>分布式系统架构设计</a></li></ul><ul class=share-buttons><li><a target=_blank rel="noopener noreferrer" aria-label="share SpringCloud搭建 on x" href="https://x.com/intent/tweet/?text=SpringCloud%e6%90%ad%e5%bb%ba&amp;url=https%3a%2f%2fluolin1024.github.io%2f2024%2f02%2fspringcloud%25E6%2590%25AD%25E5%25BB%25BA%2f&amp;hashtags=%e5%88%86%e5%b8%83%e5%bc%8f%e7%b3%bb%e7%bb%9f%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SpringCloud搭建 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fluolin1024.github.io%2f2024%2f02%2fspringcloud%25E6%2590%25AD%25E5%25BB%25BA%2f&amp;title=SpringCloud%e6%90%ad%e5%bb%ba&amp;summary=SpringCloud%e6%90%ad%e5%bb%ba&amp;source=https%3a%2f%2fluolin1024.github.io%2f2024%2f02%2fspringcloud%25E6%2590%25AD%25E5%25BB%25BA%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SpringCloud搭建 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2fluolin1024.github.io%2f2024%2f02%2fspringcloud%25E6%2590%25AD%25E5%25BB%25BA%2f&title=SpringCloud%e6%90%ad%e5%bb%ba"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SpringCloud搭建 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fluolin1024.github.io%2f2024%2f02%2fspringcloud%25E6%2590%25AD%25E5%25BB%25BA%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SpringCloud搭建 on whatsapp" href="https://api.whatsapp.com/send?text=SpringCloud%e6%90%ad%e5%bb%ba%20-%20https%3a%2f%2fluolin1024.github.io%2f2024%2f02%2fspringcloud%25E6%2590%25AD%25E5%25BB%25BA%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SpringCloud搭建 on telegram" href="https://telegram.me/share/url?text=SpringCloud%e6%90%ad%e5%bb%ba&amp;url=https%3a%2f%2fluolin1024.github.io%2f2024%2f02%2fspringcloud%25E6%2590%25AD%25E5%25BB%25BA%2f"><svg viewBox="2 2 28 28" height="30" width="30" fill="currentcolor"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg></a></li><li><a target=_blank rel="noopener noreferrer" aria-label="share SpringCloud搭建 on ycombinator" href="https://news.ycombinator.com/submitlink?t=SpringCloud%e6%90%ad%e5%bb%ba&u=https%3a%2f%2fluolin1024.github.io%2f2024%2f02%2fspringcloud%25E6%2590%25AD%25E5%25BB%25BA%2f"><svg width="30" height="30" viewBox="0 0 512 512" fill="currentcolor" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"/></svg></a></li></ul></footer><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=waline></div><script type=module>
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+    const locale = {
+        nick: '昵称',
+        nickError: '请填写昵称',
+        mail: '邮箱',
+        mailError: '请填写正确的邮件地址',
+        link: '网址',
+        optional: '可选',
+        placeholder: '仅填写昵称即可发表回复。\n填写邮箱可收到回复提醒。\n评论区支持 Markdown 语法及预览。\n',
+        sofa: '来发评论吧~',
+        submit: '提交',
+        like: '喜欢',
+        cancelLike: '取消喜欢',
+        reply: '回复',
+        cancelReply: '取消回复',
+        comment: '评论',
+        refresh: '刷新',
+        more: '加载更多...',
+        preview: '预览',
+        emoji: '表情',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '管理',
+        logout: '退出',
+        admin: '博主',
+        sticky: '置顶',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+        anonymous: '匿名',
+        level0: '潜水',
+        level1: '冒泡',
+        level2: '吐槽',
+        level3: '活跃',
+        level4: '话痨',
+        level5: '传说',
+        gif: '表情包',
+        gifSearchPlaceholder: '搜索表情包',
+        profile: '个人资料',
+        approved: '通过',
+        waiting: '待审核',
+        spam: '垃圾',
+        unsticky: '取消置顶',
+        oldest: '按倒序',
+        latest: '按正序',
+        hottest: '按热度',
+        reactionTitle: '你认为这篇文章怎么样？',
+    };
+    init({
+        
+        el: '#waline',
+        serverURL: 'https://blogcomments.luolin.online',
+        locale,
+        emoji: false,     
+        search: false,    
+        reaction: false,  
+        requiredMeta: ['nick'],
+        pageSize: 10,
+        imageUploader: false,
+        copyright: true,
+        pageview: true,
+        like: false,
+    });
+</script></article></main><footer class=footer><span>&copy; 2024 <a href=https://luolin1024.github.io/>luolin1024</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span><div>本站总访问量 <span id=busuanzi_value_site_pv></span> 次
+本站总访客数 <span id=busuanzi_value_site_uv></span> 人
+当前在线访客 <span id=busuanzi_value_active_uv></span> 人</div><a href="https://icp.gov.moe/?keyword=20249018" target=_blank>萌ICP备20249018号</a></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

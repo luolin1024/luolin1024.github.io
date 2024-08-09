@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/linux/</link>
+    <description>Recent content in Linux on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 May 2024 14:32:28 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux上配置springboot作为Systemd 服务单元</title>
+      <link>https://luolin1024.github.io/2024/05/linux%E4%B8%8A%E9%85%8D%E7%BD%AEspringboot%E4%BD%9C%E4%B8%BAsystemd-%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83/</link>
+      <pubDate>Thu, 09 May 2024 08:08:31 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/05/linux%E4%B8%8A%E9%85%8D%E7%BD%AEspringboot%E4%BD%9C%E4%B8%BAsystemd-%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83/</guid>
+      <description>在服务器上配置 Spring Boot 应用作为服务（Service）启动通常涉及创建一个 Systemd 服务单元。Systemd 是 Linux 系统中常用的系统和服务管理器。 以下是配置 Spring</description>
+    </item>
+    <item>
+      <title>Linux通过ln命令建立文件&amp;目录链接</title>
+      <link>https://luolin1024.github.io/2024/04/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Tue, 09 Apr 2024 13:07:58 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/04/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/</guid>
+      <description>使用方式：ln [option] source_file dist_file -f 建立时，将同档案名删除. -i 删除前进行询问. ln -s abc cde 建立abc 的软连接 ln abc cde 建立abc的硬连接， 软链接与硬链接的区别（通</description>
+    </item>
+    <item>
+      <title>ubuntu22 添加用户并赋sudo权限</title>
+      <link>https://luolin1024.github.io/2024/04/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/</link>
+      <pubDate>Tue, 09 Apr 2024 00:19:26 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/04/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/</guid>
+      <description>添加用户 adduser username 添加sudo权限 usermod -G sudo username 添加root权限 sudo vim /etc/sudoers # User privilege specification root ALL=(ALL) ALL username ALL=(ALL) ALL 保存退出，username 用户就拥有了root权限。</description>
+    </item>
+    <item>
+      <title>Linux常用命令记录</title>
+      <link>https://luolin1024.github.io/2024/02/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>本文主要是记录Linux下常用的命令 Linux下查询当前端口占用 lsof -i:8445</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>luolin1024</title>
+    <link>https://luolin1024.github.io/</link>
+    <description>Recent content on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 09 Aug 2024 13:54:00 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac M1好用软件列表与破解</title>
+      <link>https://luolin1024.github.io/2024/08/mac-m1%E5%A5%BD%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E4%B8%8E%E7%A0%B4%E8%A7%A3/</link>
+      <pubDate>Wed, 07 Aug 2024 00:49:06 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/08/mac-m1%E5%A5%BD%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E4%B8%8E%E7%A0%B4%E8%A7%A3/</guid>
+      <description>M1 安装mat 下载arm架构的jdk11https://www.azul.com/downloads/?version=java-11-lts</description>
+    </item>
+    <item>
+      <title>如何阅读一本书</title>
+      <link>https://luolin1024.github.io/2024/07/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</link>
+      <pubDate>Mon, 01 Jul 2024 23:23:22 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/07/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</guid>
+      <description>明确自己阅读的目的 扩充知识：期望扩充哪方面的知识呢 研究他人的方法论？ 深挖某些知识点？ 当前看的内容是否合适？ 应用方法论 SQ3R 阅读法 Survey (预览): 快速</description>
+    </item>
+    <item>
+      <title>并发编程-基础知识</title>
+      <link>https://luolin1024.github.io/2024/06/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 05 Jun 2024 09:53:38 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/06/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>多线程使用 创建子线程并运行 public class ThreadTest { private static class MyTestThread extends Thread { @Override public void run() { System.out.println(&amp;#34;MyTestThread run&amp;#34;); } } public static void main(String[] args) { new MyTestThread().start(); } } 问题：1. 没有多继承，只能继承Thread类；2. 任务</description>
+    </item>
+    <item>
+      <title>SpringBoot学习</title>
+      <link>https://luolin1024.github.io/2024/05/springboot%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Fri, 24 May 2024 09:54:23 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/05/springboot%E5%AD%A6%E4%B9%A0/</guid>
+      <description>Spring框架 Spring 中的条件注解 - spring 中文网 (springdoc.cn) SpringMVC框架 拦截器 源码分析Spring boot拦截器执行顺序_spring interce</description>
+    </item>
+    <item>
+      <title>Linux上配置springboot作为Systemd 服务单元</title>
+      <link>https://luolin1024.github.io/2024/05/linux%E4%B8%8A%E9%85%8D%E7%BD%AEspringboot%E4%BD%9C%E4%B8%BAsystemd-%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83/</link>
+      <pubDate>Thu, 09 May 2024 08:08:31 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/05/linux%E4%B8%8A%E9%85%8D%E7%BD%AEspringboot%E4%BD%9C%E4%B8%BAsystemd-%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83/</guid>
+      <description>在服务器上配置 Spring Boot 应用作为服务（Service）启动通常涉及创建一个 Systemd 服务单元。Systemd 是 Linux 系统中常用的系统和服务管理器。 以下是配置 Spring</description>
+    </item>
+    <item>
+      <title>Linux通过ln命令建立文件&amp;目录链接</title>
+      <link>https://luolin1024.github.io/2024/04/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Tue, 09 Apr 2024 13:07:58 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/04/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/</guid>
+      <description>使用方式：ln [option] source_file dist_file -f 建立时，将同档案名删除. -i 删除前进行询问. ln -s abc cde 建立abc 的软连接 ln abc cde 建立abc的硬连接， 软链接与硬链接的区别（通</description>
+    </item>
+    <item>
+      <title>ubuntu22 添加用户并赋sudo权限</title>
+      <link>https://luolin1024.github.io/2024/04/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/</link>
+      <pubDate>Tue, 09 Apr 2024 00:19:26 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/04/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/</guid>
+      <description>添加用户 adduser username 添加sudo权限 usermod -G sudo username 添加root权限 sudo vim /etc/sudoers # User privilege specification root ALL=(ALL) ALL username ALL=(ALL) ALL 保存退出，username 用户就拥有了root权限。</description>
+    </item>
+    <item>
+      <title>开源协议</title>
+      <link>https://luolin1024.github.io/2024/04/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Wed, 03 Apr 2024 12:48:33 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/04/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/</guid>
+      <description>协议 商业用途 修改 分发 GPL 限制 要求公开 要求开源 LGPL 允许 要求公开 允许分发修改版本 MPL 允许 不要求 要求修改版本开源 MIT 允许 不要求 允许分发修改版本 Apache 2.0 允许 不要</description>
+    </item>
+    <item>
+      <title>ubuntu22 搭建LNMP环境</title>
+      <link>https://luolin1024.github.io/2024/04/ubuntu22-%E6%90%AD%E5%BB%BAlnmp%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 02 Apr 2024 01:54:47 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/04/ubuntu22-%E6%90%AD%E5%BB%BAlnmp%E7%8E%AF%E5%A2%83/</guid>
+      <description>本文介绍Ubuntu 22.04手动搭建LNMP环境并做基础配置。nginx和php使用Ondřej Surý的ppa源进行安装和升级，mysq</description>
+    </item>
+    <item>
+      <title>Mysql 性能优化知识点</title>
+      <link>https://luolin1024.github.io/2024/03/mysql-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <pubDate>Thu, 14 Mar 2024 21:35:58 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/03/mysql-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <description>Mysql中组合索引排序问题 如果我们建立单列索引（A），实际上相当于在（A，ID）上建立了索引，其中ID为主键。这中情况下对于 where A=xx order by ID的</description>
+    </item>
+    <item>
+      <title>通过vercel部署hugo静态博客搭建</title>
+      <link>https://luolin1024.github.io/2024/03/%E9%80%9A%E8%BF%87vercel%E9%83%A8%E7%BD%B2hugo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 13 Mar 2024 22:51:42 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/03/%E9%80%9A%E8%BF%87vercel%E9%83%A8%E7%BD%B2hugo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+      <description>背景 本文编写目的主要是帮助小白快速部署一个简洁好看的私人静态博客，支持他人评论，文章统计等功能，具备被google、baidu等搜索引擎索引</description>
+    </item>
+    <item>
+      <title>synchronized 实现原理</title>
+      <link>https://luolin1024.github.io/2024/03/synchronized-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Wed, 06 Mar 2024 23:29:14 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/03/synchronized-%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</guid>
+      <description>简单来说是一种对象锁，锁的是对象，而不是引用 32位对象头mark work分布：</description>
+    </item>
+    <item>
+      <title>Jdk8 ConcurrentHashMap的死循环bug</title>
+      <link>https://luolin1024.github.io/2024/03/jdk8-concurrenthashmap%E7%9A%84%E6%AD%BB%E5%BE%AA%E7%8E%AFbug/</link>
+      <pubDate>Mon, 04 Mar 2024 01:30:12 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/03/jdk8-concurrenthashmap%E7%9A%84%E6%AD%BB%E5%BE%AA%E7%8E%AFbug/</guid>
+      <description>public static void main(String[] args) { ConcurrentHashMap&amp;lt;String, Integer&amp;gt; map = new ConcurrentHashMap&amp;lt;&amp;gt;(16); map.computeIfAbsent( &amp;#34;AaAa&amp;#34;, key -&amp;gt; { return map.computeIfAbsent( &amp;#34;BBBB&amp;#34;, key2 -&amp;gt; 42); } ); System.out.println(&amp;#34;程序完成&amp;#34;); } 执行以上代码，程序</description>
+    </item>
+    <item>
+      <title>位图BitMap</title>
+      <link>https://luolin1024.github.io/2024/03/%E4%BD%8D%E5%9B%BEbitmap/</link>
+      <pubDate>Sun, 03 Mar 2024 17:49:55 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/03/%E4%BD%8D%E5%9B%BEbitmap/</guid>
+      <description>什么是BitMap BitMap算法的核心思想在于用bit数组记录0/1两种状态，然后再将具体数据映射到这个比特数组的具体位置，这个比特位表示</description>
+    </item>
+    <item>
+      <title>布隆过滤器</title>
+      <link>https://luolin1024.github.io/2024/03/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</link>
+      <pubDate>Fri, 01 Mar 2024 13:27:37 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/03/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</guid>
+      <description>什么是布隆过滤器 在实际业务场景中，存在网页 URL 去重、垃圾邮件识别、大集合中重复元素的判断和缓存穿透等问题。而布隆过滤器就主要是用于检索一个元素</description>
+    </item>
+    <item>
+      <title>五年计划</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%BA%94%E5%B9%B4%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Sun, 25 Feb 2024 23:52:05 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%BA%94%E5%B9%B4%E8%AE%A1%E5%88%92/</guid>
+      <description>当前日期：2024-02-25 30岁想要的生活：净资产达过200w、身体健康、家庭圆满 终极目标：可以依靠睡后收入过好这一生 净资产达过200w</description>
+    </item>
+    <item>
+      <title>2024规划</title>
+      <link>https://luolin1024.github.io/2024/02/2024%E8%A7%84%E5%88%92/</link>
+      <pubDate>Sun, 25 Feb 2024 23:30:44 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/2024%E8%A7%84%E5%88%92/</guid>
+      <description>将[[五年计划]]进行拆分，不同方向如下： 财务自由 现状：主要依赖做为团队经理这份职业进行工作，获取工资回报收益 2024目标：主业依旧是作为团</description>
+    </item>
+    <item>
+      <title>Clean Code</title>
+      <link>https://luolin1024.github.io/2024/02/clean-code/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/clean-code/</guid>
+      <description>把系统当作故事来写 有意义的命名 尽量避免误导，即使用类似命名表达完全不一样的意思。避免双关语，即同一个名称表达两种意思。 不需要使用a，the等</description>
+    </item>
+    <item>
+      <title>DDD领域驱动模型落地</title>
+      <link>https://luolin1024.github.io/2024/02/ddd%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9E%8B%E8%90%BD%E5%9C%B0/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/ddd%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9E%8B%E8%90%BD%E5%9C%B0/</guid>
+      <description>DDD领域驱动模型是当前业内通用的一套软件设计思路，也是目前我所在公司的软件设计方案。 首先介绍一下DDD领域驱动设计出现的背景，在现代化公司</description>
+    </item>
+    <item>
+      <title>eu.org申请免费域名</title>
+      <link>https://luolin1024.github.io/2024/02/eu.org%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/eu.org%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9%E5%9F%9F%E5%90%8D/</guid>
+      <description>本文目的：记录如何在eu.org申请免费域名 域名官网：https://nic.eu.org/ 注册账号 注册链接：https://nic.eu.</description>
+    </item>
+    <item>
+      <title>Excel使用&amp;连接符批量</title>
+      <link>https://luolin1024.github.io/2024/02/excel%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E7%AC%A6%E6%89%B9%E9%87%8F/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/excel%E4%BD%BF%E7%94%A8%E8%BF%9E%E6%8E%A5%E7%AC%A6%E6%89%B9%E9%87%8F/</guid>
+      <description>Excel使用&amp;amp;连接符批量 示例输入： =&amp;#34;insert into ssta_line_limit(tenant_id, settle_config_id, document_type, enable_flag) value(&amp;#34;&amp;amp;B2&amp;amp;&amp;#34;, &amp;#34;&amp;amp;A2&amp;amp;&amp;#34;, &amp;#39;INVOICE&amp;#39;, 0);&amp;#34; 实现效果：</description>
+    </item>
+    <item>
+      <title>feign、ribbon、hystrix分析</title>
+      <link>https://luolin1024.github.io/2024/02/feignribbonhystrix%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/feignribbonhystrix%E5%88%86%E6%9E%90/</guid>
+      <description>feign、ribbon、hystrix三者之间的关系 如果微服务项目加上了spring-cloud-starter-netflix-hyst</description>
+    </item>
+    <item>
+      <title>Feign调用接口报错情况分析</title>
+      <link>https://luolin1024.github.io/2024/02/feign%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/feign%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/</guid>
+      <description>报错405 这两天遇到了一个FeignClient和GetMapping组合报错405请求方法错误，在写代码的时候，遇到一个情况，在使用Fei</description>
+    </item>
+    <item>
+      <title>Git操作手册</title>
+      <link>https://luolin1024.github.io/2024/02/git%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/git%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</guid>
+      <description>关于git的一些介绍以及大部分用法，可以参考官方文档,本文只记录一些常用操作和一些比较难的操作。 git fetch和git pull对比 先用一张图来</description>
+    </item>
+    <item>
+      <title>Java线程池结合ThreadLocal的用法实例</title>
+      <link>https://luolin1024.github.io/2024/02/java%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%BB%93%E5%90%88threadlocal%E7%9A%84%E7%94%A8%E6%B3%95%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/java%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%BB%93%E5%90%88threadlocal%E7%9A%84%E7%94%A8%E6%B3%95%E5%AE%9E%E4%BE%8B/</guid>
+      <description>今天有一个任务：向数据库中添加百万条数据用来做测试，考虑到单线程插入数据可能要花很久的时间，于是想到了用线程池来进行插入操作，但是里面有个一</description>
+    </item>
+    <item>
+      <title>Linux常用命令记录</title>
+      <link>https://luolin1024.github.io/2024/02/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>本文主要是记录Linux下常用的命令 Linux下查询当前端口占用 lsof -i:8445</description>
+    </item>
+    <item>
+      <title>Moment读书会第10期</title>
+      <link>https://luolin1024.github.io/2024/02/moment%E8%AF%BB%E4%B9%A6%E4%BC%9A%E7%AC%AC10%E6%9C%9F/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/moment%E8%AF%BB%E4%B9%A6%E4%BC%9A%E7%AC%AC10%E6%9C%9F/</guid>
+      <description>序 先简单讲一下，这是我第一次参加类似读书会的活动，总体感觉下来和各行各业一些有想法的年轻人一起去沟通去交流，很有意思的事情。 文章内容主要包括</description>
+    </item>
+    <item>
+      <title>Moment读书会第11期</title>
+      <link>https://luolin1024.github.io/2024/02/moment%E8%AF%BB%E4%B9%A6%E4%BC%9A%E7%AC%AC11%E6%9C%9F/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/moment%E8%AF%BB%E4%B9%A6%E4%BC%9A%E7%AC%AC11%E6%9C%9F/</guid>
+      <description>本期读书会的主题还是跟上一期[[Moment读书会第10期]]有重叠，这一次读书会主题是讲围绕创业方面的内容 本次读书会主要还是收获了以下内容</description>
+    </item>
+    <item>
+      <title>MyBatis中的一对一，一对多，多对多关联映射查询</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E4%B8%AD%E7%9A%84%E4%B8%80%E5%AF%B9%E4%B8%80%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E4%B8%AD%E7%9A%84%E4%B8%80%E5%AF%B9%E4%B8%80%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84%E6%9F%A5%E8%AF%A2/</guid>
+      <description>MyBatis中的一对一，一对多，多对多关联映射查询 一对多（嵌套结果） 将结果嵌套，在collection标签中加入对应的行表列映射： &amp;lt;resultMap id=&amp;#34;BaseResultMap&amp;#34; type=&amp;#34;com.luolin.springssm.model.Student&amp;#34;&amp;gt; &amp;lt;!--</description>
+    </item>
+    <item>
+      <title>MyBatis入门篇</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E5%85%A5%E9%97%A8%E7%AF%87/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E5%85%A5%E9%97%A8%E7%AF%87/</guid>
+      <description>持久层解决方案 JDBC技术：Connection; PreparedStatement; ResultSet Spring的JdbcTemplate: Spring中对jdbc的简单封装 Apache</description>
+    </item>
+    <item>
+      <title>MyBatis提升篇</title>
+      <link>https://luolin1024.github.io/2024/02/mybatis%E6%8F%90%E5%8D%87%E7%AF%87/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mybatis%E6%8F%90%E5%8D%87%E7%AF%87/</guid>
+      <description>对于开发人员来讲，mybatis作为一个框架需要做到哪些事情呢？ 根据技术简单的配置好配置文件即可连接数据库，框架需要读取配置文件； 框架根据写</description>
+    </item>
+    <item>
+      <title>Mysql rc隔离级别下的死锁分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql-rc%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E4%B8%8B%E7%9A%84%E6%AD%BB%E9%94%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql-rc%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E4%B8%8B%E7%9A%84%E6%AD%BB%E9%94%81%E5%88%86%E6%9E%90/</guid>
+      <description>问题背景 https://fanlv.fun/2021/02/11/mysql-insert-lock/ https://blog.csdn.net/qq_42524262/article/details/123189023</description>
+    </item>
+    <item>
+      <title>MySQL 为什么使用 B&#43; 树来作索引，对比 B 树它的优点和缺点是什么？</title>
+      <link>https://luolin1024.github.io/2024/02/mysql-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-b-%E6%A0%91%E6%9D%A5%E4%BD%9C%E7%B4%A2%E5%BC%95%E5%AF%B9%E6%AF%94-b-%E6%A0%91%E5%AE%83%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-b-%E6%A0%91%E6%9D%A5%E4%BD%9C%E7%B4%A2%E5%BC%95%E5%AF%B9%E6%AF%94-b-%E6%A0%91%E5%AE%83%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+      <description>索引的本质 索引是帮助MySQL高效获取数据的排好序的数据结构 索引数据结构 二叉树 红黑树 Hash表 B-Tree 索引的建立就是数据排序的过程 为什么二叉树不适</description>
+    </item>
+    <item>
+      <title>MySql大表更新方案</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E5%A4%A7%E8%A1%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E5%A4%A7%E8%A1%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</guid>
+      <description>前言 随着业务的发展，用户对系统需求变得越来越多，这就要求系统能够快速更新迭代以满足业务需求，通常系统版本发布时，都要先执行数据库的DDL变更</description>
+    </item>
+    <item>
+      <title>MySql性能优化基本知识</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
+      <description>Mysql分层、存储引擎 常用引擎对比：InnoDB:事务优先(适合高并发操作，使用行锁) MyISAM:性能优先（使用表锁） 可以使用show e</description>
+    </item>
+    <item>
+      <title>MySQL死锁日志查看与分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E6%AD%BB%E9%94%81%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E6%AD%BB%E9%94%81%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%88%86%E6%9E%90/</guid>
+      <description>前言 本文主要介绍在MySql数据库中如何进行基本的死锁分析，尤其是针对线上环境死锁，但是仅仅通过日志可能不是很好分析具体死锁原因的，只能通过</description>
+    </item>
+    <item>
+      <title>MySQL索引数据结构分析</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</guid>
+      <description>MySQL索引数据结构分析 摘要 本文讨论MySQL数据库索引数据结构相关的一些话题，重点在于常用的B+Tree索引以及性能十分高的Hash索引</description>
+    </item>
+    <item>
+      <title>MySQL锁机制</title>
+      <link>https://luolin1024.github.io/2024/02/mysql%E9%94%81%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/mysql%E9%94%81%E6%9C%BA%E5%88%B6/</guid>
+      <description>宏观 数据库锁 数据库锁适用于集群 粒度小，更方便控制 代码锁 需要复杂的处理，才能作用于集群 粒度大 微观 行锁和表锁 说明 说明只有明确指定主键，才会执行锁</description>
+    </item>
+    <item>
+      <title>NC61 两数之和</title>
+      <link>https://luolin1024.github.io/2024/02/nc61-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/nc61-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>描述 给出一个整型数组 numbers 和一个目标值 target，请在数组中找出两个加起来等于目标值的数的下标，返回的下标按升序排列。 （注：返回的数组下标从1</description>
+    </item>
+    <item>
+      <title>Object源码分析</title>
+      <link>https://luolin1024.github.io/2024/02/object%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/object%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+      <description>package java.lang; public class Object { private static native void registerNatives(); static { // 对象初始化时自动调用此方法 registerNatives(); } /** * 返回此对象的运行时类 * * @return The {@code Class} object that represents the runtime * class of this object. * @jls 15.8.2 Class Literals */ public final native Class&amp;lt;?&amp;gt; getClass(); /** *</description>
+    </item>
+    <item>
+      <title>Redission分布式锁实战</title>
+      <link>https://luolin1024.github.io/2024/02/redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E6%88%98/</guid>
+      <description>背景 通过springboot整合Redission实现分布式锁 可重入锁 可重入锁，也叫做递归锁，是指在一个线程中可以多次获取同一把锁，比如：一</description>
+    </item>
+    <item>
+      <title>redis分布式锁细讲</title>
+      <link>https://luolin1024.github.io/2024/02/redis%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%BB%86%E8%AE%B2/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/redis%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E7%BB%86%E8%AE%B2/</guid>
+      <description>这篇文章我想和你聊一聊，关于 Redis 分布式锁的「安全性」问题。 Redis 分布式锁的话题，很多文章已经写烂了，我为什么还要写这篇文章呢？因为我发现网上 99% 的文</description>
+    </item>
+    <item>
+      <title>redis基础</title>
+      <link>https://luolin1024.github.io/2024/02/redis%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/redis%E5%9F%BA%E7%A1%80/</guid>
+      <description>命令手册 http://redisdoc.com/index.html</description>
+    </item>
+    <item>
+      <title>redis实现分布式锁——setnx</title>
+      <link>https://luolin1024.github.io/2024/02/redis%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81setnx/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/redis%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81setnx/</guid>
+      <description>setnx key value 只在键 key 不存在的情况下， 将键 key 的值设置为 value 。若键 key 已经存在， 则 SETNX 命令不做任何动作。SETNX 是『SET if Not eXists』(如果不存在，</description>
+    </item>
+    <item>
+      <title>redis常见问题</title>
+      <link>https://luolin1024.github.io/2024/02/redis%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/redis%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>为啥用redis？ 因为传统的关系型数据库如Mysql已经不能适用所有的场景了，比如秒杀的库存扣减，APP首页的访问流量高峰等等，都很容易把数</description>
+    </item>
+    <item>
+      <title>RestFul风格API</title>
+      <link>https://luolin1024.github.io/2024/02/restful%E9%A3%8E%E6%A0%BCapi/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/restful%E9%A3%8E%E6%A0%BCapi/</guid>
+      <description>RestFul是什么？ REST是REpresentational State Transfer的缩写（表述性状态转移），REST是一种体系结构。简单的说</description>
+    </item>
+    <item>
+      <title>Spring</title>
+      <link>https://luolin1024.github.io/2024/02/spring/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring/</guid>
+      <description>Spring&amp;amp; Spring Cloud基础使用 [[feign、ribbon、hystrix分析]] [[Spring组件]] [[Spring事务以及事务嵌套]] [[S</description>
+    </item>
+    <item>
+      <title>Spring AOP注解常见问题</title>
+      <link>https://luolin1024.github.io/2024/02/spring-aop%E6%B3%A8%E8%A7%A3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-aop%E6%B3%A8%E8%A7%A3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>[[Java动态代理]] [[Java注解与自定义注解]] [[Spring中利用AOP使用自定义注解]] 使用 @Transactional , @Async 等Spring AOP注解不生</description>
+    </item>
+    <item>
+      <title>Spring Bean初始化</title>
+      <link>https://luolin1024.github.io/2024/02/spring-bean%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-bean%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
+      <description>scan&amp;mdash;beanDefinition&amp;mdash;-map 遍历map validate 得到class 推断构造方法 反射 实例化这个对象 合并beanDefinition 提前暴露一个bean工厂对象 填充属性&amp;mdash;</description>
+    </item>
+    <item>
+      <title>Spring 中当前类方法调用本类其他方法注意事项</title>
+      <link>https://luolin1024.github.io/2024/02/spring-%E4%B8%AD%E5%BD%93%E5%89%8D%E7%B1%BB%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E6%9C%AC%E7%B1%BB%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring-%E4%B8%AD%E5%BD%93%E5%89%8D%E7%B1%BB%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E6%9C%AC%E7%B1%BB%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>加入存在类AServiceImpl中存在方法a()，没有事务注解（没有被spring事务管理管理），调用本类中方法b(),而b()是使用了事</description>
+    </item>
+    <item>
+      <title>Spring5 源码阅读环境搭建</title>
+      <link>https://luolin1024.github.io/2024/02/spring5-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring5-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>这一阵子在读spring源码，但是网上的文章，构建spring源码大都有问题，导致我构建源码的时候出现了很多问题，所以我自己重新构建了一下。</description>
+    </item>
+    <item>
+      <title>SpringBoot yaml日志级别配置</title>
+      <link>https://luolin1024.github.io/2024/02/springboot-yaml%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot-yaml%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB%E9%85%8D%E7%BD%AE/</guid>
+      <description>本来只是想要学习一些SSM框架的东西，自己测试一下，带着怎么快速怎么来的于是就用SpringBoot呗，结果刚写完代码刚点击启动就莫名其妙开</description>
+    </item>
+    <item>
+      <title>Springboot事务管理看这篇就够了</title>
+      <link>https://luolin1024.github.io/2024/02/springboot%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%E7%9C%8B%E8%BF%99%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86/</guid>
+      <description>问题背景 [[记一次事务的坑：Transaction rolled back because it has been marked as rollback-only]] 源码分析 @Nullable protected Object invokeWithinTransaction(Method method, @Nullable Class&amp;lt;?&amp;gt; targetClass, final InvocationCallback invocation) throws Throwable { // If the transaction attribute is null, the method is non-transactional. TransactionAttributeSource tas = getTransactionAttributeSource(); final TransactionAttribute txAttr</description>
+    </item>
+    <item>
+      <title>SpringBoot事务自定义提交后执行</title>
+      <link>https://luolin1024.github.io/2024/02/springboot%E4%BA%8B%E5%8A%A1%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%90%E4%BA%A4%E5%90%8E%E6%89%A7%E8%A1%8C/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot%E4%BA%8B%E5%8A%A1%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%90%E4%BA%A4%E5%90%8E%E6%89%A7%E8%A1%8C/</guid>
+      <description>背景 在SpringBoot通常会使用到事务注解快速启动一个事务，但是在一个大型项目中，往往会存在一些流程上的逻辑需要在事务提交之后新启一个方</description>
+    </item>
+    <item>
+      <title>SpringBoot异步线程</title>
+      <link>https://luolin1024.github.io/2024/02/springboot%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springboot%E5%BC%82%E6%AD%A5%E7%BA%BF%E7%A8%8B/</guid>
+      <description>线程池参数含义: corePoolSize：核心线程数 核心线程会一直存活，及时没有任务需要执行 当线程数小于核心线程数时，即使有线程空闲，线程池</description>
+    </item>
+    <item>
+      <title>SpringCloud搭建</title>
+      <link>https://luolin1024.github.io/2024/02/springcloud%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/springcloud%E6%90%AD%E5%BB%BA/</guid>
+      <description>SpringCloud简介 Spring Cloud是一系列框架的有序集合。它利用SpringBoot的开发便利性巧妙地简化了分布式系统基础设施的开发，如</description>
+    </item>
+    <item>
+      <title>Spring中Bean的生命周期</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%B8%ADbean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%B8%ADbean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>前言 这其实是一道面试题，是我在面试百度的时候被问到的，当时没有答出来(因为自己真的很菜)，后来在网上寻找答案，看到也是一头雾水，直到看到了《</description>
+    </item>
+    <item>
+      <title>Spring中利用AOP使用自定义注解</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%B8%AD%E5%88%A9%E7%94%A8aop%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%B8%AD%E5%88%A9%E7%94%A8aop%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</guid>
+      <description>使用spring时，aop可以大幅度减少我们的工作量，这里主要介绍一些spring中aop如何切注解。 自定义注解： @Target({ElementType.METHOD}) @Retention(RetentionPolicy.RUNTIME) public @interface MyAnnotation { String value(); } 编写切面</description>
+    </item>
+    <item>
+      <title>Spring事务以及事务嵌套</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E4%BA%8B%E5%8A%A1%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E4%BA%8B%E5%8A%A1%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/</guid>
+      <description>Spring事务基本知识点 事务的ACID 事务是区分文件存储系统与NoSql数据库重要特性之一，其存在的意义是为了保证即使在并发情况下也能正确</description>
+    </item>
+    <item>
+      <title>Spring知识</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E7%9F%A5%E8%AF%86/</guid>
+      <description>Spring IOC与DI IOC：在Spring框架中实现控制反转的是Spring IoC容器，其具体就是由容器来控制对象的生命周期和业务对象之间的依赖关</description>
+    </item>
+    <item>
+      <title>Spring组件</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E7%BB%84%E4%BB%B6/</guid>
+      <description>spring容器注册组件 通过使用注解方式向spring容器中添加组件是十分简单的，大体有如下方式： 在config类中通过添加@Bean来添加</description>
+    </item>
+    <item>
+      <title>Spring结构组成</title>
+      <link>https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/</guid>
+      <description>DefaultListableBeanFactory 类图 AliasRegistry：定义对alias的简单增删改操作 SimpleAliasRegistry：主要使用map作为alias的缓存</description>
+    </item>
+    <item>
+      <title>Sql中count(1)、count(%2A)和count(字段名)的区别</title>
+      <link>https://luolin1024.github.io/2024/02/sql%E4%B8%ADcount1count%E5%92%8Ccount%E5%AD%97%E6%AE%B5%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/sql%E4%B8%ADcount1count%E5%92%8Ccount%E5%AD%97%E6%AE%B5%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>测试实例 count(1)测试，sql语句如下： select count(1) from ums_member; 结果如下： count(*)测试，sql语句如下： select count(*) from ums_member; 结果如下： count(主键)测</description>
+    </item>
+    <item>
+      <title>Sql查询中char或者varchar类型字段为null和‘没有值’时引起的问题分析</title>
+      <link>https://luolin1024.github.io/2024/02/sql%E6%9F%A5%E8%AF%A2%E4%B8%ADchar%E6%88%96%E8%80%85varchar%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E4%B8%BAnull%E5%92%8C%E6%B2%A1%E6%9C%89%E5%80%BC%E6%97%B6%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/sql%E6%9F%A5%E8%AF%A2%E4%B8%ADchar%E6%88%96%E8%80%85varchar%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E4%B8%BAnull%E5%92%8C%E6%B2%A1%E6%9C%89%E5%80%BC%E6%97%B6%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</guid>
+      <description>在平时开发中，我们都会遇到数据库中varchar或者char类型字段为null的情况，通常情况我们都会认为数据库中&#39;某个值或者没有值&#39;!=n</description>
+    </item>
+    <item>
+      <title>Sql联表查询</title>
+      <link>https://luolin1024.github.io/2024/02/sql%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/sql%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/</guid>
+      <description>sql中的join（本文仅介绍left join、right join、join on，图片是网上找的，原作者如果不允许使用请联系我）如下： 测试数</description>
+    </item>
+    <item>
+      <title>ThreadLocal和InheritableThreadLocal源码分析</title>
+      <link>https://luolin1024.github.io/2024/02/threadlocal%E5%92%8Cinheritablethreadlocal%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/threadlocal%E5%92%8Cinheritablethreadlocal%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</guid>
+      <description>ThreadLocal分析 什么是ThreadLocal ThreadLocal是一种变量类型，与普通的局部变量和全局变量所不同的是，Threa</description>
+    </item>
+    <item>
+      <title>UML统一建模语言</title>
+      <link>https://luolin1024.github.io/2024/02/uml%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/uml%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80/</guid>
+      <description>概述 UML是什么 UML 是一种为面向对象开发系统的产品进行说明、可视化、和编制文档的标准语言；作为一种模型语言，它使开发人员专注于建立产品的模型和</description>
+    </item>
+    <item>
+      <title>win10下idea终端中使用git中文乱码解决方案</title>
+      <link>https://luolin1024.github.io/2024/02/win10%E4%B8%8Bidea%E7%BB%88%E7%AB%AF%E4%B8%AD%E4%BD%BF%E7%94%A8git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/win10%E4%B8%8Bidea%E7%BB%88%E7%AB%AF%E4%B8%AD%E4%BD%BF%E7%94%A8git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>Axure9激活 Licensee:Freecrackdownload.comKey:5vYpJgQZ431X/G5kp6jpOO8Vi3TySCBnAslTcNcKkszfPH7jaM4eKM8CrALBcEC1 Windows通过cmd查看网络端口占用情况 对于一些使用java后端服务在没有关闭端口的情况下被关闭，则可能导致端口一直占</description>
+    </item>
+    <item>
+      <title>一次诡异的sql索引失效分析</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%B8%80%E6%AC%A1%E8%AF%A1%E5%BC%82%E7%9A%84sql%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%B8%80%E6%AC%A1%E8%AF%A1%E5%BC%82%E7%9A%84sql%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90/</guid>
+      <description>这两天在公司优化一个sql的时候碰到了一个诡异的事——一个表中的一个唯一性索引在更换了最左边的字段后，根据最左边字段为where后面的查询条</description>
+    </item>
+    <item>
+      <title>为啥阿里巴巴不建议MySQL使用Text类型？</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%B8%BA%E5%95%A5%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%B8%8D%E5%BB%BA%E8%AE%AEmysql%E4%BD%BF%E7%94%A8text%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%B8%BA%E5%95%A5%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%B8%8D%E5%BB%BA%E8%AE%AEmysql%E4%BD%BF%E7%94%A8text%E7%B1%BB%E5%9E%8B/</guid>
+      <description>前言 众所周知，MySQL广泛应用于互联网的OLTP（联机事务处理过程）业务系统中，在大厂开发规范中，经常会看到一条&amp;quot;不建议使用te</description>
+    </item>
+    <item>
+      <title>优秀博客</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%BC%98%E7%A7%80%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%BC%98%E7%A7%80%E5%8D%9A%E5%AE%A2/</guid>
+      <description>优秀技术博主 阮一峰的网络日志 (ruanyifeng.com) 首页 - 廖雪峰的官方网站 (liaoxuefeng.com) 冰河 美团 优秀技术博客 [工作中如何做好技术积累](工作中如何做好技术积累 - 美团技术团队 (meituan.com))</description>
+    </item>
+    <item>
+      <title>使用PageHelper分页失效</title>
+      <link>https://luolin1024.github.io/2024/02/%E4%BD%BF%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E5%A4%B1%E6%95%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E4%BD%BF%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E5%A4%B1%E6%95%88/</guid>
+      <description>mybatis mapper中的注释，查询条件中的注释不建议使用 &amp;ndash;注释符，因为一旦出现后续没有查询条件时，pageHelper分页拼接的sql</description>
+    </item>
+    <item>
+      <title>关于复盘这件事</title>
+      <link>https://luolin1024.github.io/2024/02/%E5%85%B3%E4%BA%8E%E5%A4%8D%E7%9B%98%E8%BF%99%E4%BB%B6%E4%BA%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E5%85%B3%E4%BA%8E%E5%A4%8D%E7%9B%98%E8%BF%99%E4%BB%B6%E4%BA%8B/</guid>
+      <description>每日复盘 如何做记录 通过excel快速记录每天当前时刻接下来要做的事情【没有捷径】 如何每日复盘 每天晚上9点开始复盘，将当天的做的重要事情转移到</description>
+    </item>
+    <item>
+      <title>单体架构和微服务架构的优缺点</title>
+      <link>https://luolin1024.github.io/2024/02/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9/</guid>
+      <description>单体架构 单体架构就是把所有的功能模块编写在一个项目中，最终打包成一个war/jar包，然后进行部署 优点 部署简单：由于没有完整的结构体，可以直</description>
+    </item>
+    <item>
+      <title>多系统数据一致性问题</title>
+      <link>https://luolin1024.github.io/2024/02/%E5%A4%9A%E7%B3%BB%E7%BB%9F%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E5%A4%9A%E7%B3%BB%E7%BB%9F%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E9%97%AE%E9%A2%98/</guid>
+      <description>对于多个系统之间的数据交互，存在以下场景会出现问题： 系统A调用系统B，系统B逻辑处理时间过程，导致系统A直接报错回滚，最后系统A action</description>
+    </item>
+    <item>
+      <title>循环依赖和Spring循环依赖</title>
+      <link>https://luolin1024.github.io/2024/02/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%92%8Cspring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%92%8Cspring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</guid>
+      <description>循环依赖 对于java来讲，我们一般都是通过set来达到循环依赖的效果，比如我们存在两个类A、B，这两个类中互有属性： class A{ private B b; public B getB() { return b; }</description>
+    </item>
+    <item>
+      <title>数据库与缓存双写一致性方案解析</title>
+      <link>https://luolin1024.github.io/2024/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E7%BC%93%E5%AD%98%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7%E6%96%B9%E6%A1%88%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E7%BC%93%E5%AD%98%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7%E6%96%B9%E6%A1%88%E8%A7%A3%E6%9E%90/</guid>
+      <description>在当前环境下，分布式架构已经被广泛使用，其中缓存由于其高并发和共性能的特点，在分布式系统中频繁被使用，在使用缓存过程中，对于读取缓存，通常都</description>
+    </item>
+    <item>
+      <title>数据类型</title>
+      <link>https://luolin1024.github.io/2024/02/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>类型 1. 基础类型 1.1. 布尔类型 //布尔类型的关键字为bool,值为true或false，不可写为0或1 var v1 bool v1=true //接受表达式判断赋值，不支持自动或</description>
+    </item>
+    <item>
+      <title>查询mysql中的所有索引</title>
+      <link>https://luolin1024.github.io/2024/02/%E6%9F%A5%E8%AF%A2mysql%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E6%9F%A5%E8%AF%A2mysql%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%B4%A2%E5%BC%95/</guid>
+      <description>mysql查看所有表的索引: SELECT a.TABLE_SCHEMA, a.TABLE_NAME, a.index_name, GROUP_CONCAT(column_name ORDER BY seq_in_index) AS `Columns` FROM information_schema.statistics a GROUP BY a.TABLE_SCHEMA,a.TABLE_NAME,a.index_name 查询索引： select * from (SELECT a.TABLE_SCHEMA, a.TABLE_NAME, a.index_name, GROUP_CONCAT(column_name ORDER BY seq_in_index) AS `Columns` FROM information_schema.statistics a GROUP BY a.TABLE_SCHEMA,a.TABLE_NAME,a.index_name) as b where b.index_name like &amp;#39;%req_id_3%&amp;#39;</description>
+    </item>
+    <item>
+      <title>缓存一致性问题怎么解决</title>
+      <link>https://luolin1024.github.io/2024/02/%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7%E9%97%AE%E9%A2%98%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7%E9%97%AE%E9%A2%98%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</guid>
+      <description>关于Redis的其他的一些面试问题已经写过了，比如常见的缓存穿透、雪崩、击穿、热点的问题，但是还有一个比较麻烦的问题就是如何保证缓存一致性。</description>
+    </item>
+    <item>
+      <title>缓存知识</title>
+      <link>https://luolin1024.github.io/2024/02/%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86/</guid>
+      <description>缓存 Java本地缓存 [[Java本地缓存]] Redis [[redis实现分布式锁——setnx]] 什么是RDB和AOF Redis的过期键的删除策暖 R</description>
+    </item>
+    <item>
+      <title>缓存穿透，缓存击穿和缓存雪崩的区别以及解决方案</title>
+      <link>https://luolin1024.github.io/2024/02/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E5%92%8C%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%9A%84%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E5%92%8C%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E7%9A%84%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>什么是缓存穿透，缓存击穿和缓存雪崩 缓存穿透：缓存和数据库中都没有的数据，被大量请求（速记：缓存和数据库都不存在） 缓存击穿：缓存中的数据突然失</description>
+    </item>
+    <item>
+      <title>记一次事务的坑：Transaction rolled back because it has been marked as rollback-only</title>
+      <link>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9D%91transaction-rolled-back-because-it-has-been-marked-as-rollback-only/</guid>
+      <description>问题背景 最近在项目中发现了一则报错：“org.springframework.transaction.UnexpectedRollbackE</description>
+    </item>
+    <item>
+      <title>语雀迁移至Obsidian</title>
+      <link>https://luolin1024.github.io/2024/02/%E8%AF%AD%E9%9B%80%E8%BF%81%E7%A7%BB%E8%87%B3obsidian/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E8%AF%AD%E9%9B%80%E8%BF%81%E7%A7%BB%E8%87%B3obsidian/</guid>
+      <description>背景 本人从2020年初开始使用语雀，在这段时间中通过语雀做了大量的笔记，也写了一些自己的博客，十分感谢语雀，给了我一个干净整洁的mark在线</description>
+    </item>
+    <item>
+      <title>软件工程</title>
+      <link>https://luolin1024.github.io/2024/02/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</guid>
+      <description>[[UML统一建模语言]]</description>
+    </item>
+    <item>
+      <title>高效率Idea</title>
+      <link>https://luolin1024.github.io/2024/02/%E9%AB%98%E6%95%88%E7%8E%87idea/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E9%AB%98%E6%95%88%E7%8E%87idea/</guid>
+      <description>M1 破解Idea2024.1 下载ja-netfilter并进行配置 ja-netfilter 发行版 - Gitee.com 下载到本地，将解压后的文件夹放到合适的位置，编辑以下三个文件 dns.conf [DNS]</description>
+    </item>
+    <item>
+      <title>Docker学习</title>
+      <link>https://luolin1024.github.io/2024/01/docker%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 04 Jan 2024 20:55:02 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/01/docker%E5%AD%A6%E4%B9%A0/</guid>
+      <description>ubuntu使用官方安装脚本自动安装 sudo apt-get update curl -fsSL https://test.docker.com -o test-docker.sh sudo sh test-docker.sh 要使用 Docker 作为非 root 用户，则应考虑使用类似以下方式将用户添加到 docker 组： sudo usermod -aG docker your-user dockert 镜像 -</description>
+    </item>
+    <item>
+      <title>消息队列知识</title>
+      <link>https://luolin1024.github.io/2023/12/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 06 Dec 2023 15:38:49 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/12/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%9F%A5%E8%AF%86/</guid>
+      <description>消息队列 什么是消息队列 它的本质，就是个转发器，包含发消息、存消息、消费消息的过程。 消息队列的应用场景 应用解耦 流量削峰 异步处理 消息通讯 远程调用</description>
+    </item>
+    <item>
+      <title>MyBatis知识</title>
+      <link>https://luolin1024.github.io/2023/12/mybatis%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 06 Dec 2023 15:38:32 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/12/mybatis%E7%9F%A5%E8%AF%86/</guid>
+      <description>Mybatis 拦截器 $和#</description>
+    </item>
+    <item>
+      <title>Mysql知识</title>
+      <link>https://luolin1024.github.io/2023/12/mysql%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 06 Dec 2023 15:24:59 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/12/mysql%E7%9F%A5%E8%AF%86/</guid>
+      <description>Mysql 事务 事务的特性ACID 隔离级别 产生死锁的四个必要条件： （1） 互斥条件：一个资源每次只能被一个进程使用。 （2） 请求与保持条件：一个进程因请求</description>
+    </item>
+    <item>
+      <title>Java知识</title>
+      <link>https://luolin1024.github.io/2023/12/java%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Wed, 06 Dec 2023 15:24:18 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/12/java%E7%9F%A5%E8%AF%86/</guid>
+      <description>Java基础 基本类型 数字类型 4 种整数型：byte、short、int、long，int:4个字节 2 种浮点型：float、double 字符类型</description>
+    </item>
+    <item>
+      <title>知行：技术人的管理之路</title>
+      <link>https://luolin1024.github.io/2023/09/%E7%9F%A5%E8%A1%8C%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%9A%84%E7%AE%A1%E7%90%86%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Wed, 20 Sep 2023 22:20:11 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/09/%E7%9F%A5%E8%A1%8C%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%9A%84%E7%AE%A1%E7%90%86%E4%B9%8B%E8%B7%AF/</guid>
+      <description>为什么要做管理 可以提升自己的能力 可以通过团队实现更有价值的目标 建立更强的自信 什么是管理 角色认知 管理规划（看方向） 职能：你的团队是干什么的 目标</description>
+    </item>
+    <item>
+      <title>SMART原则</title>
+      <link>https://luolin1024.github.io/2023/04/smart%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Thu, 06 Apr 2023 08:25:23 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/04/smart%E5%8E%9F%E5%88%99/</guid>
+      <description>制定目标看似一件简单的事情，每个人都有过制定目标的经历，但是如果上升到技术的层面，经理必须学习并掌握SMART原则。 目标必须是具体的（Spe</description>
+    </item>
+    <item>
+      <title>5W2H问题分析法</title>
+      <link>https://luolin1024.github.io/2023/04/5w2h%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E6%B3%95/</link>
+      <pubDate>Thu, 06 Apr 2023 08:19:12 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/04/5w2h%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E6%B3%95/</guid>
+      <description>背景 5W2H分析法由第二世界大战中美国陆军兵器修理部首创。它简单、方便，易于理解、使用，被广泛用于企业管理和技术活动，对于决策和执行性的活动</description>
+    </item>
+    <item>
+      <title>设计模式</title>
+      <link>https://luolin1024.github.io/2023/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 13 Feb 2023 12:43:48 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description>Java设计模式概述 设计模式（Design pattern）是软件开发人员在软件开发过程中面临的一般问题的解决方案模板，这些模板是经过相当长的</description>
+    </item>
+    <item>
+      <title>HashTable</title>
+      <link>https://luolin1024.github.io/2023/02/hashtable/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/hashtable/</guid>
+      <description>什么是HashTable 对比其他数据结构，HashTable是一种典型的空间换时间思想的结构，大体思路就是创建一个数组，通过一个hash函数</description>
+    </item>
+    <item>
+      <title>Java List</title>
+      <link>https://luolin1024.github.io/2023/02/java-list/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java-list/</guid>
+      <description>List接口 An ordered collection (also known as a sequence). The user of this interface has precise control over where in the list each element is inserted. The user can access elements by their integer index (position in the list), and search for elements in the list. 上面这段引用就是jdk8对List的定</description>
+    </item>
+    <item>
+      <title>Java Map</title>
+      <link>https://luolin1024.github.io/2023/02/java-map/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java-map/</guid>
+      <description>本文主要介绍Map接口以及其主要实现类：HashMap、LinkedHashMap、TreeMap、Hashtable、Properties</description>
+    </item>
+    <item>
+      <title>Java Set</title>
+      <link>https://luolin1024.github.io/2023/02/java-set/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java-set/</guid>
+      <description>Set接口 HashSet、LinkedHashSet、TreeSet HashSet是Set接口的典型实现，大多数时候Set集合都使用这个实现</description>
+    </item>
+    <item>
+      <title>Java8 Stream</title>
+      <link>https://luolin1024.github.io/2023/02/java8-stream/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java8-stream/</guid>
+      <description>java Stream是什么 首先，我们来看下java怎么描述Stream的： A sequence of elements supporting sequential and parallel aggregate operations. 其实学习stream之前我以为stream式很难的，</description>
+    </item>
+    <item>
+      <title>Java8 函数式编程和Lambda</title>
+      <link>https://luolin1024.github.io/2023/02/java8-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%92%8Clambda/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java8-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%92%8Clambda/</guid>
+      <description>lambda 初识lambda表达式 一个简单的方法，比较两个Integer： public void Test1() { Comparator&amp;lt;Integer&amp;gt; com = new Comparator&amp;lt;Integer&amp;gt;() { @Override public int compare(Integer o1, Integer o2) { return Integer.compare(o1, o2); } }; TreeSet&amp;lt;Integer&amp;gt; treeSet = new TreeSet&amp;lt;&amp;gt;(com); } 下面的这个方法与上</description>
+    </item>
+    <item>
+      <title>Java传参机制</title>
+      <link>https://luolin1024.github.io/2023/02/java%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6/</guid>
+      <description>首先看下java中的参数传递机制: 基本数据类型传值（未传递地址）方式： class Main{ public static void main(String[] args) { Main main = new Main(); int a = 20; System.out.println</description>
+    </item>
+    <item>
+      <title>Java动态代理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/</guid>
+      <description>Java动态代理 动态代理 实现方式一，JDK动态代理 public class Main { public static void main(String[] args) { MyInvocationHandler myInvocationHandler = new MyInvocationHandler(); Hello hello = (Hello) myInvocationHandler.newProxy(new HelloWorld()); hello.morning(&amp;#34;lin&amp;#34;); } } // 目标接口 public interface Hello { void morning(String name); } // 目标类 public class HelloWorld implements</description>
+    </item>
+    <item>
+      <title>Java反射</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84/</guid>
+      <description>在说反射之前，必须说一句，所谓java框架（比如大名鼎鼎的Spring）大多数都是动态代理+注解完成的，而动态代理（动态代理模式以及静态代理</description>
+    </item>
+    <item>
+      <title>Java反射对父子类属性的处理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E5%AF%B9%E7%88%B6%E5%AD%90%E7%B1%BB%E5%B1%9E%E6%80%A7%E7%9A%84%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E5%AF%B9%E7%88%B6%E5%AD%90%E7%B1%BB%E5%B1%9E%E6%80%A7%E7%9A%84%E5%A4%84%E7%90%86/</guid>
+      <description>class Person implements Cloneable{ String name; int age; @Override public String toString() { return &amp;#34;Person{&amp;#34; + &amp;#34;name=&amp;#39;&amp;#34; + name + &amp;#39;\&amp;#39;&amp;#39; + &amp;#34;, age=&amp;#34; + age + &amp;#39;}&amp;#39;; } public Person(String name, int age) { this.name = name; this.age = age; } public Person(int age, String name) { this.name = name; this.age = age; } public Person() { } public String getName() { return name; } public void setName(String name)</description>
+    </item>
+    <item>
+      <title>Java反射获取父类信息</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%88%B6%E7%B1%BB%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%88%B6%E7%B1%BB%E4%BF%A1%E6%81%AF/</guid>
+      <description>取本类和父类的所有成员变量 要取本类和基类的所有成员变量，Class类中提供的两种获取类中成员变量的方法都不能直接实现这个需求，但是可以通过简</description>
+    </item>
+    <item>
+      <title>Java变量</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%98%E9%87%8F/</guid>
+      <description>1.变量 1.1变量声明 //1、单变量声明,类型放在变量名之后，可以为任意类型 var 变量名 类型 var v1,v2,v3 string //多变量同类型声明 //2、多变量声明 var { v1 int</description>
+    </item>
+    <item>
+      <title>Java可变参数</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0/</guid>
+      <description>java可变参数列表 从java5开始，java支持一种参数写法：Java类型后面三个点(如String…)，叫可变长度参数列表。向其中传入参</description>
+    </item>
+    <item>
+      <title>Java异常</title>
+      <link>https://luolin1024.github.io/2023/02/java%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E5%BC%82%E5%B8%B8/</guid>
+      <description>Throwable throw new Exception()既代表 java 运行进入了一个新的分支，不再执行new Exception()后面的语句了，之后再来执行finally中的</description>
+    </item>
+    <item>
+      <title>Java排序</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%8E%92%E5%BA%8F/</guid>
+      <description>在java中经常会使用到排序，通常使用的java内置提供的排序方式： Arrays.sort（） Collection.sort() Collections.sort() Stream中使用sort 对一批对象进行排</description>
+    </item>
+    <item>
+      <title>Java日期处理</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/</guid>
+      <description>Calendar类 使用场景 public class CalendarUtils { /** * 获取本月第x天 * @return */ public static Date getDayOfCurrentMonth(Calendar c, int x) { // 设置时间为本月第一天 c.set(Calendar.DAY_OF_MONTH, x); // 将小时至0 c.set(Calendar.HOUR_OF_DAY, 0); // 将分钟至0 c.set(Calendar.MINUTE, 0); // 将秒至</description>
+    </item>
+    <item>
+      <title>Java本地缓存</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98/</guid>
+      <description>前言 对一个java后台开发者而言，提到缓存，第一反应就是redis和memcache。利用这类缓存足以解决大多数的性能问题了，并且java针</description>
+    </item>
+    <item>
+      <title>Java枚举</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%9E%9A%E4%B8%BE/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%9E%9A%E4%B8%BE/</guid>
+      <description>JDK1.5之前的枚举 在JDK1.5之前是没有enum这个关键字的，那么那个时代是怎么实现枚举的呢？主要是通过私有化构造器，然后在类里面创建</description>
+    </item>
+    <item>
+      <title>Java泛型</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B3%9B%E5%9E%8B/</guid>
+      <description>概述 泛型在java中有很重要的地位，在面向对象编程及各种设计模式中有非常广泛的应用。 什么是泛型？为什么要使用泛型？Java泛型（generi</description>
+    </item>
+    <item>
+      <title>Java注解与自定义注解</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B3%A8%E8%A7%A3%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B3%A8%E8%A7%A3%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/</guid>
+      <description>随着spring的流行，java注解的使用成为了java工程师必不可少的技能。 注解基本知识 元注解：@Retention、 @Target、 @D</description>
+    </item>
+    <item>
+      <title>Java浅拷贝和深拷贝</title>
+      <link>https://luolin1024.github.io/2023/02/java%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/</guid>
+      <description>关于浅拷贝和深拷贝，简单来说就是创建一个和已知对象一模一样的对象。深入了解浅拷贝和深拷贝，对于Java中的值传递或者引用传递将会有更深的理解</description>
+    </item>
+    <item>
+      <title>Java重载和重写</title>
+      <link>https://luolin1024.github.io/2023/02/java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E9%87%8D%E8%BD%BD%E5%92%8C%E9%87%8D%E5%86%99/</guid>
+      <description>重载(Overload) 重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。 注意：在一个类里</description>
+    </item>
+    <item>
+      <title>Java面向对象</title>
+      <link>https://luolin1024.github.io/2023/02/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>什么是面向对象？这大概是java中最重要的一部分了，写这篇文章主要是自己之前java基础不怎么样，然后今天看了一些关于面向对象和多态的文章，</description>
+    </item>
+    <item>
+      <title>利用策略模式和工厂模式优化代码中过多的if-else思路</title>
+      <link>https://luolin1024.github.io/2023/02/%E5%88%A9%E7%94%A8%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81%E4%B8%AD%E8%BF%87%E5%A4%9A%E7%9A%84if-else%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/%E5%88%A9%E7%94%A8%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81%E4%B8%AD%E8%BF%87%E5%A4%9A%E7%9A%84if-else%E6%80%9D%E8%B7%AF/</guid>
+      <description>背景 在公司经常会遇到一些需要做一连串相似的业务逻辑判断需求，比如使用不同支付方式实现商品打折、商店根据客户的vip等级给予客户不同的优惠政策</description>
+    </item>
+    <item>
+      <title>多线程编程</title>
+      <link>https://luolin1024.github.io/2023/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Sat, 11 Feb 2023 00:32:19 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</guid>
+      <description>概念梳理 并行 多个线程在同一时间在CPU上运行。 并发表示一会做这个事情，一会做另一个事情，存在着调度。单核 CPU 不可能存在并行（微观上）。 临界区临</description>
+    </item>
+    <item>
+      <title>影响力</title>
+      <link>https://luolin1024.github.io/2022/08/%E5%BD%B1%E5%93%8D%E5%8A%9B/</link>
+      <pubDate>Sun, 21 Aug 2022 15:08:38 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2022/08/%E5%BD%B1%E5%93%8D%E5%8A%9B/</guid>
+      <description>互惠 欲先取之，必先予之 先拒绝，后让步，也可以造就互惠效应 承诺与一致 人们趋于遵守自己对外暴露的承诺 登门槛效应：从一件小事开始，当你同意了他人的</description>
+    </item>
+    <item>
+      <title>月亮与六便士</title>
+      <link>https://luolin1024.github.io/2022/08/%E6%9C%88%E4%BA%AE%E4%B8%8E%E5%85%AD%E4%BE%BF%E5%A3%AB/</link>
+      <pubDate>Sun, 21 Aug 2022 15:08:24 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2022/08/%E6%9C%88%E4%BA%AE%E4%B8%8E%E5%85%AD%E4%BE%BF%E5%A3%AB/</guid>
+      <description>序 每天忙于脚下的六便士时，也要偶尔抬头看看天上的月亮 文章故事 “我”是一位作家，在一次偶然的机会下认识了思特里克兰德，沿着“我”所了解的思特里</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://luolin1024.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://luolin1024.github.io/about/</guid>
+      <description>about</description>
+    </item>
+    <item>
+      <title>Links</title>
+      <link>https://luolin1024.github.io/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://luolin1024.github.io/links/</guid>
+      <description>links</description>
+    </item>
+  </channel>
+</rss>

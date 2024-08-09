@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>牛客网 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/</link>
+    <description>Recent content in 牛客网 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:49:43 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NC61 两数之和</title>
+      <link>https://luolin1024.github.io/2024/02/nc61-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/nc61-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>描述 给出一个整型数组 numbers 和一个目标值 target，请在数组中找出两个加起来等于目标值的数的下标，返回的下标按升序排列。 （注：返回的数组下标从1</description>
+    </item>
+  </channel>
+</rss>

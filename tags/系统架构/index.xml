@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>系统架构 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/</link>
+    <description>Recent content in 系统架构 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:48:14 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RestFul风格API</title>
+      <link>https://luolin1024.github.io/2024/02/restful%E9%A3%8E%E6%A0%BCapi/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/restful%E9%A3%8E%E6%A0%BCapi/</guid>
+      <description>RestFul是什么？ REST是REpresentational State Transfer的缩写（表述性状态转移），REST是一种体系结构。简单的说</description>
+    </item>
+  </channel>
+</rss>
