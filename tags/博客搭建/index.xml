@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>博客搭建 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+    <description>Recent content in 博客搭建 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 27 Aug 2024 01:16:37 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo静态博客一键部署</title>
+      <link>https://luolin1024.github.io/2024/03/hugo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 13 Mar 2024 22:51:42 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/03/hugo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;搭建了一个hugo+Papermod+github action自动部署的静态博客后，想着分享出来，可以帮助大家快速部署一个简洁好看的私人静态博客，支持他人评论，文章统计等功能，具备被google、baidu等搜索引擎索引等特点。&lt;/p&gt;
+&lt;h2 id=&#34;快速开始&#34;&gt;快速开始&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/luolin1024/hugo-blog-starter&#34;&gt;luolin1024/hugo-blog-starter: 用于通过vercel快速搭建一个hugo静态博客 (github.com)&lt;/a&gt;
+点击use this template
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240827012027.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240827012027.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;vercel自动部署&#34;&gt;vercel自动部署&lt;/h2&gt;
+&lt;p&gt;通过github账号登录&lt;a href=&#34;https://vercel.com/&#34;&gt;vercel&lt;/a&gt;，选择刚刚的项目导入&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240827012902.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240827012902.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;github-action方式自动部署&#34;&gt;github action方式自动部署&lt;/h3&gt;
+&lt;p&gt;.github/workflows/gh-pages.yml中的修改为自己的项目即可&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;自身可翻墙(github和vercel使用前提)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建好github和vercel账号，这一步基本随便建&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;尽量自己有一个域名（可以在us.kg上申请一个），没有的话也没关系，就是国内无法访问而已，也可以考虑通过&lt;a href=&#34;https://dash.cloudflare.com/&#34;&gt;cloudflare&lt;/a&gt;加速&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;访问&lt;a href=&#34;https://github.com/luolin1024/hugo-vercel-starter&#34;&gt;hugo-vercel-starter&lt;/a&gt;，可以快速部署自带doit主题静态博客，注意填写好hugo版本即可部署
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725155511.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725155511.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725155640.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725155640.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160244.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160244.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160312.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160312.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后，访问vercel给出的域名即可，我这里vercel给的域名&lt;a href=&#34;https://demo-vercel-blog.vercel.app/&#34;&gt;hugo博客demo (demo-vercel-blog.vercel.app)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;案例&#34;&gt;案例&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://demo-vercel-blog.vercel.app/&#34;&gt;hugo博客demo (demo-vercel-blog.vercel.app)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;自定义域名指向该静态博客&#34;&gt;自定义域名指向该静态博客&lt;/h2&gt;
+&lt;p&gt;前提：自己有一个域名
+域名添加到cloudflare管理，并配置dns解析服务器，完成后即可添加对应的域名解析vercel给的xxx.xxx.app域名&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160623.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160623.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160803.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160803.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160736.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160736.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;上面cloudflare设置完成后在vercel里面添加自己的域名解析对应的app
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160905.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240725160905.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;写在最后&#34;&gt;写在最后&lt;/h2&gt;
+&lt;p&gt;如果想要自己搭建，可以参考：
+&lt;a href=&#34;https://luolin1024.github.io/2024/08/hugo-page%E6%90%AD%E5%BB%BA%E7%AE%80%E7%BA%A6%E7%BE%8E%E8%A7%82%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/&#34;&gt;hugo+page搭建简约美观静态博客 | luolin1024&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>
