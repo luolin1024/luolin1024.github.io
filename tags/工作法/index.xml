@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>工作法 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%B3%95/</link>
+    <description>Recent content in 工作法 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:52:44 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于复盘这件事</title>
+      <link>https://luolin1024.github.io/2024/02/%E5%85%B3%E4%BA%8E%E5%A4%8D%E7%9B%98%E8%BF%99%E4%BB%B6%E4%BA%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E5%85%B3%E4%BA%8E%E5%A4%8D%E7%9B%98%E8%BF%99%E4%BB%B6%E4%BA%8B/</guid>
+      <description>&lt;h2 id=&#34;每日复盘&#34;&gt;每日复盘&lt;/h2&gt;
+&lt;h1 id=&#34;如何做记录&#34;&gt;如何做记录&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;通过excel快速记录每天当前时刻接下来要做的事情【没有捷径】&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;如何每日复盘&#34;&gt;如何每日复盘&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;每天晚上9点开始复盘，将当天的做的重要事情转移到obsidian的daily note中，并且每件事情一定是要有一个结论的。&lt;/li&gt;
+&lt;li&gt;此30分钟内有任何感想都可以先写下来，但是一定不能超过30分钟；&lt;/li&gt;
+&lt;li&gt;9点半下班后回到家如果还有感谢可以写到daily中（比如思考当天哪些计划没有完成，没有完成的原因是什么，有什么客观原因，有什么主观原因，询问自己原因）&lt;/li&gt;
+&lt;li&gt;花3-6分钟制定第二天的计划&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;每周复盘&#34;&gt;每周复盘&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;直接通过obsidian的daily note进行复盘，回顾过去一周的事情，查看本周哪些计划是执行完成的，哪些计划没有被执行完成&lt;/li&gt;
+&lt;li&gt;花10-15分钟制定下周计划&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=JmNNrJdUoKc&#34;&gt;youtube复盘学习&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;复盘需要问自己的问题&#34;&gt;复盘需要问自己的问题&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;我进步的地方是什么？&lt;/li&gt;
+&lt;li&gt;我不足的地方在哪里？&lt;/li&gt;
+&lt;li&gt;本周/本月哪些任务达成？&lt;/li&gt;
+&lt;li&gt;本周/本月哪些任务没有达成？&lt;/li&gt;
+&lt;li&gt;如果没有达成，没有达成的原因是什么？&lt;/li&gt;
+&lt;li&gt;未达成的原因是客观原因还是主观原因？&lt;/li&gt;
+&lt;li&gt;主观原因是由哪些因素造成的？需要更多的通过收集日常数据：学习、生活、习惯、工作等多维度进行提问&lt;/li&gt;
+&lt;li&gt;客观原因是什么？他的影响占比有多大？我是否是在推卸责任？&lt;/li&gt;
+&lt;li&gt;如果是客观原因，那我下次再遇到这种情况的几率有多大？&lt;/li&gt;
+&lt;li&gt;下次遇到类似的问题，我该怎么处理&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>5W2H问题分析法</title>
+      <link>https://luolin1024.github.io/2023/04/5w2h%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E6%B3%95/</link>
+      <pubDate>Thu, 06 Apr 2023 08:19:12 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2023/04/5w2h%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%E6%B3%95/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+&lt;p&gt;5W2H分析法由第二世界大战中美国陆军兵器修理部首创。它简单、方便，易于理解、使用，被广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。一个活动方案也许各有侧重点，但是基本的思路都会从5W2H这几方面入手。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Why——为什么？为什么要这么做？理由何在？原因是什么？&lt;/li&gt;
+&lt;li&gt;What——什么？是什么？目的是什么？做什么工作？&lt;/li&gt;
+&lt;li&gt;Where——何处？在哪里做？从哪里入手？&lt;/li&gt;
+&lt;li&gt;When——何时？什么时间完成？什么时机最适宜？&lt;/li&gt;
+&lt;li&gt;Who——谁？由谁来承担？谁来完成？谁负责？&lt;/li&gt;
+&lt;li&gt;How To——怎样做？怎么做？如何提高效率？如何实施？方法怎样？&lt;/li&gt;
+&lt;li&gt;How Much——多少？做到什么程度？数量如何？质量怎样？投入产出如何？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;使用指南&#34;&gt;使用指南&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;1.Why&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为何做？为何如此做？为什么（目的、目标、宗旨）？是最佳方案吗？有预备案吗？这样做的必要性是什么？有没有更好的方法？&lt;/p&gt;
+&lt;p&gt;剔除不必要的工作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.What&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;做何事？做什么（内容、标题）？目的？具有挑战性吗？选定明确的分析焦点。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.How To&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如何做？怎么做（方法）？方式、方法？能突破吗？制订方案计划、步骤、流程。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.Who&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;何人做？什么人（担当者、担当部门）？分主办者、协办者及相关者。由谁来执行？谁来负责？明确地指定权、责人员。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5.Where&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;何地做？什么地方（执行对象、地点）？空间地域分析，能否因地制宜？在哪里做？为什么在那里做？在别处做会更好吗？选定做的最佳位置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6.When&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;何时做？什么时间（进度、期限）？开始时间？中间进度？完成期限？什么时候开始？什么时候结束？什么时候检查？制定时间表，掌控进度。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7.How Much&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;几时做？多少钱（经费、预算）？效益如何？值得做吗？需要多少资源。人力、设备、金钱、时间；会不会旷日费时、得不偿失。对此做出整体预算。&lt;/p&gt;
+&lt;h1 id=&#34;例子分析&#34;&gt;例子分析&lt;/h1&gt;
+&lt;p&gt;某公司的办公室要购置一台自动贩卖机，以解决员工喝饮料的问题，后勤部门是这件事的负责单位，接着，负责人便可以用5W2H法则来分析增设自动贩卖机的可行性。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;首先是why&lt;/strong&gt;，即弄清目的。购置自动贩卖机的理由是什么呢？负责人认为，支持的观点有：它可以解决员工购买饮料的问题；可以解决员工出门购买饮料的时间问题；可以为公司增加收入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;其次是what&lt;/strong&gt;，即确认问题。问题是什么呢？后勤部门负责人列出了两项：第一项是了解全员（包括公司领导）对于购置自动贩卖机的意见，第二项是决定购置贩卖机的品牌及类型。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;第三是when&lt;/strong&gt;，即何时开始实施征询意见的工作？在此之后，又要何时去购置自动贩卖机？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;第四项where&lt;/strong&gt;与第三项when是并列的，那就是确认自动贩卖机摆放的位置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;第五项who&lt;/strong&gt;与三四项也是并列的，即让谁去负责处理以上问题。购置贩卖机由哪个部门负责？搜集内部人员的意见又由哪个部门负责？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;第六项是how&lt;/strong&gt;，即如何开展以上的各项工作。这里包括，如何搜集企业内部人员的意见，如果获取自动贩卖机的资料，如何获得相关部门的资源，如何定期评定自动贩卖机的执行效果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;最后是how much&lt;/strong&gt;，这其实是一种可行性分析，为问题的解决——购置自动贩卖机设置一个合理的购置成本，并预估其运用的成本和收益。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过以上七个问题，后勤部门将在购置自动贩卖机过程中可能遇到的所有问题都摆了出来。&lt;/p&gt;
+&lt;p&gt;任何问题，只要经过了这七个部分，都可以得到全面和透彻的分析。而一些突破性的思考，通过这七个问题，也往往能够打开一片新的天地。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;著作权归@pdai所有 原文链接：https://pdai.tech/md/team/person/person-5w2h.html&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>
