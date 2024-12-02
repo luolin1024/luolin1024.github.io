@@ -1,0 +1,91 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Sql查询中char或者varchar类型字段为null和‘没有值’时引起的问题分析 | luolin1024</title><meta name=keywords content="数据库"><meta name=description content="在平时开发中，我们都会遇到数据库中varchar或者char类型字段为null的情况，通常情况我们都会认为数据库中'某个值或者没有值'!=n"><meta name=author content="luolin"><link rel=canonical href=https://luolin1024.github.io/2024/02/sql%E6%9F%A5%E8%AF%A2%E4%B8%ADchar%E6%88%96%E8%80%85varchar%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E4%B8%BAnull%E5%92%8C%E6%B2%A1%E6%9C%89%E5%80%BC%E6%97%B6%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/><script defer src=https://blogcounter.luolin.us.kg/script.js data-website-id=c8850e2c-16aa-465e-aa6f-5392c9397317></script>
+<script src=/js/umami-stats.js></script>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css><script src=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=https://luolin1024.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://luolin1024.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://luolin1024.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://luolin1024.github.io/apple-touch-icon.png><link rel=mask-icon href=https://luolin1024.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><html><head><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css><link rel=stylesheet href=https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/style.css><style>body{font-family:lxgw wenkai lite,sans-serif;font-family:lxgw wenkai screen,sans-serif}</style></head></html><meta property="og:title" content="Sql查询中char或者varchar类型字段为null和‘没有值’时引起的问题分析"><meta property="og:description" content="在平时开发中，我们都会遇到数据库中varchar或者char类型字段为null的情况，通常情况我们都会认为数据库中'某个值或者没有值'!=n"><meta property="og:type" content="article"><meta property="og:url" content="https://luolin1024.github.io/2024/02/sql%E6%9F%A5%E8%AF%A2%E4%B8%ADchar%E6%88%96%E8%80%85varchar%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E4%B8%BAnull%E5%92%8C%E6%B2%A1%E6%9C%89%E5%80%BC%E6%97%B6%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-02-21T11:30:51+08:00"><meta property="article:modified_time" content="2024-03-21T00:48:36+08:00"><meta property="og:site_name" content="luolin的博客"><meta name=twitter:card content="summary"><meta name=twitter:title content="Sql查询中char或者varchar类型字段为null和‘没有值’时引起的问题分析"><meta name=twitter:description content="在平时开发中，我们都会遇到数据库中varchar或者char类型字段为null的情况，通常情况我们都会认为数据库中'某个值或者没有值'!=n"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://luolin1024.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Sql查询中char或者varchar类型字段为null和‘没有值’时引起的问题分析","item":"https://luolin1024.github.io/2024/02/sql%E6%9F%A5%E8%AF%A2%E4%B8%ADchar%E6%88%96%E8%80%85varchar%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E4%B8%BAnull%E5%92%8C%E6%B2%A1%E6%9C%89%E5%80%BC%E6%97%B6%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Sql查询中char或者varchar类型字段为null和‘没有值’时引起的问题分析","name":"Sql查询中char或者varchar类型字段为null和‘没有值’时引起的问题分析","description":"在平时开发中，我们都会遇到数据库中varchar或者char类型字段为null的情况，通常情况我们都会认为数据库中'某个值或者没有值'!=n","keywords":["数据库"],"articleBody":"在平时开发中，我们都会遇到数据库中varchar或者char类型字段为null的情况，通常情况我们都会认为数据库中'某个值或者没有值'!=null这个条件的结果是true。但是，我得告诉你，上面说的那个等式的结果是false。首先上结论：\n'某个值或者没有值'!=null这个条件的结果是false '某个值或者没有值'=null这个条件的结果也是false 解释下上面结论中说的‘没有值’，在数据库中存在这样一些值，它们是char类型或者varchar类型字段，但是它的值被删除了。另外它还有个兄弟，就是值为null的情况，大体差异如下：\n可是，有了结论总得有证据证明不是。接下来，上证据，表结构\ncreate table member ( mid int auto_increment, name varchar(50) null, age int null, level_type char(50) null, constraint member_pk primary key (mid) ) comment '会员表'; 表中所有的数据，即select * from member;的执行结果：\nselect * from member where level_type != 'c';的执行结果：\nselect count(*) from member where level_type = 'c';的执行结果：\n另外，char类型的字段，也存在类似的问题，select * from member where name != 'c';的执行结果：\n也就是说，在数据库中，对于varchar或者char类型的字段，null !='c'的结果为false,null = 'c'的结果也为false。这也就给了我们提示：对于刚说的两种类型的字段，如果允许为空，那么对于空值null就需要额外注意，这个时候通常得具体情况具体分析。同时，我们可以观察到，我所说的‘没有值’，和平常字段中存的某个值的表现是差不多的，只是它的值似乎被‘删除’了。注：本文所用数据库为mysql5.7，目前对于sql server和oracle的情况还不是很了解，后续有环境可以测试一下。\n","wordCount":"690","inLanguage":"en","datePublished":"2024-02-21T11:30:51+08:00","dateModified":"2024-03-21T00:48:36+08:00","author":{"@type":"Person","name":"luolin"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://luolin1024.github.io/2024/02/sql%E6%9F%A5%E8%AF%A2%E4%B8%ADchar%E6%88%96%E8%80%85varchar%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E4%B8%BAnull%E5%92%8C%E6%B2%A1%E6%9C%89%E5%80%BC%E6%97%B6%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"},"publisher":{"@type":"Organization","name":"luolin1024","logo":{"@type":"ImageObject","url":"https://luolin1024.github.io/favicon.ico"}}}</script></head><body id=top><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://luolin1024.github.io accesskey=h title="luolin的博客 (Alt + H)">luolin的博客</a><div class=logo-switches></div></div><ul id=menu><li><a href=https://luolin1024.github.io/posts title=📚文章><span>📚文章</span></a></li><li><a href=https://luolin1024.github.io/archives/ title=⏱时间轴><span>⏱时间轴</span></a></li><li><a href=https://luolin1024.github.io/search/ title="🔍搜索 (Alt + /)" accesskey=/><span>🔍搜索</span></a></li><li><a href=https://luolin1024.github.io/tags title=🔖标签><span>🔖标签</span></a></li><li><a href=https://luolin1024.github.io/about title=🙋🏻‍♂️关于><span>🙋🏻‍♂️关于</span></a></li><li><a href=https://luolin1024.github.io/links title=🤝友链><span>🤝友链</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://luolin1024.github.io>Home</a>&nbsp;»&nbsp;<a href=https://luolin1024.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Sql查询中char或者varchar类型字段为null和‘没有值’时引起的问题分析</h1><div class=post-meta><span title='2024-02-21 11:30:51 +0800 +0800'>2024-02-21</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;690 words&nbsp;·&nbsp;luolin
+本文总阅读量 <span id=umami_value_page_pv></span> 次
+本文总访客量 <span id=umami_value_page_uv></span> 人</div></header><div class=post-content><p>在平时开发中，我们都会遇到数据库中varchar或者char类型字段为null的情况，通常情况我们都会认为数据库中<code>'某个值或者没有值'!=null</code>这个条件的结果是true。但是，我得告诉你，上面说的那个等式的结果是false。首先上结论：</p><ol><li><code>'某个值或者没有值'!=null</code>这个条件的结果是false</li><li><code>'某个值或者没有值'=null</code>这个条件的结果也是false</li></ol><p>解释下上面结论中说的‘没有值’，在数据库中存在这样一些值，它们是char类型或者varchar类型字段，但是它的值被删除了。另外它还有个兄弟，就是值为null的情况，大体差异如下：</p><p><div class=post-img-view><a data-fancybox=gallery href=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511459983-4c853daa-997b-4bed-b5f4-a9a724894809.png><img src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511459983-4c853daa-997b-4bed-b5f4-a9a724894809.png alt></a></div></p><p>可是，有了结论总得有证据证明不是。接下来，上证据，表结构</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sql data-lang=sql><span class=line><span class=cl><span class=k>create</span><span class=w> </span><span class=k>table</span><span class=w> </span><span class=n>member</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=n>mid</span><span class=w> </span><span class=nb>int</span><span class=w> </span><span class=n>auto_increment</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=n>name</span><span class=w> </span><span class=nb>varchar</span><span class=p>(</span><span class=mi>50</span><span class=p>)</span><span class=w> </span><span class=k>null</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=n>age</span><span class=w> </span><span class=nb>int</span><span class=w> </span><span class=k>null</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=n>level_type</span><span class=w> </span><span class=nb>char</span><span class=p>(</span><span class=mi>50</span><span class=p>)</span><span class=w> </span><span class=k>null</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=k>constraint</span><span class=w> </span><span class=n>member_pk</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>primary</span><span class=w> </span><span class=k>key</span><span class=w> </span><span class=p>(</span><span class=n>mid</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>comment</span><span class=w> </span><span class=s1>&#39;会员表&#39;</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></div><p>表中所有的数据，即<code>select * from member;</code>的执行结果：</p><p><div class=post-img-view><a data-fancybox=gallery href=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511459988-0c847715-196e-4bb9-a2b7-5ca94f69358c.png><img src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511459988-0c847715-196e-4bb9-a2b7-5ca94f69358c.png alt></a></div></p><p><code>select * from member where level_type != 'c';</code>的执行结果：</p><p><div class=post-img-view><a data-fancybox=gallery href=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511460168-3614f1d7-468c-448b-a501-ddbe74803991.png><img src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511460168-3614f1d7-468c-448b-a501-ddbe74803991.png alt></a></div></p><p><code>select count(*) from member where level_type = 'c';</code>的执行结果：</p><p><div class=post-img-view><a data-fancybox=gallery href=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511460091-b24e0141-6dc3-46f8-aaa9-88534931c467.png><img src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511460091-b24e0141-6dc3-46f8-aaa9-88534931c467.png alt></a></div></p><p>另外，char类型的字段，也存在类似的问题，<code>select * from member where name != 'c';</code>的执行结果：</p><p><div class=post-img-view><a data-fancybox=gallery href=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511460280-d8d8954e-22c2-4241-b708-8175306438c1.png><img src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596511460280-d8d8954e-22c2-4241-b708-8175306438c1.png alt></a></div></p><p>也就是说，在数据库中，对于<code>varchar</code>或者<code>char</code>类型的字段，<code>null !='c'</code>的结果为false,<code>null = 'c'</code>的结果也为false。这也就给了我们提示：对于刚说的两种类型的字段，如果允许为空，那么对于空值null就需要额外注意，这个时候通常得具体情况具体分析。同时，我们可以观察到，我所说的‘没有值’，和平常字段中存的某个值的表现是差不多的，只是它的值似乎被‘删除’了。注：本文所用数据库为mysql5.7，目前对于sql server和oracle的情况还不是很了解，后续有环境可以测试一下。</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://luolin1024.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/>数据库</a></li></ul><nav class=paginav><a class=prev href=https://luolin1024.github.io/2024/02/sql%E4%B8%ADcount1count%E5%92%8Ccount%E5%AD%97%E6%AE%B5%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/><span class=title>« Prev</span><br><span>Sql中count(1)、count(%2A)和count(字段名)的区别</span></a>
+<a class=next href=https://luolin1024.github.io/2024/02/sql%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/><span class=title>Next »</span><br><span>Sql联表查询</span></a></nav><div class=related-posts><h2>相关文章</h2><ul><li>· <a href=/2024/02/mybatis%E4%B8%AD%E7%9A%84%E4%B8%80%E5%AF%B9%E4%B8%80%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E8%81%94%E6%98%A0%E5%B0%84%E6%9F%A5%E8%AF%A2/>MyBatis中的一对一，一对多，多对多关联映射查询</a></li><li>· <a href=/2024/02/mybatis%E5%85%A5%E9%97%A8%E7%AF%87/>MyBatis入门篇</a></li><li>· <a href=/2024/02/mybatis%E6%8F%90%E5%8D%87%E7%AF%87/>MyBatis提升篇</a></li><li>· <a href=/2024/02/mysql%E9%94%81%E6%9C%BA%E5%88%B6/>MySQL锁机制</a></li><li>· <a href=/2024/02/%E4%BD%BF%E7%94%A8pagehelper%E5%88%86%E9%A1%B5%E5%A4%B1%E6%95%88/>使用PageHelper分页失效</a></li></ul></div></footer><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=waline></div><script type=module>
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+    const locale = {
+        nick: '昵称',
+        nickError: '请填写昵称',
+        mail: '邮箱',
+        mailError: '请填写正确的邮件地址',
+        link: '网址',
+        optional: '可选',
+        placeholder: '仅填写昵称即可发表回复。\n填写邮箱可收到回复提醒。\n评论区支持 Markdown 语法及预览。\n',
+        sofa: '来发评论吧~',
+        submit: '提交',
+        like: '喜欢',
+        cancelLike: '取消喜欢',
+        reply: '回复',
+        cancelReply: '取消回复',
+        comment: '评论',
+        refresh: '刷新',
+        more: '加载更多...',
+        preview: '预览',
+        emoji: '表情',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '管理',
+        logout: '退出',
+        admin: '博主',
+        sticky: '置顶',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+        anonymous: '匿名',
+        level0: '潜水',
+        level1: '冒泡',
+        level2: '吐槽',
+        level3: '活跃',
+        level4: '话痨',
+        level5: '传说',
+        gif: '表情包',
+        gifSearchPlaceholder: '搜索表情包',
+        profile: '个人资料',
+        approved: '通过',
+        waiting: '待审核',
+        spam: '垃圾',
+        unsticky: '取消置顶',
+        oldest: '按倒序',
+        latest: '按正序',
+        hottest: '按热度',
+        reactionTitle: '你认为这篇文章怎么样？',
+    };
+    init({
+        
+        el: '#waline',
+        serverURL: 'https://blogcomments.luolin.online',
+        locale,
+        emoji: false,     
+        search: false,    
+        reaction: false,  
+        requiredMeta: ['nick'],
+        pageSize: 10,
+        imageUploader: false,
+        copyright: true,
+        pageview: true,
+        like: false,
+    });
+</script></article></main><footer class=footer><span>&copy; 2024 <a href=https://luolin1024.github.io>luolin1024</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span><div>本站总访问量 <span id=umami_value_site_pv></span> 次
+本站总访客数 <span id=umami_value_site_uv></span> 人
+当前在线访客 <span id=umami_value_active_uv></span> 人</div><a href="https://icp.gov.moe/?keyword=20248618" target=_blank>萌ICP备20248618号</a></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

@@ -1,0 +1,81 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Spring结构组成 | luolin1024</title><meta name=keywords content="Java/Spring"><meta name=description content="DefaultListableBeanFactory 类图 AliasRegistry：定义对alias的简单增删改操作 SimpleAliasRegistry：主要使用map作为alias的缓存"><meta name=author content="luolin"><link rel=canonical href=https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/><script defer src=https://blogcounter.luolin.us.kg/script.js data-website-id=c8850e2c-16aa-465e-aa6f-5392c9397317></script>
+<script src=/js/umami-stats.js></script>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css><script src=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=https://luolin1024.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://luolin1024.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://luolin1024.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://luolin1024.github.io/apple-touch-icon.png><link rel=mask-icon href=https://luolin1024.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><html><head><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css><link rel=stylesheet href=https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/style.css><style>body{font-family:lxgw wenkai lite,sans-serif;font-family:lxgw wenkai screen,sans-serif}</style></head></html><meta property="og:title" content="Spring结构组成"><meta property="og:description" content="DefaultListableBeanFactory 类图 AliasRegistry：定义对alias的简单增删改操作 SimpleAliasRegistry：主要使用map作为alias的缓存"><meta property="og:type" content="article"><meta property="og:url" content="https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-02-21T11:30:51+08:00"><meta property="article:modified_time" content="2024-03-21T00:54:47+08:00"><meta property="og:site_name" content="luolin的博客"><meta name=twitter:card content="summary"><meta name=twitter:title content="Spring结构组成"><meta name=twitter:description content="DefaultListableBeanFactory 类图 AliasRegistry：定义对alias的简单增删改操作 SimpleAliasRegistry：主要使用map作为alias的缓存"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://luolin1024.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Spring结构组成","item":"https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Spring结构组成","name":"Spring结构组成","description":"DefaultListableBeanFactory 类图 AliasRegistry：定义对alias的简单增删改操作 SimpleAliasRegistry：主要使用map作为alias的缓存","keywords":["Java/Spring"],"articleBody":"DefaultListableBeanFactory 类图 AliasRegistry：定义对alias的简单增删改操作 SimpleAliasRegistry：主要使用map作为alias的缓存，并对接口AliasRegistry进行实现。 SingletonBeanRegistry：定义对单例的注册及获取 BeanFactory：定义获取bean以及bean的各种属性 DefaultSingletonBeanRegistry：对接口SingletonBeanRegistry各方法的实现 FactoryBeanRegistrySupport：在DefaultSingletonBeanRegistry基础上增加对FactoryBean的特殊处理功能 AbstractBeanFactory：综合AbstractBeanRegistorySupport和ConfigurableBeanFactory的功能 AbstractAutowireCapableBeanFactory：综合AbstractBeanFactory并对接口AutowireCapableBeanFactory进行实现 ","wordCount":"463","inLanguage":"en","datePublished":"2024-02-21T11:30:51+08:00","dateModified":"2024-03-21T00:54:47+08:00","author":{"@type":"Person","name":"luolin"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://luolin1024.github.io/2024/02/spring%E7%BB%93%E6%9E%84%E7%BB%84%E6%88%90/"},"publisher":{"@type":"Organization","name":"luolin1024","logo":{"@type":"ImageObject","url":"https://luolin1024.github.io/favicon.ico"}}}</script></head><body id=top><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://luolin1024.github.io accesskey=h title="luolin的博客 (Alt + H)">luolin的博客</a><div class=logo-switches></div></div><ul id=menu><li><a href=https://luolin1024.github.io/posts title=📚文章><span>📚文章</span></a></li><li><a href=https://luolin1024.github.io/archives/ title=⏱时间轴><span>⏱时间轴</span></a></li><li><a href=https://luolin1024.github.io/search/ title="🔍搜索 (Alt + /)" accesskey=/><span>🔍搜索</span></a></li><li><a href=https://luolin1024.github.io/tags title=🔖标签><span>🔖标签</span></a></li><li><a href=https://luolin1024.github.io/about title=🙋🏻‍♂️关于><span>🙋🏻‍♂️关于</span></a></li><li><a href=https://luolin1024.github.io/links title=🤝友链><span>🤝友链</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://luolin1024.github.io>Home</a>&nbsp;»&nbsp;<a href=https://luolin1024.github.io/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">Spring结构组成</h1><div class=post-meta><span title='2024-02-21 11:30:51 +0800 +0800'>2024-02-21</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;463 words&nbsp;·&nbsp;luolin
+本文总阅读量 <span id=umami_value_page_pv></span> 次
+本文总访客量 <span id=umami_value_page_uv></span> 人</div></header><div class=post-content><p>DefaultListableBeanFactory 类图<div class=post-img-view><a data-fancybox=gallery href=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240726125205.png><img src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240726125205.png alt=image.png></a></div></p><ul><li>AliasRegistry：定义对alias的简单增删改操作</li><li>SimpleAliasRegistry：主要使用map作为alias的缓存，并对接口AliasRegistry进行实现。</li><li>SingletonBeanRegistry：定义对单例的注册及获取</li><li>BeanFactory：定义获取bean以及bean的各种属性</li><li>DefaultSingletonBeanRegistry：对接口SingletonBeanRegistry各方法的实现</li><li>FactoryBeanRegistrySupport：在DefaultSingletonBeanRegistry基础上增加对FactoryBean的特殊处理功能</li><li>AbstractBeanFactory：综合AbstractBeanRegistorySupport和ConfigurableBeanFactory的功能</li><li>AbstractAutowireCapableBeanFactory：综合AbstractBeanFactory并对接口AutowireCapableBeanFactory进行实现</li></ul><p><div class=post-img-view><a data-fancybox=gallery href=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240726125232.png><img src=https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240726125232.png alt=image.png></a></div></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://luolin1024.github.io/tags/java/spring/>Java/Spring</a></li></ul><nav class=paginav><a class=prev href=https://luolin1024.github.io/2024/02/spring%E7%BB%84%E4%BB%B6/><span class=title>« Prev</span><br><span>Spring组件</span></a>
+<a class=next href=https://luolin1024.github.io/2024/02/sql%E4%B8%ADcount1count%E5%92%8Ccount%E5%AD%97%E6%AE%B5%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/><span class=title>Next »</span><br><span>Sql中count(1)、count(%2A)和count(字段名)的区别</span></a></nav><div class=related-posts><h2>相关文章</h2><ul><li>· <a href=/2024/02/feignribbonhystrix%E5%88%86%E6%9E%90/>feign、ribbon、hystrix分析</a></li><li>· <a href=/2024/02/feign%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%E6%8A%A5%E9%94%99%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90/>Feign调用接口报错情况分析</a></li><li>· <a href=/2024/02/redission%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%AE%9E%E6%88%98/>Redission分布式锁实战</a></li><li>· <a href=/2024/02/spring-aop%E6%B3%A8%E8%A7%A3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/>Spring AOP注解常见问题</a></li><li>· <a href=/2024/02/spring-bean%E5%88%9D%E5%A7%8B%E5%8C%96/>Spring Bean初始化</a></li></ul></div></footer><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=waline></div><script type=module>
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+    const locale = {
+        nick: '昵称',
+        nickError: '请填写昵称',
+        mail: '邮箱',
+        mailError: '请填写正确的邮件地址',
+        link: '网址',
+        optional: '可选',
+        placeholder: '仅填写昵称即可发表回复。\n填写邮箱可收到回复提醒。\n评论区支持 Markdown 语法及预览。\n',
+        sofa: '来发评论吧~',
+        submit: '提交',
+        like: '喜欢',
+        cancelLike: '取消喜欢',
+        reply: '回复',
+        cancelReply: '取消回复',
+        comment: '评论',
+        refresh: '刷新',
+        more: '加载更多...',
+        preview: '预览',
+        emoji: '表情',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '管理',
+        logout: '退出',
+        admin: '博主',
+        sticky: '置顶',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+        anonymous: '匿名',
+        level0: '潜水',
+        level1: '冒泡',
+        level2: '吐槽',
+        level3: '活跃',
+        level4: '话痨',
+        level5: '传说',
+        gif: '表情包',
+        gifSearchPlaceholder: '搜索表情包',
+        profile: '个人资料',
+        approved: '通过',
+        waiting: '待审核',
+        spam: '垃圾',
+        unsticky: '取消置顶',
+        oldest: '按倒序',
+        latest: '按正序',
+        hottest: '按热度',
+        reactionTitle: '你认为这篇文章怎么样？',
+    };
+    init({
+        
+        el: '#waline',
+        serverURL: 'https://blogcomments.luolin.online',
+        locale,
+        emoji: false,     
+        search: false,    
+        reaction: false,  
+        requiredMeta: ['nick'],
+        pageSize: 10,
+        imageUploader: false,
+        copyright: true,
+        pageview: true,
+        like: false,
+    });
+</script></article></main><footer class=footer><span>&copy; 2024 <a href=https://luolin1024.github.io>luolin1024</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span><div>本站总访问量 <span id=umami_value_site_pv></span> 次
+本站总访客数 <span id=umami_value_site_uv></span> 人
+当前在线访客 <span id=umami_value_active_uv></span> 人</div><a href="https://icp.gov.moe/?keyword=20248618" target=_blank>萌ICP备20248618号</a></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

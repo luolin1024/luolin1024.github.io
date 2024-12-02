@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>复盘 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E5%A4%8D%E7%9B%98/</link>
+    <description>Recent content in 复盘 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:52:44 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E5%A4%8D%E7%9B%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于复盘这件事</title>
+      <link>https://luolin1024.github.io/2024/02/%E5%85%B3%E4%BA%8E%E5%A4%8D%E7%9B%98%E8%BF%99%E4%BB%B6%E4%BA%8B/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/%E5%85%B3%E4%BA%8E%E5%A4%8D%E7%9B%98%E8%BF%99%E4%BB%B6%E4%BA%8B/</guid>
+      <description>&lt;h2 id=&#34;每日复盘&#34;&gt;每日复盘&lt;/h2&gt;
+&lt;h1 id=&#34;如何做记录&#34;&gt;如何做记录&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;通过excel快速记录每天当前时刻接下来要做的事情【没有捷径】&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;如何每日复盘&#34;&gt;如何每日复盘&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;每天晚上9点开始复盘，将当天的做的重要事情转移到obsidian的daily note中，并且每件事情一定是要有一个结论的。&lt;/li&gt;
+&lt;li&gt;此30分钟内有任何感想都可以先写下来，但是一定不能超过30分钟；&lt;/li&gt;
+&lt;li&gt;9点半下班后回到家如果还有感谢可以写到daily中（比如思考当天哪些计划没有完成，没有完成的原因是什么，有什么客观原因，有什么主观原因，询问自己原因）&lt;/li&gt;
+&lt;li&gt;花3-6分钟制定第二天的计划&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;每周复盘&#34;&gt;每周复盘&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;直接通过obsidian的daily note进行复盘，回顾过去一周的事情，查看本周哪些计划是执行完成的，哪些计划没有被执行完成&lt;/li&gt;
+&lt;li&gt;花10-15分钟制定下周计划&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=JmNNrJdUoKc&#34;&gt;youtube复盘学习&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;复盘需要问自己的问题&#34;&gt;复盘需要问自己的问题&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;我进步的地方是什么？&lt;/li&gt;
+&lt;li&gt;我不足的地方在哪里？&lt;/li&gt;
+&lt;li&gt;本周/本月哪些任务达成？&lt;/li&gt;
+&lt;li&gt;本周/本月哪些任务没有达成？&lt;/li&gt;
+&lt;li&gt;如果没有达成，没有达成的原因是什么？&lt;/li&gt;
+&lt;li&gt;未达成的原因是客观原因还是主观原因？&lt;/li&gt;
+&lt;li&gt;主观原因是由哪些因素造成的？需要更多的通过收集日常数据：学习、生活、习惯、工作等多维度进行提问&lt;/li&gt;
+&lt;li&gt;客观原因是什么？他的影响占比有多大？我是否是在推卸责任？&lt;/li&gt;
+&lt;li&gt;如果是客观原因，那我下次再遇到这种情况的几率有多大？&lt;/li&gt;
+&lt;li&gt;下次遇到类似的问题，我该怎么处理&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+  </channel>
+</rss>

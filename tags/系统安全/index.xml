@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>系统安全 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/</link>
+    <description>Recent content in 系统安全 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Dec 2024 16:11:40 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>系统架构师需要了解的系统安全相关信息</title>
+      <link>https://luolin1024.github.io/2024/11/security-for-system-architects/</link>
+      <pubDate>Fri, 22 Nov 2024 14:17:07 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/11/security-for-system-architects/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;作为技术开发人员可能有的时候会疏忽，但是对于系统架构师，则需要更加系统地做好系统安全&lt;/p&gt;
+&lt;h2 id=&#34;为什么要做好系统安全&#34;&gt;为什么要做好系统安全？&lt;/h2&gt;
+&lt;p&gt;主要是如下几个点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果系统软件受到攻击，可能会导致服务中断、数据丢失甚至业务崩溃。&lt;/li&gt;
+&lt;li&gt;系统中存在着一些重要数据，需要避免被窃取或篡改&lt;/li&gt;
+&lt;li&gt;一些法律和审计对软件是存在数据安全性要求的，会需要定期进行合规性审计&lt;/li&gt;
+&lt;li&gt;从技术层面来看，自己管理的系统被攻击瘫痪或者业务数据丢失，说明技术还“有待提升”&lt;/li&gt;
+&lt;li&gt;从个人职业发展角度看，系统软件安全是IT行业的核心知识之一，了解并清楚安全相关知识可以增强开发在工作中的竞争力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;系统安全分析&#34;&gt;系统安全分析&lt;/h2&gt;
+&lt;p&gt;从为什么要做安全可以看出，系统安全的主要目标是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;可用性&lt;/strong&gt;：确保系统在受到攻击或故障时仍能正常运行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保密性&lt;/strong&gt;：保护系统数据不被泄露。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完整性&lt;/strong&gt;：防止系统文件和数据被篡改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安全技术分析&#34;&gt;安全技术分析&lt;/h2&gt;
+&lt;p&gt;安全技术可以分为三个主要的层次：应用层安全、系统层安全、网络层安全，同时加上贯穿所有层次的重要安全因素－安全管理（包括技术和非技术的方法），组成了分层的安全架构模型&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20241202150628.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20241202150628.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;网络层&#34;&gt;网络层&lt;/h3&gt;
+&lt;p&gt;面临的主要威胁是数据在传输过程中遭到篡改，主要手段可以分为&lt;!-- raw HTML omitted --&gt;限制访问、传输加密、数据校验&lt;!-- raw HTML omitted --&gt;，具体如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在业务网络中引入防火墙，通过安全域划分，合理的ACL策略配置进行访问控制。&lt;/li&gt;
+&lt;li&gt;对非系统运行和维护所必需开启的端口，必须默认关闭，将攻击面降低到最小。&lt;/li&gt;
+&lt;li&gt;提供完整的端口通信矩阵，明确标识哪些端口系统需要使用，便于用户更好地管理网络。&lt;/li&gt;
+&lt;li&gt;设备的管理平面和近端维护终端、网管维护终端间传输的管理流量采用加密传输，使用合适的安全传输协议（如HTTPS等）。&lt;/li&gt;
+&lt;li&gt;跨越信任网络的敏感数据加密传输，防止传输过程中泄露。在CCPortal的远程可视化功能中的客户端代理noVNC和TurboVNC之间采用WSS加密通信技术确保数据安全。&lt;/li&gt;
+&lt;li&gt;使用SSHv2、TLS1.2等安全协议，对系统进行访问和维护，同时支持关闭不安全协议（FTP、Telnet等）。&lt;/li&gt;
+&lt;li&gt;跨越信任网络传输数据时，实现敏感数据（如口令、密钥等）的完整性校验，防止敏感数据传输过程中被篡改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;系统层&#34;&gt;系统层&lt;/h3&gt;
+&lt;p&gt;主要需要考虑操作系统、数据库、应用服务器、中间件的安全版本、漏洞扫描、账号密码管控、ip限制等安全问题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;操作系统安全：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HPC产品不交付OS，用户可以选用安全稳定的CentOS版本（兼容OS版本见版本配套表），通过使用可靠稳定的OS，可以确保应用程序运行在安全的环境中。&lt;/li&gt;
+&lt;li&gt;操作系统供应商在官网上会定期测试、发布操作系统补丁，客户应该及时升级补丁以防安全漏洞被攻击者利用。&lt;/li&gt;
+&lt;li&gt;操作系统在安装部署前需经业界主流漏洞扫描软件扫描，确保不存在高风险级别的漏洞。&lt;/li&gt;
+&lt;li&gt;操作系统安装部署后应该进行安全加固，关闭不安全的协议和非业务必须的端口、开启系统漏洞防御机制等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;数据库安全：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择稳定安全版本的MySQL或者PostgreSQL数据库，确保没有高级别的安全漏洞，以解决基本的安全问题。&lt;/li&gt;
+&lt;li&gt;数据库系统安全补丁需要定期进行更新，以修补已知漏洞。&lt;/li&gt;
+&lt;li&gt;对数据库系统进行安全配置，包括：目录与文件权限、参数设置、用户Profile配置、用户权限配置、数据库网络安全等。&lt;/li&gt;
+&lt;li&gt;数据库系统经业界主流漏洞扫描软件扫描后，高风险级别的漏洞在出厂前处理。&lt;/li&gt;
+&lt;li&gt;对数据库进行安全加固。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;应用服务器安全：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用最新版本的Tomcat应用服务器，确保没有已知高危漏洞。对Tomcat进行安全配置，避免错误配置引起的安全问题。具体配置可以参考《Tomcat安全配置规范》。&lt;/li&gt;
+&lt;li&gt;对要集成使用的客户LDAP系统提供加固指导。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;中间件安全:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择稳定安全版本的Mq中间件、Redis，确保没有高级别的安全漏洞，以解决基本的安全问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;应用层&#34;&gt;应用层&lt;/h3&gt;
+&lt;p&gt;在应用层，采用的安全技术包括帐号和口令安全、认证安全、访问控制与授权、会话管理、密钥管理、证书管理、输入校验、Web页面输出编码、接口协议安全、日志保护等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;帐号和口令安全：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对系统可以管理的帐号口令，提供口令复杂度检测功能，对第三方和开源软件的默认帐号口令提供首次登录后修改的机制，并提示使用缺省口令的风险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;认证安全：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;认证接口提供防暴力破解机制，当重复输入口令次数超过阈值时锁定登录的帐号，同时为了避免基于帐号的锁定方式会被利用来进行DoS攻击，采用了流控机制来限制认证请求数。&lt;/li&gt;
+&lt;li&gt;可以采用2FA等最新认证方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;证书管理：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用OpenSSL进行统一的证书签发、吊销、维护，确保全网身份信息的一致性和有效性。&lt;/li&gt;
+&lt;li&gt;使用X.509 v3格式的证书，证书私钥文件加密存储，并提供证书到期检查和更新机制。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;密钥管理：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用户密码需要通过md5算法进行加密，存在在数据库需要保存密文&lt;/li&gt;
+&lt;li&gt;用户密码在系统服务中流转时需要保持加密&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;会话管理：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对用户正在访问的页面，服务器需要判断会话是否已认证，并且用户是否有权限访问。&lt;/li&gt;
+&lt;li&gt;通过服务器端认证后，服务器端使用安全随机数算法生成维持当前连接的会话标识。&lt;/li&gt;
+&lt;li&gt;用户通过认证后，更换会话标识，以防止会话固定攻击。并且会话标识要安全传输（HTTPS、SSL或IPSec）以防止会话劫持情况的发生。&lt;/li&gt;
+&lt;li&gt;提供会话超时机制，避免攻击者通过猜测或暴力破解的方式获取有效的会话标识来模拟用户和服务器进行通信。&lt;/li&gt;
+&lt;li&gt;对B/S应用，用于维持会话的Cookie设置正确的属性，避免可能造成信息泄露的风险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;访问控制与授权：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对高低风险模块在安全设计上进行隔离，通过不同的进程实现。&lt;/li&gt;
+&lt;li&gt;为了确保不同进程之间权限隔离，对外提供不同网络服务的进程使用不同的UID。&lt;/li&gt;
+&lt;li&gt;应用权限最小化，确保运行软件程序的帐号要尽可能是OS低权限帐号，使用业务功能所必需的最小权限。&lt;/li&gt;
+&lt;li&gt;所有Daemon都是以普通用户的身份执行，不以root权限运行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;堆栈保护&amp;amp;防漏洞利用：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为了防止缓冲区溢出、运行库注入和逆向分析等漏洞利用技术，需要针对编译器和操作系统提供适当的安全编译选项来加固软件的安全性，CCSuite自研部分满足公司的安全编译选项要求。&lt;/p&gt;
+&lt;h3 id=&#34;管理层&#34;&gt;管理层&lt;/h3&gt;
+&lt;p&gt;安全管理是指对所有计算机网络应用体系中各个方面的安全技术和产品进行统一的管理和协调，进而从整体上提高计算机系统的安全保护能力。&lt;/p&gt;
+&lt;p&gt;安全管理包括两个方面的内容，一是从技术上建立高效的管理平台，协调各个安全技术和产品的统一管理，为实现安全策略和度量安全效果提供便利；另一方面是非技术方面，如人员管理、制度管理和安全策略规范等方面的内容，以这些措施来提高产品的安全能力。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;帐号与权限管理
+&lt;ul&gt;
+&lt;li&gt;每人每帐号实现。系统帐号按角色分权设置，实现帐号分级管理，每人每帐号授权，消除共享帐号。&lt;/li&gt;
+&lt;li&gt;清除多余帐号与组。清除操作系统与数据库多余的帐号与组（含默认）。&lt;/li&gt;
+&lt;li&gt;本系统不提供用户密码、口令等管理能力。OS系统帐户密码策略受限于OS系统，第三方帐户密码策略如口令长度、口令复杂性，受限于第三方系统。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;日志审计
+&lt;ul&gt;
+&lt;li&gt;支持对系统有影响的操作记录日志，包括用户相关的操作（登录、注销、锁定、解锁、帐号管理等）和用户登录后所进行的非查询类操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;软件完整性保护
+&lt;ul&gt;
+&lt;li&gt;对外发布的软件包采用大包签名进行完整性保护。&lt;/li&gt;
+&lt;li&gt;在产品版本软件构建阶段进行CMS内层签名，并在升级阶段进行完整性校验。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;提供完整的安全资料，便于客户运维人员进行安全相关运维操作。&lt;/li&gt;
+&lt;li&gt;通过合适的安全策略、标准、过程和补丁管理等来规避系统攻击带来的风险。&lt;/li&gt;
+&lt;li&gt;对系统使用者进行安全意识和赋能培训，提升团队整体安全素质和能力。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;不管从公司利益层面还是个人职业发展层面，提升系统安全意识，时刻对系统安全保持足够的敏感度，都是十分有价值的&lt;/p&gt;
+&lt;p&gt;参考资料：
+&lt;a href=&#34;https://support.huawei.com/enterprise/zh/doc/EDOC1100228708/2d439e10&#34;&gt;https://support.huawei.com/enterprise/zh/doc/EDOC1100228708/2d439e10&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>
