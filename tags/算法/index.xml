@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>算法 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 22 Nov 2024 18:15:53 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>位图BitMap</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E7%AE%97%E6%B3%95/%E4%BD%8D%E5%9B%BEbitmap/</link>
+      <pubDate>Sun, 03 Mar 2024 17:49:55 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E7%AE%97%E6%B3%95/%E4%BD%8D%E5%9B%BEbitmap/</guid>
+      <description>&lt;h2 id=&#34;什么是bitmap&#34;&gt;什么是BitMap&lt;/h2&gt;
+&lt;p&gt;BitMap算法的核心思想在于用bit数组记录0/1两种状态，然后再将具体数据映射到这个比特数组的具体位置，这个比特位表示数据存在或者数据不存在&lt;/p&gt;
+&lt;h2 id=&#34;位图的实现&#34;&gt;位图的实现&lt;/h2&gt;
+&lt;p&gt;目前主要可以使用JDK中的BitSet
+Google开源的EWAHCompressedBitmap&lt;/p&gt;
+&lt;h2 id=&#34;位图使用案例&#34;&gt;位图使用案例&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;给定10亿正数进行，没排过序的，然后再给一个数，如果快速判断是否在这10亿数据里面
+&lt;ol&gt;
+&lt;li&gt;解法：通过bitMap映射判断是否存在值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;使用位图法进行元素不重复的正整形数组排序
+&lt;ol&gt;
+&lt;li&gt;解法，存入bitMap后，从小打到去除存在1的值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;在2.5亿个整数中找出不重复的正整数，注，内存不足以容纳这2.5亿个整数
+&lt;ol&gt;
+&lt;li&gt;采用2-bitMap（每个数分配2bit，00表示存在，01表示出现1次，10表示多次，11无意义）&lt;/li&gt;
+&lt;li&gt;采用两个bitmap，第一个bitmap标记是否第一次存在，第二个bitmap标记是否存在多次，如果只在第一个bitmap则表示存在1次，两个bitmap都存在则表示多次，两个bitmap都没有则表示没有值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;在系统中给多名用户打多个标记，在拉取数据的时候可以通过这个标记直接获取结果，比如给三个人A、B、C分别标记程序员，产品经理和测试，那么在设计时就可以使用标记直接过去对应标记下的所有人&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>NC61 两数之和</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E7%AE%97%E6%B3%95/nc61-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E7%AE%97%E6%B3%95/nc61-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</guid>
+      <description>&lt;h2 id=&#34;描述&#34;&gt;描述&lt;/h2&gt;
+&lt;p&gt;给出一个整型数组 numbers 和一个目标值 target，请在数组中找出两个加起来等于目标值的数的下标，返回的下标按升序排列。&lt;/p&gt;
+&lt;p&gt;（注：&lt;strong&gt;返回&lt;/strong&gt;的数组下标从1开始算起，保证target一定可以由数组里面2个数字相加得到）&lt;/p&gt;
+&lt;p&gt;示例1：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;输入：
+
+[3,2,4],6
+
+返回值：
+
+[2,3]
+
+说明：
+
+因为 2+4=6 ，而 2的下标为2 ， 4的下标为3 ，又因为 下标2 &amp;lt; 下标3 ，所以返回[2,3]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;答案：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;java.util.*&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Solution&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cm&#34;&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;     *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;     *
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;     * @param numbers int整型一维数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;     * @param target int整型
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;     * @return int整型一维数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;     */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;twoSum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;// write code here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;Map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;map&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HashMap&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;containsKey&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;target&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;target&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;])+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;put&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;numbers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>效率工具 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 效率工具 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Dec 2024 16:20:12 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Excel使用</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/excel-use/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/excel-use/</guid>
+      <description>&lt;h2 id=&#34;excel使用连接符批量&#34;&gt;Excel使用&amp;amp;连接符批量&lt;/h2&gt;
+&lt;p&gt;背景：很多时候需要修复数据，同时数据是通过数据库管理工具导出，因此固定了A列和B列作为参数，在C列通过公式进行SQL拼接&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1609208355558-0398fae9-c1a4-456c-95c7-0d5246051d57.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1609208355558-0398fae9-c1a4-456c-95c7-0d5246051d57.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;示例输入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;insert into ssta_line_limit(tenant_id, settle_config_id, document_type, enable_flag) value(&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;B2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;, &amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;, &amp;#39;INVOICE&amp;#39;, 0);&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;实现效果：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1609208467623-23bf9dc4-551e-4f35-ab99-64b755408737.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1609208467623-23bf9dc4-551e-4f35-ab99-64b755408737.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Git操作手册</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/git-operation-manual/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/git-operation-manual/</guid>
+      <description>&lt;p&gt;关于git的一些介绍以及大部分用法，可以参考&lt;a href=&#34;https://git-scm.com/book/zh/v2&#34;&gt;官方文档&lt;/a&gt;,本文只记录一些常用操作和一些比较难的操作。&lt;/p&gt;
+&lt;h1 id=&#34;git-fetch和git-pull对比&#34;&gt;git fetch和git pull对比&lt;/h1&gt;
+&lt;p&gt;先用一张图来理一下git fetch和git pull的概念：&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595482301577-413f9d99-dd51-4e1f-bb5a-4b8b0ae6714f.jpeg&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595482301577-413f9d99-dd51-4e1f-bb5a-4b8b0ae6714f.jpeg&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;code&gt;git fetch&lt;/code&gt;是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git fetch origin&lt;/code&gt;查找 “origin” 是哪一个服务器,从中抓取本地没有的数据，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git pull&lt;/code&gt;则是将远程主机的最新内容拉下来后直接合并，即：&lt;code&gt;git pull&lt;/code&gt; = &lt;code&gt;git fetch&lt;/code&gt; + &lt;code&gt;git merge&lt;/code&gt;，这样可能会产生冲突，需要手动解决。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;git fetch用法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;git fetch 命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch &amp;lt;远程主机名&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//这个命令将某个远程主机的更新全部取回本地,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;并且更新本地数据库，移动 origin/所有分支 指针指向新的、更新后的位置。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;后面不加参数&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;// 这个命令与上面的命令相似，远程主机用的默认远程主机
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果只想取回特定分支的更新，可以指定分支名：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch &amp;lt;远程主机名&amp;gt; &amp;lt;分支名&amp;gt; //注意之间有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最常见的命令如取回origin 主机的master 分支：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;取回更新后，会返回一个FETCH_HEAD ，指的是某个branch在服务器上的最新状态，我们可以在本地通过它查看刚取回的更新信息：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git log -p FETCH_HEAD
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;git pull 用法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;前面提到，git pull 的过程可以理解为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch origin master //从远程主机的master分支拉取最新内容 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git merge FETCH_HEAD    //将拉取下来的最新内容合并到当前所在的分支中
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即将远程主机的某个分支的更新取回，并与本地指定的分支合并，完整格式可表示为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull &amp;lt;远程主机名&amp;gt; &amp;lt;远程分支名&amp;gt;:&amp;lt;本地分支名&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果远程分支是与当前分支合并，则冒号后面的部分可以省略：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull origin dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;git-push&#34;&gt;git push&lt;/h1&gt;
+&lt;p&gt;git push的一般形式为 &lt;code&gt;git push &amp;lt;远程主机名&amp;gt; &amp;lt;本地分支名&amp;gt; &amp;lt;远程分支名&amp;gt;&lt;/code&gt; ，例如 git push origin master，即是将本地的master分支推送到远程主机origin上的对应master分支， origin 是远程主机名,第一个master是本地分支名，第二个master是远程分支名。&lt;/p&gt;
+&lt;p&gt;如果远程分支被省略，如下则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支，等同于 &lt;code&gt;git push origin --delete master&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin:master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果当前分支与远程分支存在追踪关系，则本地分支和远程分支都可以省略，将当前分支推送到origin主机的对应分支&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果当前分支只有一个远程分支，那么主机名都可以省略，形如 &lt;code&gt;git push&lt;/code&gt;，可以使用&lt;code&gt;git branch -r&lt;/code&gt;，查看远程的分支名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;git push 的其他命令&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin master&lt;/code&gt; 如果当前分支与多个主机存在追踪关系，则可以使用 -u 参数指定一个默认主机，这样后面就可以不加任何参数使用git push，不带任何参数的git push，默认只推送当前分支，这叫做simple方式，还有一种matching方式，会推送所有有对应的远程分支的本地分支， Git 2.0之前默认使用matching，现在改为simple方式,如果想更改设置，可以使用git config命令。git config &amp;ndash;global push.default matching OR git config &amp;ndash;global push.default simple；可以使用git config -l 查看配置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push --all origin&lt;/code&gt; 当遇到这种情况就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要 -all 选项&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push --force origin&lt;/code&gt; git push的时候需要本地先git pull更新到跟服务器版本一致，如果本地版本库比远程服务器上的低，那么一般会提示你git pull更新，如果一定要提交，那么可以使用这个命令。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push origin --tags&lt;/code&gt; //git push 的时候不会推送分支，如果一定要推送标签的话那么可以使用这个命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;常用分支操作&#34;&gt;常用分支操作&lt;/h1&gt;
+&lt;h4 id=&#34;git-本地分支操作&#34;&gt;git 本地分支操作&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch //查看本地所有分支 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -r //查看远程所有分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -a //查看本地和远程的所有分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch &amp;lt;branchname&amp;gt; //新建分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -d &amp;lt;branchname&amp;gt; //删除本地分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -d -r &amp;lt;branchname&amp;gt; //删除远程分支，删除后还需推送到服务器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin:&amp;lt;branchname&amp;gt;  //删除后推送至服务器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -m &amp;lt;oldbranch&amp;gt; &amp;lt;newbranch&amp;gt; //重命名本地分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*重命名远程分支：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*1、删除远程待修改分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*2、push本地新分支到远程服务器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//git中一些选项解释:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-d
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--delete：删除
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-D
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--delete --force的快捷键
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--force：强制
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-m
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--move：移动或重命名
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-M
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--move --force的快捷键
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-r
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--remote：远程
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--all：所有
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git check -b &amp;lt;新分支名称&amp;gt; //新建分支并切换到新建分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -vv // 查看本地处于远程库中哪个
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;git-操作远程分支&#34;&gt;git 操作远程分支&lt;/h4&gt;
+&lt;p&gt;把新建的本地分支push到远程服务器，远程分支与本地分支同名（当然可以随意起名）：&lt;code&gt;git push origin &amp;lt;本地分支名&amp;gt;:&amp;lt;远程分支名&amp;gt;&lt;/code&gt;,删除远程已有分支：&lt;code&gt;git push origin --delete dbg_lichen_star&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git branch -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;推送到远程：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git push origin dev:dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Total &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;delta 0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, reused &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;delta 0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: Create a pull request &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;dev2&amp;#39;&lt;/span&gt; on GitHub by visiting:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote:      https://github.com/runooboy/runooboy.github.io/pull/new/dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;To github.com:runooboy/runooboy.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; * &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;new branch&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;      dev -&amp;gt; dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;结果：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git branch -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;删除远程已有分支：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git push origin --delete dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;To github.com:runooboy/runooboy.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; - &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;deleted&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;         dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;结果：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git branch -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;git-推送个人远程服务器&#34;&gt;git 推送个人远程服务器&lt;/h2&gt;
+&lt;h4 id=&#34;1-服务器操作&#34;&gt;1. 服务器操作&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# root用户操作：
+adduser git
+su git
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;2-本地操作&#34;&gt;2. 本地操作&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen -t rsa
+cat .ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;3-服务器操作&#34;&gt;3. 服务器操作&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; .ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim authorized_keys &lt;span class=&#34;c1&#34;&gt;# 将本地公钥保存进来&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir repository
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir repository/hello.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; repository/hello.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git --bare init &lt;span class=&#34;c1&#34;&gt;# 一定要用这个，不然不让本地推送远程&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -m master &lt;span class=&#34;c1&#34;&gt;# 设置分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;git init&lt;/code&gt;,本地推送时将会报错：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: error: refusing to update checked out branch: refs/heads/master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: error: By default, updating the current branch in a non-bare repository
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;没有设置分支，将会报错：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;error: remote unpack failed: unable to create temporary object directory
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;git-stash暂存&#34;&gt;git stash暂存&lt;/h1&gt;
+&lt;h4 id=&#34;git-stash&#34;&gt;git stash&lt;/h4&gt;
+&lt;p&gt;保存当前工作进度，会把暂存区和工作区的改动保存起来。执行完这个命令后，在运行&lt;code&gt;git status&lt;/code&gt;命令，就会发现当前是一个干净的工作区，没有任何改动。使用&lt;code&gt;git stash save &#39;message...&#39;&lt;/code&gt;可以添加一些注释。&lt;/p&gt;
+&lt;h4 id=&#34;git-stash-list&#34;&gt;git stash list&lt;/h4&gt;
+&lt;p&gt;显示保存进度的列表。也就意味着，&lt;code&gt;git stash&lt;/code&gt;命令可以多次执行。&lt;/p&gt;
+&lt;h4 id=&#34;git-stash-pop-index-stash_id&#34;&gt;git stash pop [–index] [stash_id]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git stash pop&lt;/code&gt; 恢复最新的进度到工作区。git默认会把工作区和暂存区的改动都恢复到工作区。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash pop --index&lt;/code&gt; 恢复最新的进度到工作区和暂存区。（尝试将原来暂存区的改动还恢复到暂存区）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash pop &#39;stash@{1}&#39;&lt;/code&gt;恢复指定的进度到工作区。stash_id是通过&lt;code&gt;git stash list&lt;/code&gt;命令得到的通过&lt;code&gt;git stash pop&lt;/code&gt;命令恢复进度后，会删除当前进度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;git-stash-apply-index-stash_id&#34;&gt;git stash apply [–index] [stash_id]&lt;/h4&gt;
+&lt;p&gt;除了不删除恢复的进度之外，其余和&lt;code&gt;git stash pop&lt;/code&gt; 命令一样。&lt;/p&gt;
+&lt;h4 id=&#34;git-stash-drop-stash_id&#34;&gt;git stash drop [stash_id]&lt;/h4&gt;
+&lt;p&gt;删除一个存储的进度。如果不指定stash_id，则默认删除最新的存储进度。&lt;/p&gt;
+&lt;h4 id=&#34;git-stash-clear&#34;&gt;git stash clear&lt;/h4&gt;
+&lt;p&gt;删除所有存储的进度。&lt;/p&gt;
+&lt;h3 id=&#34;注意&#34;&gt;注意&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;git中两个不同分支同时修改了同一处（同一行）内容之后，只要两个分支修改后的内容一致，就不会产生冲突。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;参考：
+&lt;a href=&#34;https://blog.51cto.com/u_15061934/3443406&#34;&gt;本地git仓库推送到服务器自建的git仓库实现目录文件同步教程_51CTO博客_git推送到远程仓库&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>win10软件使用</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/windows-sofrware/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/windows-sofrware/</guid>
+      <description>&lt;h2 id=&#34;axure9激活&#34;&gt;Axure9激活&lt;/h2&gt;
+&lt;p&gt;Licensee:Freecrackdownload.comKey:5vYpJgQZ431X/G5kp6jpOO8Vi3TySCBnAslTcNcKkszfPH7jaM4eKM8CrALBcEC1&lt;/p&gt;
+&lt;h2 id=&#34;windows通过cmd查看网络端口占用情况&#34;&gt;Windows通过cmd查看网络端口占用情况&lt;/h2&gt;
+&lt;p&gt;对于一些使用java后端服务在没有关闭端口的情况下被关闭，则可能导致端口一直占用，处理方案：
+一、列出所有端口的情况，找到被占用的端口 ：netstat -ano
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987699392-8a40f5df-ee76-485e-8ff5-bdd4ddfffa57.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987699392-8a40f5df-ee76-485e-8ff5-bdd4ddfffa57.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+二、找对应的PID： netstat -aon|findstr &amp;ldquo;8440&amp;rdquo; 
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987720307-a75ab886-eab5-4045-8c02-a7a9dd0e1e8f.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987720307-a75ab886-eab5-4045-8c02-a7a9dd0e1e8f.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+三、查找具体的占用进程：tasklist|findstr &amp;ldquo;28712&amp;rdquo;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987731127-906c40ed-6227-4176-98a0-0b4aa49a931c.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987731127-906c40ed-6227-4176-98a0-0b4aa49a931c.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+四、结束进程：taskkill /f /t /im java.exe&lt;/p&gt;
+&lt;h2 id=&#34;win10下idea终端中使用git中文乱码解决方案&#34;&gt;win10下idea终端中使用git中文乱码解决方案&lt;/h2&gt;
+&lt;h4 id=&#34;方案一-系统变量中添加lesscharsetutf-8&#34;&gt;方案一 系统变量中添加LESSCHARSET=utf-8&lt;/h4&gt;
+&lt;p&gt;在idea中使用powershell/cmd终端做git操作的时候，git log会显示中文乱码，查阅网上资料后发现是因为git log 默认使用 less 分页，需要 bash 对 less 命令进行 utf-8 编码 ，可以通过在系统环境变量中添加LESSCHARSET=utf-8，如下：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598572459312-edc56a59-6e4e-4dc8-9d0d-d04de28f0c29.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598572459312-edc56a59-6e4e-4dc8-9d0d-d04de28f0c29.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;此时再使用idea终端中的powershell进行git log操作，结果如下：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598572889940-2e3a1377-aef3-4989-ae3a-cc76d2b0462c.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598572889940-2e3a1377-aef3-4989-ae3a-cc76d2b0462c.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;方案二-idea-中使用git-bash&#34;&gt;方案二 idea 中使用git bash&lt;/h4&gt;
+&lt;p&gt;这个方法比较粗暴，直接在idea的设置中设置终端为git bash即可
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598573087612-5dc77ca0-1cce-4f09-8f47-8af67f5c169d.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598573087612-5dc77ca0-1cce-4f09-8f47-8af67f5c169d.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>语雀迁移至Obsidian</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/the-sparrow-migrates-to-obsidian/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/the-sparrow-migrates-to-obsidian/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;本人从2020年初开始使用语雀，在这段时间中通过语雀做了大量的笔记，也写了一些自己的博客，十分感谢语雀，给了我一个干净整洁的mark在线笔记。在最近这一个月内，起因是某天在b站看到了对Obsidian的介绍，本来自己也是十分想要记日记的，但是无奈语雀不可以定制日记模版，以及其他模版。另外语雀也不支持个人任务管理以及个人okr管理，因此对Obsidian和logseq，语雀，思源和notion等笔记软件十分感兴趣，想要实现All in one，在了解了这些软件之后，发现每个软件都有自己的长处和短处，开始逐渐反思或许不应该追求所谓的all in all，而是用不同的软件组合实现，整理了一下自己的需求：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;记日记&lt;/li&gt;
+&lt;li&gt;做好GTD&lt;/li&gt;
+&lt;li&gt;个人目标管理&lt;/li&gt;
+&lt;li&gt;读书笔记&lt;/li&gt;
+&lt;li&gt;记录工作相关笔记&lt;/li&gt;
+&lt;li&gt;知识沉淀&lt;/li&gt;
+&lt;li&gt;编写博客并发布至网上&lt;/li&gt;
+&lt;li&gt;支持本地化，避免软件丢失&lt;/li&gt;
+&lt;li&gt;最好可以支持双链(这样我就可以看到我的知识图谱，然后满满的成就感，嘿嘿)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;具体工具使用方式&#34;&gt;具体工具使用方式&lt;/h2&gt;
+&lt;p&gt;按照这个思路确定了我之后的将要使用的工具，主要有语雀，微软todo和obsidian，其中语雀主要是博客的载体，微软todo作为认为管理工具参考&lt;a href=&#34;https://blog.effie.co/7%e7%a7%8d%e5%b8%b8%e8%a7%81%e7%9a%84%e4%bb%bb%e5%8a%a1%e7%ae%a1%e7%90%86%e6%96%b9%e6%b3%95/&#34;&gt;effie任务管理&lt;/a&gt;，obsidian主要解决我的日记、笔记以及其他事项。&lt;/p&gt;
+&lt;h3 id=&#34;gtd微软todo&#34;&gt;GTD：微软todo&lt;/h3&gt;
+&lt;p&gt;首先是微软todo，我为啥要用微软todo呢，因为他免费、好用、支持多平台同步。先给大家看下我的微软todo
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1660985273921-9b52c2e2-59cf-4390-a77b-14170fb72fb2.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1660985273921-9b52c2e2-59cf-4390-a77b-14170fb72fb2.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+我将我的todo按照四象限的思路建立了不同的list，以及收集箱list主要用于收集每天的任务，然后进行分类，如果是当天要完成的就放到我的一天中快速搞定。另外，每个任务最好都有对应的计划完成时间，毕竟有句话叫做&lt;code&gt;如果计划没有截止时间，那么他将无限期推迟&lt;/code&gt;,我的还有些没有加计划完成，这个别学我～&lt;/p&gt;
+&lt;h3 id=&#34;博客语雀&#34;&gt;博客：语雀&lt;/h3&gt;
+&lt;p&gt;语雀，主要会是我编写博客并发布至网上、组建对外公布的个人知识库主要工具，另外因为语雀本身&lt;/p&gt;
+&lt;h3 id=&#34;知识图谱obsidian&#34;&gt;知识图谱：Obsidian&lt;/h3&gt;
+&lt;p&gt;首先Obsidian其实是一块白板，需要自己有自己的定制化内容，github上也有一些主页可以fork过来之后自己直接使用，但是那些对我来讲太过花里胡哨了，我不喜欢，所以参考了Obsidian社区的另一位老哥的工作区，我也对我的Obsidian工作区进行了规划，通过目录文件夹分好每一个文件的内容，将收集箱，okr，daily，工作相关，博客相关进行拆分，看起来有条理些，自己也更舒服，这个是我目前的工作区：&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1660985642887-f5129b52-1bc3-43c3-9492-ee8ad060b2c4.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1660985642887-f5129b52-1bc3-43c3-9492-ee8ad060b2c4.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+我的需求都是怎么实现的呢？记日记：Obsidian的day planer工具可以结合日记模版，提前规划好每天的时间块，按照自己的实际动态调整，本地化、记录工作相关笔记、个人目标管理、读书笔记、知识沉淀、本地化、双链组成个人知识图谱&lt;/p&gt;
+&lt;h2 id=&#34;语雀导出到本地markdown&#34;&gt;语雀导出到本地Markdown&lt;/h2&gt;
+&lt;p&gt;语雀目前官方批量导出只支持导出pdf获取和自主研发文本类型导出，不支持markdow导出，所以想要本地备份需要稍微花点功夫，通过脚本将文件下载下来
+建议使用如下脚本：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/truda8/ExportMD&#34;&gt;truda8/ExportMD: 语雀知识库自动导出为 Markdown 格式 (github.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本人使用的是python版本为3.8.19，另外注意&lt;!-- raw HTML omitted --&gt;使用bash执行，使用pycharm会报错&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h3 id=&#34;图片导入个人图床&#34;&gt;图片导入个人图床&lt;/h3&gt;
+&lt;p&gt;这一步可以直接使用obsidian的插件&lt;code&gt;Image auto upload&lt;/code&gt;(插件市场已有)组合picGo全量上传，他会自动替换好上传后的图片位置&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240726130242.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240726130242.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;随想&#34;&gt;随想&lt;/h2&gt;
+&lt;p&gt;其实折腾个工具还是挺蛋疼的，俗话是磨刀不误砍柴工，一直折腾这玩意就像是一直在磨刀，一磨就是老半天，以后再也不想折腾笔记软件了～&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>高效率Idea</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/%E9%AB%98%E6%95%88%E7%8E%87idea/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/%E9%AB%98%E6%95%88%E7%8E%87idea/</guid>
+      <description>&lt;h2 id=&#34;m1-破解idea20241&#34;&gt;M1 破解Idea2024.1&lt;/h2&gt;
+&lt;h3 id=&#34;下载ja-netfilter并进行配置&#34;&gt;下载ja-netfilter并进行配置&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/ja-netfilter/ja-netfilter/releases&#34;&gt;ja-netfilter 发行版 - Gitee.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423220340.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423220340.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;下载到本地，将解压后的文件夹放到合适的位置，编辑以下三个文件
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423221420.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423221420.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;dns.conf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DNS&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;EQUAL,jetbrains.com&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;EQUAL,dbeaver.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;power.conf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Result&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;EQUAL,120506319308405029943033101198259523557651500267734599270782782071425072541184605728867830395125412768750966448411447392137801711908001958831204692561738046570955709184538088569271703484602917023462976408329100293802371486063140115775311907530943821345005598057265747678100463689973450156515895355214983079672467769169324175533323801179755544364921063654340185317077965735659865485150734884110709760680757502730007505995422237875348017761382234951127263548660889969621730944377739766734765769747684457663965611896398862841334032542726392699785677440644859509166466497325071885386505404431787167239320957696896447925472784312642576835792921100239616617639216190447230487878404191838684279341834945197861631446454083984351911070798505031973496634229907567362853550735007045265430703581336189733180744888091740381912913980707537008943084904260746266383019688346709856215660232636334604552145129775009725685598798774376749830567219982166661918408832945395290223853748014160473876195098438959881711585152480525870219408398012002829112863175041709512032251930709608035158747101960447898838942705485214217426612863919268749874079707310181890737049603255938886865558759802593500502795018952114650332765839003032013708006750600413455628536259,65537,860106576952879101192782278876319243486072481962999610484027161162448933268423045647258145695082284265933019120714643752088997312766689988016808929265129401027490891810902278465065056686129972085119605237470899952751915070244375173428976413406363879128531449407795115913715863867259163957682164040613505040314747660800424242248055421184038777878268502955477482203711835548014501087778959157112423823275878824729132393281517778742463067583320091009916141454657614089600126948087954465055321987012989937065785013284988096504657892738536613208311013047138019418152103262155848541574327484510025594166239784429845180875774012229784878903603491426732347994359380330103328705981064044872334790365894924494923595382470094461546336020961505275530597716457288511366082299255537762891238136381924520749228412559219346777184174219999640906007205260040707839706131662149325151230558316068068139406816080119906833578907759960298749494098180107991752250725928647349597506532778539709852254478061194098069801549845163358315116260915270480057699929968468068015735162890213859113563672040630687357054902747438421559817252127187138838514773245413540030800888215961904267348727206110582505606182944023582459006406137831940959195566364811905585377246353-&amp;gt;31872219281407242025505148642475109331663948030010491344733687844358944945421064967310388547820970408352359213697487269225694990179009814674781374751323403257628081559561462351695605167675284372388551941279783515209238245831229026662363729380633136520288327292047232179909791526492877475417113579821717193807584807644097527647305469671333646868883650312280989663788656507661713409911267085806708237966730821529702498972114194166091819277582149433578383639532136271637219758962252614390071122773223025154710411681628917523557526099053858210363406122853294409830276270946292893988830514538950951686480580886602618927728470029090747400687617046511462665469446846624685614084264191213318074804549715573780408305977947238915527798680393538207482620648181504876534152430149355791756374642327623133843473947861771150672096834149014464956451480803326284417202116346454345929350148770746553056995922154382822307758515805142704373984019252210715650875853634697920708113806880196144197384637328982263167395073688501517286678083973976140696077590122053014085412828620051470085033364773099146103525313018873319293728800442101520384088109603555959893639842091339193857485407672132882577840295039058621747654642202620767068924079813640067442975
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;EQUAL,8028659553836119901593655311677865290672387540027895708985570867455842278776015838142490556122515317003830575671206217290165955723210315889275621408086645995280770696135307020454887097794294273869941097888549275028604248332746117479367032100139091095818169444690976206636597409322539276252570779516636180497560345090851316373570301807158645002654208816162902430571101092599540795501152368695431168224953320283502815852695423193526255836776240019085157444254721864134058745605280085897450952937893645487302683006269553010996013513395044612932182772364336368242146044741660443063207438830622376694839772096688572619877,65537,21052260334349247097390263197515551021430500095747078612475171670547647379514624742422155617118382403386162585789957995106937640909858927441120214136124618650916253946431099279059999234690271861285094667690686174087562943995337813383652323725628494261414287817117703355799303086256914782640807165021059760198249458510362432176960683009890989990086614909076853502936665842869163947730574085863127445475967466399017447434906719734480523659879746056728772390182338236187070557277461449143752467418310063647027554915213099799725713708651142505590086828211040619445941301844994775362846837122335522584661592447560060751169-&amp;gt;986236757547332986472011617696226561292849812918563355472727826767720188564083584387121625107510786855734801053524719833194566624465665316622563244215340671405971599343902468620306327831715457360719532421388780770165778156818229863337344187575566725786793391480600129482653072861971002459947277805295727097226389568776499707662505334062639449916265137796823793276300221537201727072401742985542559596685092673521228140822200236743113743661549252453726123450722876929538747702356573783116197523966334991563351853851212597377279504828784687920949198341066450537230593608440475006386024448307924665012521692416658191
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;url.conf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;URL&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PREFIX,https://account.jetbrains.com/lservice/rpc/validateKey.action
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PREFIX,https://dbeaver.com/lmp/checkLicense
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PREFIX,https://store.smartgit.com/check
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;激活idea&#34;&gt;激活idea&lt;/h3&gt;
+&lt;p&gt;通过finder找到应用程序后IntelliJ IDEA通过显示包内容进入&lt;code&gt;/Contents/bin&lt;/code&gt;文件夹下， 修改&lt;code&gt;idea.vmoptions&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423221053.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423221053.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423220223.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423220223.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;尾部添加&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--add-opens&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;java.base/jdk.internal.org.objectweb.asm&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;ALL-UNNAMED
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--add-opens&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;java.base/jdk.internal.org.objectweb.asm.tree&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;ALL-UNNAMED
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-javaagent:/Users/luolin/locaDevTool/ja-netfilter/ja-netfilter.jar&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;jetbrains
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意：&lt;code&gt;/Users/luolin/locaDevTool/ja-netfilter&lt;/code&gt;是我电脑中的位置，此处需要改为自己的电脑位置
+打开idea，编辑VM Options，添加上面的参数&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423221137.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423221137.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;完成后点击注册，选择如下配置：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423221237.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240423221237.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;配置激活服务器：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://jetbra.in/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考：
+&lt;a href=&#34;https://blog.csdn.net/weixin_44712778/article/details/127475116&#34;&gt;macOS如何给idea安装ja-netfilter插件-CSDN博客&lt;/a&gt;
+&lt;a href=&#34;https://gitee.com/ja-netfilter/ja-netfilter/releases&#34;&gt;ja-netfilter 发行版 - Gitee.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;新的激活方法：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://blog.csdn.net/qq251708339/article/details/134105044
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;jrebel-激活&#34;&gt;JRebel 激活&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;:生成 GUID 的网址 &lt;a href=&#34;https://www.guidgen.com/&#34;&gt;https://www.guidgen.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;:用这个网址 + 生成的 GUID 激活 &lt;a href=&#34;https://jrebel.qekang.com/&#34;&gt;https://jrebel.qekang.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例如: &lt;a href=&#34;https://jrebel.qekang.com/f11c305b-a88b-454b-8bb5-0c280f3b6257&#34;&gt;https://jrebel.qekang.com/f11c305b-a88b-454b-8bb5-0c280f3b6257&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;:设置离线模式 来防止失效&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;File -&amp;gt; Settings -&amp;gt; JRebel -&amp;gt; [Work offline]按钮&lt;/p&gt;
+&lt;h2 id=&#34;idea报错java--source-16-中不支持-diamond-运算符&#34;&gt;Idea报错java: -source 1.6 中不支持 diamond 运算符&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nl&#34;&gt;D:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;IdeaProjects&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;how&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;about&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;how&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;about&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basic&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;com&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lin&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;io&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bio&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BioServerWithPool&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;27&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;72&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nl&#34;&gt;java:&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;source&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.6&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;中不支持&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;diamond&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;运算符&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;请使用&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;source&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;或更高版本以启用&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;diamond&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;运算符&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打开module setting，更新language level为8&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1628167711001-572375ad-aef3-459a-b169-5591f4383ed2.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1628167711001-572375ad-aef3-459a-b169-5591f4383ed2.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+接着报错：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nl&#34;&gt;java:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Compilation&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;failed&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;internal&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;java&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;compiler&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;error&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1628167806888-4b6f4870-4085-45b3-a3b6-a7228b2ec36a.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1628167806888-4b6f4870-4085-45b3-a3b6-a7228b2ec36a.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1628167839802-f6abe1e4-3e1b-4662-bfcf-428a8a5c5051.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1628167839802-f6abe1e4-3e1b-4662-bfcf-428a8a5c5051.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Git on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/git/</link>
+    <description>Recent content in Git on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Dec 2024 16:17:52 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git操作手册</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/git-operation-manual/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/git-operation-manual/</guid>
+      <description>&lt;p&gt;关于git的一些介绍以及大部分用法，可以参考&lt;a href=&#34;https://git-scm.com/book/zh/v2&#34;&gt;官方文档&lt;/a&gt;,本文只记录一些常用操作和一些比较难的操作。&lt;/p&gt;
+&lt;h1 id=&#34;git-fetch和git-pull对比&#34;&gt;git fetch和git pull对比&lt;/h1&gt;
+&lt;p&gt;先用一张图来理一下git fetch和git pull的概念：&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595482301577-413f9d99-dd51-4e1f-bb5a-4b8b0ae6714f.jpeg&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595482301577-413f9d99-dd51-4e1f-bb5a-4b8b0ae6714f.jpeg&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;code&gt;git fetch&lt;/code&gt;是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git fetch origin&lt;/code&gt;查找 “origin” 是哪一个服务器,从中抓取本地没有的数据，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git pull&lt;/code&gt;则是将远程主机的最新内容拉下来后直接合并，即：&lt;code&gt;git pull&lt;/code&gt; = &lt;code&gt;git fetch&lt;/code&gt; + &lt;code&gt;git merge&lt;/code&gt;，这样可能会产生冲突，需要手动解决。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;git fetch用法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;git fetch 命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch &amp;lt;远程主机名&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//这个命令将某个远程主机的更新全部取回本地,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;并且更新本地数据库，移动 origin/所有分支 指针指向新的、更新后的位置。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;后面不加参数&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;// 这个命令与上面的命令相似，远程主机用的默认远程主机
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果只想取回特定分支的更新，可以指定分支名：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch &amp;lt;远程主机名&amp;gt; &amp;lt;分支名&amp;gt; //注意之间有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最常见的命令如取回origin 主机的master 分支：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;取回更新后，会返回一个FETCH_HEAD ，指的是某个branch在服务器上的最新状态，我们可以在本地通过它查看刚取回的更新信息：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git log -p FETCH_HEAD
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;git pull 用法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;前面提到，git pull 的过程可以理解为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git fetch origin master //从远程主机的master分支拉取最新内容 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git merge FETCH_HEAD    //将拉取下来的最新内容合并到当前所在的分支中
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即将远程主机的某个分支的更新取回，并与本地指定的分支合并，完整格式可表示为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull &amp;lt;远程主机名&amp;gt; &amp;lt;远程分支名&amp;gt;:&amp;lt;本地分支名&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果远程分支是与当前分支合并，则冒号后面的部分可以省略：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull origin dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;git-push&#34;&gt;git push&lt;/h1&gt;
+&lt;p&gt;git push的一般形式为 &lt;code&gt;git push &amp;lt;远程主机名&amp;gt; &amp;lt;本地分支名&amp;gt; &amp;lt;远程分支名&amp;gt;&lt;/code&gt; ，例如 git push origin master，即是将本地的master分支推送到远程主机origin上的对应master分支， origin 是远程主机名,第一个master是本地分支名，第二个master是远程分支名。&lt;/p&gt;
+&lt;p&gt;如果远程分支被省略，如下则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支，等同于 &lt;code&gt;git push origin --delete master&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin:master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果当前分支与远程分支存在追踪关系，则本地分支和远程分支都可以省略，将当前分支推送到origin主机的对应分支&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果当前分支只有一个远程分支，那么主机名都可以省略，形如 &lt;code&gt;git push&lt;/code&gt;，可以使用&lt;code&gt;git branch -r&lt;/code&gt;，查看远程的分支名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;git push 的其他命令&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin master&lt;/code&gt; 如果当前分支与多个主机存在追踪关系，则可以使用 -u 参数指定一个默认主机，这样后面就可以不加任何参数使用git push，不带任何参数的git push，默认只推送当前分支，这叫做simple方式，还有一种matching方式，会推送所有有对应的远程分支的本地分支， Git 2.0之前默认使用matching，现在改为simple方式,如果想更改设置，可以使用git config命令。git config &amp;ndash;global push.default matching OR git config &amp;ndash;global push.default simple；可以使用git config -l 查看配置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push --all origin&lt;/code&gt; 当遇到这种情况就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要 -all 选项&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push --force origin&lt;/code&gt; git push的时候需要本地先git pull更新到跟服务器版本一致，如果本地版本库比远程服务器上的低，那么一般会提示你git pull更新，如果一定要提交，那么可以使用这个命令。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push origin --tags&lt;/code&gt; //git push 的时候不会推送分支，如果一定要推送标签的话那么可以使用这个命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;常用分支操作&#34;&gt;常用分支操作&lt;/h1&gt;
+&lt;h4 id=&#34;git-本地分支操作&#34;&gt;git 本地分支操作&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch //查看本地所有分支 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -r //查看远程所有分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -a //查看本地和远程的所有分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch &amp;lt;branchname&amp;gt; //新建分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -d &amp;lt;branchname&amp;gt; //删除本地分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -d -r &amp;lt;branchname&amp;gt; //删除远程分支，删除后还需推送到服务器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin:&amp;lt;branchname&amp;gt;  //删除后推送至服务器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -m &amp;lt;oldbranch&amp;gt; &amp;lt;newbranch&amp;gt; //重命名本地分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*重命名远程分支：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*1、删除远程待修改分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*2、push本地新分支到远程服务器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//git中一些选项解释:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-d
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--delete：删除
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-D
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--delete --force的快捷键
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--force：强制
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-m
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--move：移动或重命名
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-M
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--move --force的快捷键
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-r
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--remote：远程
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--all：所有
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git check -b &amp;lt;新分支名称&amp;gt; //新建分支并切换到新建分支
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -vv // 查看本地处于远程库中哪个
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;git-操作远程分支&#34;&gt;git 操作远程分支&lt;/h4&gt;
+&lt;p&gt;把新建的本地分支push到远程服务器，远程分支与本地分支同名（当然可以随意起名）：&lt;code&gt;git push origin &amp;lt;本地分支名&amp;gt;:&amp;lt;远程分支名&amp;gt;&lt;/code&gt;,删除远程已有分支：&lt;code&gt;git push origin --delete dbg_lichen_star&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git branch -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;推送到远程：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git push origin dev:dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Total &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;delta 0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, reused &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;delta 0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: Create a pull request &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;dev2&amp;#39;&lt;/span&gt; on GitHub by visiting:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote:      https://github.com/runooboy/runooboy.github.io/pull/new/dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;To github.com:runooboy/runooboy.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; * &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;new branch&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;      dev -&amp;gt; dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;结果：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git branch -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;删除远程已有分支：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git push origin --delete dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;To github.com:runooboy/runooboy.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; - &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;deleted&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;         dev2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;结果：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ git branch -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  remotes/origin/master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;git-推送个人远程服务器&#34;&gt;git 推送个人远程服务器&lt;/h2&gt;
+&lt;h4 id=&#34;1-服务器操作&#34;&gt;1. 服务器操作&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# root用户操作：
+adduser git
+su git
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;2-本地操作&#34;&gt;2. 本地操作&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen -t rsa
+cat .ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;3-服务器操作&#34;&gt;3. 服务器操作&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; .ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim authorized_keys &lt;span class=&#34;c1&#34;&gt;# 将本地公钥保存进来&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir repository
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir repository/hello.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; repository/hello.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git --bare init &lt;span class=&#34;c1&#34;&gt;# 一定要用这个，不然不让本地推送远程&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -m master &lt;span class=&#34;c1&#34;&gt;# 设置分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;code&gt;git init&lt;/code&gt;,本地推送时将会报错：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: error: refusing to update checked out branch: refs/heads/master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;remote: error: By default, updating the current branch in a non-bare repository
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;没有设置分支，将会报错：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;error: remote unpack failed: unable to create temporary object directory
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;git-stash暂存&#34;&gt;git stash暂存&lt;/h1&gt;
+&lt;h4 id=&#34;git-stash&#34;&gt;git stash&lt;/h4&gt;
+&lt;p&gt;保存当前工作进度，会把暂存区和工作区的改动保存起来。执行完这个命令后，在运行&lt;code&gt;git status&lt;/code&gt;命令，就会发现当前是一个干净的工作区，没有任何改动。使用&lt;code&gt;git stash save &#39;message...&#39;&lt;/code&gt;可以添加一些注释。&lt;/p&gt;
+&lt;h4 id=&#34;git-stash-list&#34;&gt;git stash list&lt;/h4&gt;
+&lt;p&gt;显示保存进度的列表。也就意味着，&lt;code&gt;git stash&lt;/code&gt;命令可以多次执行。&lt;/p&gt;
+&lt;h4 id=&#34;git-stash-pop-index-stash_id&#34;&gt;git stash pop [–index] [stash_id]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git stash pop&lt;/code&gt; 恢复最新的进度到工作区。git默认会把工作区和暂存区的改动都恢复到工作区。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash pop --index&lt;/code&gt; 恢复最新的进度到工作区和暂存区。（尝试将原来暂存区的改动还恢复到暂存区）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash pop &#39;stash@{1}&#39;&lt;/code&gt;恢复指定的进度到工作区。stash_id是通过&lt;code&gt;git stash list&lt;/code&gt;命令得到的通过&lt;code&gt;git stash pop&lt;/code&gt;命令恢复进度后，会删除当前进度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;git-stash-apply-index-stash_id&#34;&gt;git stash apply [–index] [stash_id]&lt;/h4&gt;
+&lt;p&gt;除了不删除恢复的进度之外，其余和&lt;code&gt;git stash pop&lt;/code&gt; 命令一样。&lt;/p&gt;
+&lt;h4 id=&#34;git-stash-drop-stash_id&#34;&gt;git stash drop [stash_id]&lt;/h4&gt;
+&lt;p&gt;删除一个存储的进度。如果不指定stash_id，则默认删除最新的存储进度。&lt;/p&gt;
+&lt;h4 id=&#34;git-stash-clear&#34;&gt;git stash clear&lt;/h4&gt;
+&lt;p&gt;删除所有存储的进度。&lt;/p&gt;
+&lt;h3 id=&#34;注意&#34;&gt;注意&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;git中两个不同分支同时修改了同一处（同一行）内容之后，只要两个分支修改后的内容一致，就不会产生冲突。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;参考：
+&lt;a href=&#34;https://blog.51cto.com/u_15061934/3443406&#34;&gt;本地git仓库推送到服务器自建的git仓库实现目录文件同步教程_51CTO博客_git推送到远程仓库&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

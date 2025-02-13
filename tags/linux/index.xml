@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/linux/</link>
+    <description>Recent content in Linux on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 11 May 2024 14:32:28 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux上配置springboot作为Systemd 服务单元</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E4%B8%8A%E9%85%8D%E7%BD%AEspringboot%E4%BD%9C%E4%B8%BAsystemd-%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83/</link>
+      <pubDate>Thu, 09 May 2024 08:08:31 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E4%B8%8A%E9%85%8D%E7%BD%AEspringboot%E4%BD%9C%E4%B8%BAsystemd-%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83/</guid>
+      <description>&lt;p&gt;在服务器上配置 Spring Boot 应用作为服务（Service）启动通常涉及创建一个 Systemd 服务单元。Systemd 是 Linux 系统中常用的系统和服务管理器。&lt;/p&gt;
+&lt;p&gt;以下是配置 Spring Boot 应用作为 Systemd 服务的一般步骤：&lt;/p&gt;
+&lt;h3 id=&#34;1-创建一个-systemd-服务单元文件&#34;&gt;1. 创建一个 Systemd 服务单元文件&lt;/h3&gt;
+&lt;p&gt;在 &lt;code&gt;/etc/systemd/system/&lt;/code&gt; 目录下创建一个新的 &lt;code&gt;.service&lt;/code&gt; 文件，比如 &lt;code&gt;my-spring-boot-app.service&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nano /etc/systemd/system/my-spring-boot-app.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-编辑服务单元文件&#34;&gt;2. 编辑服务单元文件&lt;/h3&gt;
+&lt;p&gt;在文件中添加类似以下内容的配置，根据你的实际情况修改路径和参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Unit&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;Description&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;My Spring Boot Application
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;After&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;syslog.target
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Service&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;User&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;your-user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/bin/java -jar /path/to/your/spring-boot-app.jar
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;SuccessExitStatus&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;143&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;Restart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;on-failure
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Install&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;WantedBy&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;multi-user.target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Description&lt;/code&gt;: 描述服务的简短说明。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;User&lt;/code&gt;: 用于运行 Spring Boot 应用的用户。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ExecStart&lt;/code&gt;: 指定启动命令，包括 Java 命令和 Spring Boot JAR 文件的路径。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SuccessExitStatus&lt;/code&gt;: 成功退出的状态码。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Restart&lt;/code&gt;: 定义服务在失败时是否自动重启。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WantedBy&lt;/code&gt;: 定义服务应该在何时启动，这里是 &lt;code&gt;multi-user.target&lt;/code&gt; 表示多用户模式启动时启动。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-重新加载-systemd-并启动服务&#34;&gt;3. 重新加载 Systemd 并启动服务&lt;/h3&gt;
+&lt;p&gt;保存并退出编辑器后，重新加载 Systemd 并启动你的服务：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start my-spring-boot-app
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;4-验证服务状态&#34;&gt;4. 验证服务状态&lt;/h3&gt;
+&lt;p&gt;可以使用以下命令来检查服务的状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl status my-spring-boot-app
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;5-设置开机自启动可选&#34;&gt;5. 设置开机自启动（可选）&lt;/h3&gt;
+&lt;p&gt;如果你想让服务在系统启动时自动启动，可以使用以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; my-spring-boot-app
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;注意事项&#34;&gt;注意事项：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;替换配置文件中的 &lt;code&gt;your-user&lt;/code&gt; 为你的实际用户名，&lt;code&gt;/path/to/your/spring-boot-app.jar&lt;/code&gt; 为你的 Spring Boot 应用的路径。&lt;/li&gt;
+&lt;li&gt;确保 Java 已经安装并且可以在系统中正确运行。&lt;/li&gt;
+&lt;li&gt;通过 Systemd 启动的服务会在后台运行，你可以使用 &lt;code&gt;sudo journalctl -u my-spring-boot-app.service&lt;/code&gt; 查看服务的日志。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
+      <title>Linux通过ln命令建立文件&amp;目录链接</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Tue, 09 Apr 2024 13:07:58 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;使用方式：ln [option] source_file dist_file &lt;br&gt;
+                    -f 建立时，将同档案名删除.&lt;br&gt;
+                    -i 删除前进行询问.&lt;br&gt;
+                    ln -s abc cde 建立abc 的软连接&lt;br&gt;
+                    ln abc cde 建立abc的硬连接，&lt;/li&gt;
+&lt;li&gt;软链接与硬链接的区别（通俗）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;硬链接可认为是一个文件拥有两个文件名;而软链接则是系统新建一个链接文件，此文件指向其所要指的文件&lt;/p&gt;
+&lt;p&gt;ln -s /root/lntest/source/ /root/lntest/dist/&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;软链接与硬链接的区别（讲解）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Linux 软连接与硬连接&lt;/p&gt;
+&lt;p&gt;对于一个文件来说，有唯一的索引接点与之对应，而、对于一个索引接点号，却可以有多个文件名与之对应。因此，在磁盘上的同一个文件可以通过不同的路径去访问该文件。注意在Linux下是一切皆文件的啊，文件夹、新加的硬盘 &amp;hellip;都可以看着文件来处理的啊。&lt;/p&gt;
+&lt;p&gt;连接有软连接和硬连接(hard link)之分的，软连接(symbolic link)又叫符号连接。符号连接相当于Windows下的快捷方式。&lt;/p&gt;
+&lt;p&gt;不可以对文件夹建立硬连接的，我们通常用的还是软连接比较多。&lt;/p&gt;
+&lt;p&gt;eg:&lt;/p&gt;
+&lt;p&gt;ln -s source dist        # 建立软连接&lt;/p&gt;
+&lt;p&gt;ln -s /mnt/hgfs/ /home/luo/    注意后面的“/” 是将目录里所有的文件链接过去，必须加上，否则，建立的目录显示颜色异常，还不能正常访问，如cd 进不去&lt;/p&gt;
+&lt;p&gt;ln source dist            # 建立硬连接&lt;/p&gt;
+&lt;p&gt;软链接实际上只是一段文字，里面包含着它所指向的文件的名字，系统看到软链接后自动跳到对应的文件位置处进行处理；相反，硬联接为文件开设一个新的目录项，硬链接与文件原有的名字是平权的，在Linux看来它们是等价的。由于这个原因，硬链接不能连接两个不同文件系统上的文件。&lt;/p&gt;
+&lt;p&gt;（1）软连接可以 跨文件系统 ，硬连接不可以 。实践的方法就是用共享文件把windows下的 aa.txt文本文档连接到linux下/root目录 下 bb,cc . ln -s aa.txt /root/bb 连接成功 。ln aa.txt /root/bb 失败 。&lt;/p&gt;
+&lt;p&gt;（2）关于 I节点的问题 。硬连接不管有多少个，都指向的是同一个I节点，会把 结点连接数增加，只要结点的连接数不是 0，文件就一直存在，不管你删除的是源文件还是 连接的文件 。只要有一个存在 ，文件就 存在 （其实也不分什么源文件连接文件的 ，因为他们指向都是同一个 I节点）。 当你修改源文件或者连接文件任何一个的时候 ，其他的文件都会做同步的修改。软链接不直接使用i节点号作为文件指针,而是使用文件路径名作为指针。所以 删除连接文件 对源文件无影响，但是删除源文件，连接文件就会找不到要指向的文件 。软链接有自己的inode,并在磁盘上有一小片空间存放路径名.&lt;/p&gt;
+&lt;p&gt;（3）软连接可以对一个不存在的文件名进行连接 。&lt;/p&gt;
+&lt;p&gt;（4）软连接可以对目录进行连接。&lt;/p&gt;
+&lt;p&gt;备注：I节点 :它是UNIX内部用于描述文件特性的数据结构.我们通常称I节点为文件索引结点(信息结点).i节点含有关于文件的大部分的重要信息,包括文件数据块在磁盘上的地址.每一个I节点有它自己的标志号,我们称为文件顺序号.I节点包含的信息 1.文件类型 2.文件属主关系 3.文件的访问权限 4.文件的时间截.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>ubuntu22 添加用户并赋sudo权限</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/</link>
+      <pubDate>Tue, 09 Apr 2024 00:19:26 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;添加用户&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;adduser username
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;添加sudo权限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;usermod -G sudo username
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;添加root权限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo vim /etc/sudoers
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# User privilege specification  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;root &lt;span class=&#34;nv&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=(&lt;/span&gt;ALL&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; ALL  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;username &lt;span class=&#34;nv&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=(&lt;/span&gt;ALL&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; ALL  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;保存退出，username 用户就拥有了root权限。&lt;/p&gt;
+&lt;h1 id=&#34;root用户修改其他用户的密码&#34;&gt;root用户修改其他用户的密码&lt;/h1&gt;
+&lt;p&gt;在root用户下，运行passwd &lt;!-- raw HTML omitted --&gt;来重设&lt;!-- raw HTML omitted --&gt;的密码。&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Linux常用命令记录</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文主要是记录Linux下常用的命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;linux下查询当前端口占用&#34;&gt;Linux下查询当前端口占用&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;∂
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240111130947.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240111130947.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

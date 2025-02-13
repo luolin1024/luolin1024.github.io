@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>消息队列 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
+    <description>Recent content in 消息队列 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 01:36:32 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>消息队列知识</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
+      <pubDate>Wed, 06 Dec 2023 15:38:49 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
+      <description>&lt;h2 id=&#34;消息队列&#34;&gt;消息队列&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是消息队列
+&lt;ul&gt;
+&lt;li&gt;它的本质，就是个&lt;strong&gt;转发器&lt;/strong&gt;，包含&lt;strong&gt;发消息、存消息、消费消息&lt;/strong&gt;的过程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;消息队列的应用场景
+&lt;ol&gt;
+&lt;li&gt;应用解耦&lt;/li&gt;
+&lt;li&gt;流量削峰&lt;/li&gt;
+&lt;li&gt;异步处理&lt;/li&gt;
+&lt;li&gt;消息通讯&lt;/li&gt;
+&lt;li&gt;远程调用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;消息队列如何解决消息丢失问题
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;RocketMQ&lt;/strong&gt;消息中间件提供了三种发送消息的方式
+&lt;ul&gt;
+&lt;li&gt;同步发送&lt;/li&gt;
+&lt;li&gt;异步发送&lt;/li&gt;
+&lt;li&gt;单向发送&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;生产者要想发消息时保证消息不丢失，可以：
+&lt;ol&gt;
+&lt;li&gt;采用&lt;strong&gt;同步方式&lt;/strong&gt;发送，send消息方法返回&lt;strong&gt;成功&lt;/strong&gt;状态，就表示消息正常到达了存储端Broker。&lt;/li&gt;
+&lt;li&gt;如果send消息&lt;strong&gt;异常&lt;/strong&gt;或者返回&lt;strong&gt;非成功&lt;/strong&gt;状态，可以&lt;strong&gt;重试&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;可以使用事务消息，RocketMQ的事务消息机制就是为了保证零丢失来设计的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;消息队列如何保证消息的顺序性。&lt;/li&gt;
+&lt;li&gt;消息队列有可能发生重复消费吗？如何幂等处理？&lt;/li&gt;
+&lt;li&gt;如何处理消息队列的消息积压问题&lt;/li&gt;
+&lt;li&gt;消息队列技术选型，Kafka还是RocketMQ，还是RabbitMQ&lt;/li&gt;
+&lt;li&gt;消息中间件如何做到高可用？&lt;/li&gt;
+&lt;li&gt;如何保证数据一致性，事务消息如何实现&lt;/li&gt;
+&lt;li&gt;如果让你写一个消息队列，该如何进行架构设计？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;如何保证消息顺序消费&lt;/li&gt;
+&lt;li&gt;如何保证消息不重复消费&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+  </channel>
+</rss>

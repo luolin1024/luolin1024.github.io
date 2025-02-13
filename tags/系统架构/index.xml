@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>系统架构 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/</link>
+    <description>Recent content in 系统架构 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:48:14 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RestFul风格API</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/restful%E9%A3%8E%E6%A0%BCapi/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/restful%E9%A3%8E%E6%A0%BCapi/</guid>
+      <description>&lt;h3 id=&#34;restful是什么&#34;&gt;RestFul是什么？&lt;/h3&gt;
+&lt;p&gt;REST是&lt;strong&gt;REpresentational State Transfer&lt;/strong&gt;的缩写（表述性状态转移），REST是一种体系结构。简单的说，REST就是将资源的状态以合适客户端或服务端的形式从服务端转移到客户端（或者反过来）。在REST中，资源通过 &lt;strong&gt;URL&lt;/strong&gt; 进行识别和定位，然后通过不同的 &lt;strong&gt;action（既HTTP方法，GET等）&lt;/strong&gt; 来定义REST应该完成的功能。&lt;/p&gt;
+&lt;p&gt;在实际的web开发中，CRUD动作与HTTP方法的匹配一般如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;CRUD动作&lt;/th&gt;
+&lt;th&gt;HTTP方法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Create&lt;/td&gt;
+&lt;td&gt;POST&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Read&lt;/td&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Update&lt;/td&gt;
+&lt;td&gt;PUT或PATCH&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Delete&lt;/td&gt;
+&lt;td&gt;DELETE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;上述匹配不是绝对的，可以根据需要进行改动，但一般情况这样写比较好。&lt;/p&gt;
+&lt;p&gt;在使用RESTful风格之前，如果想要增加一条商品数据，通常写法是这样的：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addCategory&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xxx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但是使用RESTful之后，就会变成这样：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;category&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;请求方式为&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;POST&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;即可&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这就是使用同一个URL，但是通过约定不同的HTTP方法对应不同的CRUD动作来实现不同的业务。&lt;/p&gt;
+&lt;p&gt;下面再写一个具体的RESTful的API实现：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;请求类型&lt;/th&gt;
+&lt;th&gt;URL&lt;/th&gt;
+&lt;th&gt;功能说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;/users&lt;/td&gt;
+&lt;td&gt;查询用户列表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POST&lt;/td&gt;
+&lt;td&gt;/users&lt;/td&gt;
+&lt;td&gt;创建一个用户&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;/user/id&lt;/td&gt;
+&lt;td&gt;根据id查询一个用户的数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PUT&lt;/td&gt;
+&lt;td&gt;/user/id&lt;/td&gt;
+&lt;td&gt;根据id更新一个用户的数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DELETE&lt;/td&gt;
+&lt;td&gt;/user/id&lt;/td&gt;
+&lt;td&gt;根据id删除一个用户数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+  </channel>
+</rss>

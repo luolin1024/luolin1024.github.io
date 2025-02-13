@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>面试 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E9%9D%A2%E8%AF%95/</link>
+    <description>Recent content in 面试 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Mar 2024 01:36:32 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring知识</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/spring/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/spring/</guid>
+      <description>&lt;h2 id=&#34;spring&#34;&gt;Spring&lt;/h2&gt;
+&lt;h3 id=&#34;ioc与di&#34;&gt;IOC与DI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;IOC：在Spring框架中实现控制反转的是Spring IoC容器，其具体就是由容器来控制对象的生命周期和业务对象之间的依赖关系，而不是像传统方式(new 对象)中由代码来直接控制。&lt;/li&gt;
+&lt;li&gt;DI，依赖注入；IoC和DI其实是同一个概念，只是从不同的角度描述罢了(IoC是一种思想，而DI则是一种具体的技术实现手段)。
+&lt;ul&gt;
+&lt;li&gt;构造函数注入&lt;/li&gt;
+&lt;li&gt;set方法注入&lt;/li&gt;
+&lt;li&gt;注解注入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;优点
+&lt;ul&gt;
+&lt;li&gt;第一，资源集中管理，实现资源的可配置和易管理&lt;/li&gt;
+&lt;li&gt;第二，降低了使用资源双方的依赖程度，也就是我们说的耦合度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;aop&#34;&gt;AOP&lt;/h3&gt;
+&lt;p&gt;[[Spring中利用AOP使用自定义注解]]
+[[Spring AOP注解常见问题]]&lt;/p&gt;
+&lt;h3 id=&#34;bean&#34;&gt;Bean&lt;/h3&gt;
+&lt;h4 id=&#34;bean的作用域&#34;&gt;Bean的作用域&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;- singleton : 唯一 bean 实例，Spring 中的 bean 默认都是单例的，对单例设计模式的应用。
+	- 单例 bean 的线程安全问题
+	- 单例 bean 存在线程问题，主要是因为当多个线程操作同一个对象的时候是存在资源竞争的。
+- prototype : 每次请求都会创建一个新的 bean 实例。
+- request : 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP request 内有效。
+- session : 每一次来自新 session 的 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP session 内有效。
+- global-session ： 全局 session 作用域，仅仅在基于 portlet 的 web 应用中才有意义，Spring5 已经没有了。Portlet 是能够生成语义代码(例如：HTML)片段的小型 Java Web 插件。它们基于 portlet 容器，可以像 servlet 一样处理 HTTP 请求。但是，与 servlet 不同，每个 portlet 都有不同的会话。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;bean的生命周期4个阶段&#34;&gt;Bean的生命周期（4个阶段）&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;实例化
+&lt;ol&gt;
+&lt;li&gt;Bean 容器找到配置文件中 Spring Bean 的定义。&lt;/li&gt;
+&lt;li&gt;实例化一个 bean 对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;属性赋值
+&lt;ol&gt;
+&lt;li&gt;为 bean 设置相关属性和依赖&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;初始化
+&lt;ol&gt;
+&lt;li&gt;初始化前
+&lt;ol&gt;
+&lt;li&gt;检查Aware相关接口并设置相关依赖【扩展点】&lt;/li&gt;
+&lt;li&gt;BeanPostProcessor前置处理【扩展点】&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;初始化
+&lt;ol&gt;
+&lt;li&gt;是否实现InitializingBean接口【扩展点】&lt;/li&gt;
+&lt;li&gt;BeanPostProcessor前置处理后置处理【扩展点】&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;销毁
+&lt;ol&gt;
+&lt;li&gt;注册 Destruction相关回调接口【扩展点】&lt;/li&gt;
+&lt;li&gt;使用中&lt;/li&gt;
+&lt;li&gt;是否实现了 DisposableBean 接口，执行 destroy() 方法。【扩展点】&lt;/li&gt;
+&lt;li&gt;如果 Bean 在配置文件中的定义包含 destroy-method 属性，执行指定的方法。
+扩展点：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Aware 接口&lt;/li&gt;
+&lt;li&gt;BeanPostProcessor 是 Spring 为&lt;strong&gt;修改 bean&lt;/strong&gt;提供的强大扩展点，其可作用于容器中所有 bean，初始化&lt;/li&gt;
+&lt;li&gt;InitializingBean 和 init-method 是 Spring 为 &lt;strong&gt;bean 初始化&lt;/strong&gt;提供的扩展点。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结一下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;4个大的阶段：实例化、属性赋值、初始化、销毁&lt;/li&gt;
+&lt;li&gt;初始化的具体操作，有Aware接口的依赖注入、BeanPostProcessor在初始化前后的处理以及InitializingBean和init-method 的初始化操作&lt;/li&gt;
+&lt;li&gt;销毁的具体操作，有注册销毁回调接口，最后通过 DisposableBean和 destroy-method 实现销毁&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;spring启动流程&#34;&gt;Spring启动流程&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;初始化Spring容器，注册内置的BeanPostProcessor的BeanDefinition到容器中
+&lt;ol&gt;
+&lt;li&gt;实例化BeanFactory【DefaultListableBeanFactory】工厂，用于生成Bean对象&lt;/li&gt;
+&lt;li&gt;实例化BeanDefinitionReader注解配置读取器，用于对特定注解（如@Service、@Repository）的类进行读取转化成 BeanDefinition 对象，（BeanDefinition 是 Spring 中极其重要的一个概念，它存储了 bean 对象的所有特征信息，如是否单例，是否懒加载，factoryBeanName 等）&lt;/li&gt;
+&lt;li&gt;实例化ClassPathBeanDefinitionScanner路径扫描器，用于对指定的包目录进行扫描查找 bean 对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;将配置类的BeanDefinition注册到容器中&lt;/li&gt;
+&lt;li&gt;调用refresh()方法刷新容器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;springmvc&#34;&gt;SpringMVC&lt;/h3&gt;
+&lt;h3 id=&#34;spring事务&#34;&gt;Spring事务&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring 管理事务的方式
+&lt;ul&gt;
+&lt;li&gt;编程式事务
+&lt;ul&gt;
+&lt;li&gt;在代码中硬编码(不推荐使用) : 通过 TransactionTemplate或者 TransactionManager 手动管理事务，实际应用中很少使用，但是对于你理解 Spring 事务管理原理有帮助。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;声明式事务
+&lt;ul&gt;
+&lt;li&gt;在 XML 配置文件中配置或者直接基于注解（推荐使用） : 实际是通过 AOP 实现（基于@Transactional 的全注解方式使用最多）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;事务传播行为&#34;&gt;事务传播行为&lt;/h4&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20230906161905.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20230906161905.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Spring是什么？&lt;/li&gt;
+&lt;li&gt;谈谈你对AOP的理解
+&lt;ol&gt;
+&lt;li&gt;面向切面编程&lt;/li&gt;
+&lt;li&gt;JDK动态代理&lt;/li&gt;
+&lt;li&gt;CGLib动态代理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;谈谈你对IOC的理解
+&lt;ol&gt;
+&lt;li&gt;控制反转&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简单理解&lt;/strong&gt;：传统开发中，我们在对象内部通过new关键字，创建依赖的对象，我们主动控制依赖的对象；而IoC有专门一个容器来创建依赖对象，对象内部只是被动的接受这些依赖的对象。上面就解释了“控制反转”：依赖对象的获取给反转了。之前，依赖对象由对象内部主动创建获取，现在，依赖对象由容器创建，对象从容器中获取依赖对象。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;解释下Spring支持的几种bean的作用域
+&lt;ol&gt;
+&lt;li&gt;5种作用域&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;spring事务的实现方式和原理以及隔离级别？
+&lt;ol&gt;
+&lt;li&gt;AOP，4个隔离级别，RU、RC、RR、串行&lt;/li&gt;
+&lt;li&gt;三个问题：
+&lt;ol&gt;
+&lt;li&gt;幻读：&lt;/li&gt;
+&lt;li&gt;脏读：&lt;/li&gt;
+&lt;li&gt;不可重复读&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring事务传播机制&lt;/li&gt;
+&lt;li&gt;Spring事务什么时候会失效？&lt;/li&gt;
+&lt;li&gt;什么是bean的自动装配，有哪些方式？&lt;/li&gt;
+&lt;li&gt;Spring中的Bean创建的生命周期有哪些步骤&lt;/li&gt;
+&lt;li&gt;Spring中Bean是线程安全的吗
+&lt;ol&gt;
+&lt;li&gt;不是线程安全的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;ApplicationContext和BeanFactory有什么区别&lt;/li&gt;
+&lt;li&gt;Spring中的事务是如何实现的
+&lt;ol&gt;
+&lt;li&gt;AOP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring中什么时候@Transactional会失效&lt;/li&gt;
+&lt;li&gt;Spring容器启动流程是怎样的&lt;/li&gt;
+&lt;li&gt;Spring用到了哪些设计模式
+&lt;ol&gt;
+&lt;li&gt;工厂设计模式：BeanFactory、ApplicationContext&lt;/li&gt;
+&lt;li&gt;单例模式&lt;/li&gt;
+&lt;li&gt;代理设计模式&lt;/li&gt;
+&lt;li&gt;模板方法：jdbcTemplate、hibernateTemplate&lt;/li&gt;
+&lt;li&gt;观察者模式：ApplicationEvent，ApplicationListener&lt;/li&gt;
+&lt;li&gt;适配器模式：Spring AOP 的增强或通知(Advice)使用到了适配器模式、SpringMVC中的Controller&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Spring Boot、 Spring MVC 和 Spring 有什么区别&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>缓存知识</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/%E7%BC%93%E5%AD%98/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/%E7%BC%93%E5%AD%98/</guid>
+      <description>&lt;h2 id=&#34;缓存&#34;&gt;缓存&lt;/h2&gt;
+&lt;h3 id=&#34;java本地缓存&#34;&gt;Java本地缓存&lt;/h3&gt;
+&lt;p&gt;[[Java本地缓存]]&lt;/p&gt;
+&lt;h3 id=&#34;redis&#34;&gt;Redis&lt;/h3&gt;
+&lt;p&gt;[[redis实现分布式锁——setnx]]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;什么是RDB和AOF&lt;/li&gt;
+&lt;li&gt;Redis的过期键的删除策暖&lt;/li&gt;
+&lt;li&gt;Redis线程模型、单线程快的原因&lt;/li&gt;
+&lt;li&gt;简述Redis事务实现&lt;/li&gt;
+&lt;li&gt;Redis 主从复制的核心原理&lt;/li&gt;
+&lt;li&gt;Redis有哪些数据结构？分别有哪些典型的应用场景？&lt;/li&gt;
+&lt;li&gt;Redis分布式锁底层是如何实现的？&lt;/li&gt;
+&lt;li&gt;Redis主从复制的核心原理&lt;/li&gt;
+&lt;li&gt;Redis集群策略&lt;/li&gt;
+&lt;li&gt;缓存穿透、缓存击穿、缓存雪崩分别是什么&lt;/li&gt;
+&lt;li&gt;Redis和Mysql如何保证数据一致&lt;/li&gt;
+&lt;li&gt;Redis的持久化机制&lt;/li&gt;
+&lt;li&gt;Redis单线程为什么这么快&lt;/li&gt;
+&lt;li&gt;简述Redis事务实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;如何保证缓存和数据库数据的一致性&#34;&gt;如何保证缓存和数据库数据的一致性&lt;/h3&gt;
+&lt;p&gt;[[数据库与缓存双写一致性方案解析]]&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>消息队列知识</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
+      <pubDate>Wed, 06 Dec 2023 15:38:49 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
+      <description>&lt;h2 id=&#34;消息队列&#34;&gt;消息队列&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是消息队列
+&lt;ul&gt;
+&lt;li&gt;它的本质，就是个&lt;strong&gt;转发器&lt;/strong&gt;，包含&lt;strong&gt;发消息、存消息、消费消息&lt;/strong&gt;的过程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;消息队列的应用场景
+&lt;ol&gt;
+&lt;li&gt;应用解耦&lt;/li&gt;
+&lt;li&gt;流量削峰&lt;/li&gt;
+&lt;li&gt;异步处理&lt;/li&gt;
+&lt;li&gt;消息通讯&lt;/li&gt;
+&lt;li&gt;远程调用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;消息队列如何解决消息丢失问题
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;RocketMQ&lt;/strong&gt;消息中间件提供了三种发送消息的方式
+&lt;ul&gt;
+&lt;li&gt;同步发送&lt;/li&gt;
+&lt;li&gt;异步发送&lt;/li&gt;
+&lt;li&gt;单向发送&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;生产者要想发消息时保证消息不丢失，可以：
+&lt;ol&gt;
+&lt;li&gt;采用&lt;strong&gt;同步方式&lt;/strong&gt;发送，send消息方法返回&lt;strong&gt;成功&lt;/strong&gt;状态，就表示消息正常到达了存储端Broker。&lt;/li&gt;
+&lt;li&gt;如果send消息&lt;strong&gt;异常&lt;/strong&gt;或者返回&lt;strong&gt;非成功&lt;/strong&gt;状态，可以&lt;strong&gt;重试&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;可以使用事务消息，RocketMQ的事务消息机制就是为了保证零丢失来设计的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;消息队列如何保证消息的顺序性。&lt;/li&gt;
+&lt;li&gt;消息队列有可能发生重复消费吗？如何幂等处理？&lt;/li&gt;
+&lt;li&gt;如何处理消息队列的消息积压问题&lt;/li&gt;
+&lt;li&gt;消息队列技术选型，Kafka还是RocketMQ，还是RabbitMQ&lt;/li&gt;
+&lt;li&gt;消息中间件如何做到高可用？&lt;/li&gt;
+&lt;li&gt;如何保证数据一致性，事务消息如何实现&lt;/li&gt;
+&lt;li&gt;如果让你写一个消息队列，该如何进行架构设计？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;如何保证消息顺序消费&lt;/li&gt;
+&lt;li&gt;如何保证消息不重复消费&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>MyBatis知识</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/mybatis/</link>
+      <pubDate>Wed, 06 Dec 2023 15:38:32 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/mybatis/</guid>
+      <description>&lt;h2 id=&#34;mybatis&#34;&gt;Mybatis&lt;/h2&gt;
+&lt;h3 id=&#34;拦截器&#34;&gt;拦截器&lt;/h3&gt;
+&lt;p&gt;$和#&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Mysql知识</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/mysql/</link>
+      <pubDate>Wed, 06 Dec 2023 15:24:59 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/mysql/</guid>
+      <description>&lt;h2 id=&#34;mysql&#34;&gt;Mysql&lt;/h2&gt;
+&lt;h3 id=&#34;事务&#34;&gt;事务&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;事务的特性ACID&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;隔离级别&#34;&gt;隔离级别&lt;/h3&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20230906160920.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20230906160920.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;产生死锁的四个必要条件&#34;&gt;产生死锁的四个必要条件：&lt;/h3&gt;
+&lt;p&gt;（1） 互斥条件：一个资源每次只能被一个进程使用。
+（2） 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。
+（3） 不剥夺条件:进程已获得的资源，在末使用完之前，不能强行剥夺。
+（4） 循环等待条件:若干进程之间形成一种头尾相接的循环等待资源关系。&lt;/p&gt;
+&lt;h3 id=&#34;索引&#34;&gt;索引&lt;/h3&gt;
+&lt;h4 id=&#34;索引的类别&#34;&gt;索引的类别&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Primary Key（聚集索引）&lt;/strong&gt;：InnoDB存储引擎的表会存在主键（唯一非null），如果建表的时候没有指定主键，则会使用第一非空的唯一索引作为聚集索引，否则InnoDB会自动帮你创建一个不可见的、长度为6字节的row_id用来作为聚集索引。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单列索引&lt;/strong&gt;：单列索引即一个索引只包含单个列&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;组合索引&lt;/strong&gt;：组合索引指在表的多个字段组合上创建的索引，只有在查询条件中使用了这些字段的左边字段时，索引才会被使用。使用组合索引时&lt;strong&gt;遵循最左前缀集合&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unique（唯一索引）&lt;/strong&gt;：索引列的值必须唯一，但允许有空值。若是组合索引，则列值的组合必须唯一。主键索引是一种特殊的唯一索引，不允许有空值&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key（普通索引）&lt;/strong&gt;：是MySQL中的基本索引类型，允许在定义索引的列中插入重复值和空值&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FULLTEXT（全文索引）&lt;/strong&gt;：全文索引类型为FULLTEXT，在定义索引的列上支持值的全文查找，允许在这些索引列中插入重复值和空值。全文索引可以在CHAR、VARCHAR或者TEXT类型的列上创建&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SPATIAL（空间索引）&lt;/strong&gt;：空间索引是对空间数据类型的字段建立的索引，MySQL中的空间数据类型有4种，分别是GEOMETRY、POINT、LINESTRING和POLYGON。MySQL使用SPATIAL关键字进行扩展，使得能够用于创建正规索引类似的语法创建空间索引。创建空间索引的列必须声明为NOT NULL&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;索引的优缺点&#34;&gt;索引的优缺点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;优点
+&lt;ul&gt;
+&lt;li&gt;使用索引可以大大加快 数据的检索速度（大大减少检索的数据量）, 这也是创建索引的最主要的原因。&lt;/li&gt;
+&lt;li&gt;通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;缺点
+&lt;ul&gt;
+&lt;li&gt;创建索引和维护索引需要耗费许多时间。当对表中的数据进行增删改的时候，如果数据有索引，那么索引也需要动态的修改，会降低 SQL 执行效率。&lt;/li&gt;
+&lt;li&gt;索引需要使用物理文件存储，也会耗费一定空间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;索引的底层数据结构&#34;&gt;索引的底层数据结构&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hash表
+&lt;ul&gt;
+&lt;li&gt;通过键(key)即可快速取出对应的值(value)，因此哈希表可以快速检索数据（接近 O（1））。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;B+树
+&lt;ul&gt;
+&lt;li&gt;多路平衡查找树 ，B+ 树是 B 树的一种变体。B 树和 B+树中的 B 是 Balanced （平衡）的意思。&lt;/li&gt;
+&lt;li&gt;B 树&amp;amp; B+树两者有何异同呢？
+&lt;ul&gt;
+&lt;li&gt;B 树的所有节点既存放键(key) 也存放 数据(data)，而 B+树只有叶子节点存放 key 和 data，其他内节点只存放 key。&lt;/li&gt;
+&lt;li&gt;B 树的叶子节点都是独立的;B+树的叶子节点有一条引用链指向与它相邻的叶子节点。&lt;/li&gt;
+&lt;li&gt;B 树的检索的过程相当于对范围内的每个节点的关键字做二分查找，可能还没有到达叶子节点，检索就结束了。而 B+树的检索效率就很稳定了，任何查找都是从根节点到叶子节点的过程，叶子节点的顺序检索很明显。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;性能优化&#34;&gt;性能优化&lt;/h4&gt;
+&lt;p&gt;执行计划&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;查询的序列标识符；&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;越大的越先执行，相同&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;大小时从上到下执行&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;select_type&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;关键字对应的查询类型；&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;用到的表名&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;partitions&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;匹配的分区，对于未分区的表，值为&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;表的访问方法；描述了查询是如何执行的。所有值的顺序从最优到最差排序为：&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;const&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;eq_ref&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ref&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fulltext&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ref_or_null&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;index_merge&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unique_subquery&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;index_subquery&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;possible_keys&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;可能用到的索引；&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MySQL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;执行查询时可能用到的索引。如果这一列为&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，则表示没有可能用到的索引&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;实际用到的索引；列表示&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MySQL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;实际使用到的索引。如果为&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，则表示未用到索引。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key_len&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;所选索引的长度&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ref&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;当使用索引等值查询时，与索引作比较的列或常量；&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;rows&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;预计要读取的行数；数值越小越好。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filtered&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;按表条件过滤后，留存的记录数的百分比；一般越高越好&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Extra&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;附加信息；&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Using&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filesort&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：在排序时使用了外部的索引排序，没有用到表内索引进行排序。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Using&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;temporary&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MySQL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;需要创建临时表来存储查询的结果，常见于&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ORDER&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;BY&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;和&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;GROUP&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;BY&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Using&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：表明查询使用了覆盖索引，不用回表，查询效率非常高。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Using&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;condition&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：表示查询优化器选择使用了索引条件下推这个特性。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Using&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：表明查询使用了&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;子句进行条件过滤。一般在没有使用到索引的时候会出现。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Using&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buffer&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Block&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Nested&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Loop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：连表查询的方式，表示当被驱动表的没有使用索引的时候，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MySQL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;会先将驱动表读出来放到&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;buffer&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;中，再遍历被驱动表与驱动表进行查询。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;当&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Extra&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;列包含&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Using&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filesort&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;或&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Using&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;temporary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;时，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MySQL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;的性能可能会存在问题，需要尽可能避免。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;行锁表锁&#34;&gt;行锁&amp;amp;表锁&lt;/h3&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20230906161628.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20230906161628.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;mysql三大日志binlogredo-log和undo-log&#34;&gt;MySQL三大日志(binlog、redo log和undo log)&lt;/h3&gt;
+&lt;h3 id=&#34;mysql-mvcc&#34;&gt;MySql Mvcc&lt;/h3&gt;
+&lt;p&gt;MVCC的机制？
+MVCC怎么解决幻读问题的？
+临键锁的范围是怎么确定的？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;索引的基本原理&lt;/li&gt;
+&lt;li&gt;Mysql聚簇和非聚簇索引的区别&lt;/li&gt;
+&lt;li&gt;Mysql索引的数据结构，各自优劣&lt;/li&gt;
+&lt;li&gt;索引设计的原则？&lt;/li&gt;
+&lt;li&gt;InnoDB存储引擎的锁的算法&lt;/li&gt;
+&lt;li&gt;关心过业务系统里面的sql耗时吗？统计过慢查询吗？对慢查询都怎&lt;/li&gt;
+&lt;li&gt;么优化过？&lt;/li&gt;
+&lt;li&gt;事务的基本特性和隔离级别&lt;/li&gt;
+&lt;li&gt;什么是MVCC&lt;/li&gt;
+&lt;li&gt;分表后非sharding key的查询怎么处理，分表后的排序？&lt;/li&gt;
+&lt;li&gt;Mysql主从同步原理&lt;/li&gt;
+&lt;li&gt;简述MyISAM和InnoDB的区别&lt;/li&gt;
+&lt;li&gt;简述Mysql中索引类型及对数据库的性能的影响&lt;/li&gt;
+&lt;li&gt;Explain语句结果中各个字段分表表示什么&lt;/li&gt;
+&lt;li&gt;索引覆盖是什么&lt;/li&gt;
+&lt;li&gt;最左前缀原则是什么&lt;/li&gt;
+&lt;li&gt;Innodb是如何实现事务的&lt;/li&gt;
+&lt;li&gt;B树和B+树的区别，为什么Mysql使用B+树&lt;/li&gt;
+&lt;li&gt;Mysql锁有哪些，如何理解&lt;/li&gt;
+&lt;li&gt;Mysql慢查询该如何优化？&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    <item>
+      <title>Java知识</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/java/</link>
+      <pubDate>Wed, 06 Dec 2023 15:24:18 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E9%9D%A2%E8%AF%95/java/</guid>
+      <description>&lt;h2 id=&#34;java基础&#34;&gt;Java基础&lt;/h2&gt;
+&lt;h3 id=&#34;java中的基本类型都有哪些&#34;&gt;Java中的基本类型都有哪些&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数字类型
+&lt;ul&gt;
+&lt;li&gt;4 种整数型：byte、short、int、long，int:4个字节&lt;/li&gt;
+&lt;li&gt;2 种浮点型：float、double&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;字符类型
+&lt;ul&gt;
+&lt;li&gt;char：2个字节&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;布尔型
+&lt;ul&gt;
+&lt;li&gt;boolean&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;包装类型
+&lt;ul&gt;
+&lt;li&gt;常量池技术&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;自动装箱与拆箱
+&lt;ul&gt;
+&lt;li&gt;装箱：将基本类型用它们对应的引用类型包装起来；&lt;/li&gt;
+&lt;li&gt;拆箱：将包装类型转换为基本数据类型；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-和-的区别&#34;&gt;&amp;amp; 和&amp;amp;&amp;amp; 的区别&lt;/h3&gt;
+&lt;p&gt;&amp;amp;：按位与
+&amp;amp;&amp;amp;：与&lt;/p&gt;
+&lt;h3 id=&#34;面向对象三大特征&#34;&gt;面向对象三大特征&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;封装&lt;/li&gt;
+&lt;li&gt;继承&lt;/li&gt;
+&lt;li&gt;多态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;值传递引用传递&#34;&gt;值传递&amp;amp;引用传递&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[[Java传参机制]]&lt;/li&gt;
+&lt;li&gt;[[Java浅拷贝和深拷贝]]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;object&#34;&gt;Object&lt;/h3&gt;
+&lt;h3 id=&#34;hashcode-与--equals与-这三者的区别&#34;&gt;hashCode() 与  equals()与== 这三者的区别&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;== : 它的作用是判断两个对象的地址是不是相等。即，判断两个对象是不是同一个对象。&lt;/li&gt;
+&lt;li&gt;equals() : 它的作用也是判断两个对象是否相等。但它一般有两种使用情况：
+&lt;ul&gt;
+&lt;li&gt;情况1，类没有覆盖equals()方法。则通过equals()比较该类的两个对象时，等价于通过“ == ”比较这两个对象。&lt;/li&gt;
+&lt;li&gt;情况2，类覆盖了equals()方法。一般，我们都覆盖equals()方法来两个对象的内容相等；若它们的内容相等，则返回true(即，认为这两个对象相等)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;hashCode() 的作用是获取哈希码，hashCode() 在散列表中才有用，在其它情况下没用。&lt;/li&gt;
+&lt;li&gt;为什么重写 equals() 时必须重写 hashCode() 方法？
+&lt;ul&gt;
+&lt;li&gt;因为两个相等的对象的 hashCode 值必须是相等。也就是说如果 equals 方法判断两个对象是相等的，那这两个对象的 hashCode 值也要相等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;如果重写 equals() 时没有重写 hashCode() 方法的话就可能会导致 equals 方法判断是相等的两个对象，hashCode 值却不相等。&lt;/li&gt;
+&lt;li&gt;重写 equals() 时没有重写 hashCode() 方法的话，使用 HashMap 可能会出现什么问题?
+&lt;ul&gt;
+&lt;li&gt;hashCode() 在散列表中才有用，在其它情况下没用。&lt;/li&gt;
+&lt;li&gt;散列表，指的是：Java集合中本质是散列表的类，如HashMap，Hashtable，HashSet。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;重载和重写&#34;&gt;重载和重写&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;重载：同名方法不同参数数量&lt;/li&gt;
+&lt;li&gt;重写：子类重写父类的同名方法，目的：提高扩展性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;泛型&#34;&gt;泛型&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;泛型中extends和super的区别&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;stringstringbufferstringbuilder&#34;&gt;String、StringBuffer、StringBuilder&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;String 为什么是不可变的?
+&lt;ul&gt;
+&lt;li&gt;保存字符串的数组被 final 修饰且为私有的，并且String 类没有提供/暴露修改这个字符串的方法。&lt;/li&gt;
+&lt;li&gt;String 类被 final 修饰导致其不能被继承，进而避免了子类破坏 String 不可变。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;线程安全性
+&lt;ul&gt;
+&lt;li&gt;String 线程安全&lt;/li&gt;
+&lt;li&gt;StringBufffer线程安全&lt;/li&gt;
+&lt;li&gt;StringBuilder非线程安全&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;性能
+&lt;ul&gt;
+&lt;li&gt;每次对 String 类型进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象。StringBuffer 每次都会对 StringBuffer 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 StringBuilder 相比使用 StringBuffer 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。&lt;/li&gt;
+&lt;li&gt;操作少量的数据: 适用 String
+单线程操作字符串缓冲区下操作大量数据: 适用 StringBuilder
+多线程操作字符串缓冲区下操作大量数据: 适用 StringBuffer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;参数&#34;&gt;参数&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;可变长参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;泛型-1&#34;&gt;泛型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;泛型类、泛型接口、泛型方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;反射&#34;&gt;反射&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;优点
+&lt;ul&gt;
+&lt;li&gt;可以让咱们的代码更加灵活、为各种框架提供开箱即用的功能提供了便利&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;缺点
+&lt;ul&gt;
+&lt;li&gt;让我们在运行时有了分析操作类的能力，这同样也增加了安全问题。比如可以无视泛型参数的安全检查（泛型参数的安全检查发生在编译时）。另外，反射的性能也要稍差点，不过，对于框架来说实际是影响不大的。&lt;/li&gt;
+&lt;li&gt;代码可读性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;应用场景
+&lt;ul&gt;
+&lt;li&gt;框架中以及动态代理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;注解&#34;&gt;注解&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;编译期直接扫描&lt;/li&gt;
+&lt;li&gt;运行期通过反射处理&lt;/li&gt;
+&lt;li&gt;自定义注解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;异常&#34;&gt;异常&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Throwable&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Error&lt;/li&gt;
+&lt;li&gt;Exception&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;try-catch-finally&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;finally 中的代码一定会执行吗
+&lt;ul&gt;
+&lt;li&gt;不一定的！在某些情况下，finally 中的代码不会被执行。
+就比如说 finally 之前虚拟机被终止运行的话，finally 中的代码就不会被执行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;oom&#34;&gt;OOM&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;jstack&lt;/li&gt;
+&lt;li&gt;heap&lt;/li&gt;
+&lt;li&gt;dump&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;io&#34;&gt;I/O&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;序列化&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将数据结构或对象转换成二进制字节流的过程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;反序列化&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将在序列化过程中所生成的二进制字节流转换成数据结构或者对象的过程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Java 序列化中如果有些字段不想进行序列化，怎么办？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于不想进行序列化的变量，使用 transient 关键字修饰。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;字节流,为什么还要有字符流?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不管是文件读写还是网络发送接收，信息的最小存储单元都是字节，那为什么 I/O 流操作要分为字节流操作和字符流操作呢？
+&lt;ul&gt;
+&lt;li&gt;字符流是由 Java 虚拟机将字节转换得到的，问题就出在这个过程还算是非常耗时，并且，如果我们不知道编码类型就很容易出现乱码问题。所以， I/O 流就干脆提供了一个直接操作字符的接口，方便我们平时对字符进行流操作。如果音频文件、图片等媒体文件用字节流比较好，如果涉及到字符的话使用字符流比较好。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;stream&#34;&gt;Stream&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;函数式接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;集合类&#34;&gt;集合类&lt;/h2&gt;
+&lt;h3 id=&#34;list&#34;&gt;List&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ArrayList&lt;/li&gt;
+&lt;li&gt;LinkedLst&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;hashtable&#34;&gt;HashTable&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;hashmap和hashtable的区别
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h2 id=&#34;哈希计算方法不同&#34;&gt;哈希计算方法不同&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;HashMap计算hash对key的hashcode进行了二次hash，以获得更好的散列值，然后对table数组长度取模。&lt;/li&gt;
+&lt;li&gt;Hashtable计算hash是直接使用key的hashcode对table数组的长度直接进行取模。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;负载因子：0.75&lt;/li&gt;
+&lt;li&gt;尽量不使用，推荐使用ConcurrentHashMap&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;map&#34;&gt;Map&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HashMap
+&lt;ul&gt;
+&lt;li&gt;重写equals不重写hashCode会怎样？&lt;/li&gt;
+&lt;li&gt;HashMap如何实现线程安全？
+&lt;ul&gt;
+&lt;li&gt;HashMap本身底层是非线程安全的，在多线程条件下，容易导致死循环，具体表现为CPU使用率100%。实现线程安全方法
+&lt;ol&gt;
+&lt;li&gt;使用 java.util.Hashtable 类，此类是线程安全的。【通过方法上添加synchronized实现线程安全，建议使用ConcurrentHashMap】&lt;/li&gt;
+&lt;li&gt;使用 java.util.concurrent.ConcurrentHashMap，此类是线程安全的。【put元素时使用synchronized关键字修饰】&lt;/li&gt;
+&lt;li&gt;使用 java.util.Collections.synchronizedMap() 方法包装 HashMap object，得到线程安全的Map，并在此Map上进行操作。【方法返回SynchronizedMap】&lt;/li&gt;
+&lt;li&gt;自己在程序的关键方法或者代码段加锁，保证安全性，当然这是严重的不推荐。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ConcurrentHashMap
+&lt;ol&gt;
+&lt;li&gt;ConcurrentHashMap与HashMap的区别
+&lt;ol&gt;
+&lt;li&gt;基本概念不同；ConcurrentHashMap是一个支持高并发更新与查询的哈希表；而HashMap是基于哈希表的Map接口的实现。&lt;/li&gt;
+&lt;li&gt;底层数据结构不同；HashMap的底层数据结构主要是：数组+链表，确切的说是由链表为元素的数组。ConcurrentHashMap的底层数据结构是：Segments数组+HashEntry数组+链表。ConcurrentHashMap是线程安全的数组，它采用分段锁保证安全性。容器中有多把锁，每一把锁锁一段数据，这样在多线程访问时不同段的数据时，就不会存在锁竞争了，这样便可以有效地提高并发效率。而HashMap不是线程安全，没有锁机制，在多线程环境下会导致数据覆盖之类的问题，所以在多线程中使用HashMap是会抛出异常的。&lt;/li&gt;
+&lt;li&gt;线程安全属性不同；&lt;/li&gt;
+&lt;li&gt;对整个桶数组的处理方式不同。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;谈谈ConcurrentHashMap的扩容机制&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;java-并发&#34;&gt;Java 并发&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;线程的生命周期？线程有几种状态&lt;/li&gt;
+&lt;li&gt;Java里面synchronized锁的底层实现原理？
+&lt;ol&gt;
+&lt;li&gt;对象锁[[synchronized 实现原理]]&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;介绍一下悲观锁、乐观锁、自旋锁，适用场景？
+&lt;ol&gt;
+&lt;li&gt;对于传统的重量级锁（synchronized）提供一系列优化操作——自旋与自适应自旋（Adaptive Spinning）、锁消除（Lock Elimination）、锁粗化（Lock Coarsening）、轻量级锁（Lightweight Locking）和偏向锁（Biased Locking）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;sleep()、 wait()、 join()、 yielo()红超间的的区别&lt;/li&gt;
+&lt;li&gt;对线程安全的理解
+&lt;ol&gt;
+&lt;li&gt;线程安全可以理解为内存安全，堆是内存共享，可以被所有的内存访问。 当多个线程访问同一个对象时，如果不进行额外的同步控制或者其他的协调操作，调用这个对象的行为都可以获得正确的结果，我们就说这个对象是线程安全的。&lt;/li&gt;
+&lt;li&gt;为什么出现现场不安全？
+&lt;ol&gt;
+&lt;li&gt;其中一个线程修改了堆内存区域的对象属性，或者某个值，导致其他线程拿到错误的对象属性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Thread和Runable的区别&lt;/li&gt;
+&lt;li&gt;对守护线程的理解&lt;/li&gt;
+&lt;li&gt;ThreadLocal的底层原理
+&lt;ol&gt;
+&lt;li&gt;每个&lt;code&gt;Thread&lt;/code&gt;都维护自己的一个&lt;code&gt;ThreadLocalMap&lt;/code&gt; ，所以是线程隔离的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;并发、并行、串行之间的区别&lt;/li&gt;
+&lt;li&gt;Java死锁如何避免？
+&lt;ol&gt;
+&lt;li&gt;死锁的四个必要不充分条件
+&lt;ol&gt;
+&lt;li&gt;禁止抢占&lt;/li&gt;
+&lt;li&gt;持有和等待&lt;/li&gt;
+&lt;li&gt;互斥&lt;/li&gt;
+&lt;li&gt;循环等待&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;如何理解volatile关键字&lt;/li&gt;
+&lt;li&gt;为什么用线程池？解释下线程池参数？（7个线程池参数）
+&lt;ol&gt;
+&lt;li&gt;corePoolSize：核心线程数。&lt;/li&gt;
+&lt;li&gt;maximumPoolSize：最大线程数。&lt;/li&gt;
+&lt;li&gt;keepAliveTime：空闲线程存活时间。&lt;/li&gt;
+&lt;li&gt;TimeUnit：时间单位。&lt;/li&gt;
+&lt;li&gt;BlockingQueue：线程池任务队列。&lt;/li&gt;
+&lt;li&gt;ThreadFactory：创建线程的工厂。&lt;/li&gt;
+&lt;li&gt;RejectedExecutionHandler：拒绝策略。（4个拒绝策略）
+&lt;ul&gt;
+&lt;li&gt;AbortPolicy：拒绝并抛出异常。&lt;/li&gt;
+&lt;li&gt;CallerRunsPolicy：使用当前调用的线程来执行此任务。&lt;/li&gt;
+&lt;li&gt;DiscardOldestPolicy：抛弃队列头部（最旧）的一个任务，并执行当前任务。&lt;/li&gt;
+&lt;li&gt;DiscardPolicy：忽略并抛弃当前任务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;最大任务数量=maximumPoolSize+BlockingQueue&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;线程池的底层工作原理&lt;/li&gt;
+&lt;li&gt;线程池中阻塞队列的作用？为什么是先添加列队而不是先创建最大线程?&lt;/li&gt;
+&lt;li&gt;线程池中线程复用原理
+&lt;ol&gt;
+&lt;li&gt;线程池将线程和任务进行解耦，线程是线程，任务是任务，摆脱了之前通过 Thread 创建线程时的一个线程必须对应一个任务的限制。在线程池中，同一个线程可以从阻塞队列中不断获取新任务来执行，其核心原理在于线程池对 Thread 进行了封装，并不是每次执行任务都会调用 Thread.start() 来创建新线程，而是让每个线程去执行一个“循环任务”，在这个“循环任务”中不停的检查是否有任务需要被执行，如果有则直接执行，也就是调用任务中的 run 方法，将 run 方法当成一个普通的方法执行，通过这种方式将只使用固定的线程就将所有任务的 run 方法串联起来。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;ReentrantLock中的公平锁和非公平锁的底层实现&lt;/li&gt;
+&lt;li&gt;ReentrantLock中tryLocko和lock0方法的区别&lt;/li&gt;
+&lt;li&gt;CountDownLatch和Semaphore的区别和底层原理&lt;/li&gt;
+&lt;li&gt;Sychronized的偏向锁、轻量级锁、重量级锁&lt;/li&gt;
+&lt;li&gt;Sychronized和ReentrantLock的区别&lt;/li&gt;
+&lt;li&gt;谈谈你对AQS的理解，AQS如何实现可重入锁？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;jvm&#34;&gt;JVM&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;一个JVM进程的内存布局空间？
+&lt;ol&gt;
+&lt;li&gt;线程共享内存区
+&lt;ol&gt;
+&lt;li&gt;Java堆：
+&lt;ol&gt;
+&lt;li&gt;虚拟机启动时创建，用来存放对象实例&lt;/li&gt;
+&lt;li&gt;新生代
+1.&lt;/li&gt;
+&lt;li&gt;老年代&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;方法区
+&lt;ol&gt;
+&lt;li&gt;永久代（元空间），大多是静态方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;线程私有内存区
+&lt;ol&gt;
+&lt;li&gt;Java虚拟机栈
+&lt;ol&gt;
+&lt;li&gt;Java虚拟机栈也是线程私有的，虚拟机栈描述的是Java方法执行的内存模型：每个方法执行的时候都会创建一个&lt;!-- raw HTML omitted --&gt;栈帧&lt;!-- raw HTML omitted --&gt;，用于存放&lt;!-- raw HTML omitted --&gt;局部变量表，操作数栈，动态链接，方法出口&lt;!-- raw HTML omitted --&gt;等信息。每一个方法从调用直到执行完成的过程都对应着一个栈帧在虚拟机中的入栈到出栈的过程。我们平时把内存分为堆内存和栈内存，&lt;!-- raw HTML omitted --&gt;其中的栈内存就指的是虚拟机栈的局部变量表部分&lt;!-- raw HTML omitted --&gt;。局部变量表存放了编译期可以知道的基本数据类型(boolean、byte、char、short、int、float、long、double)，对象引用(可能是一个指向对象起始地址的引用指针，也可能指向一个代表对象的句柄或者其他与此对象相关的位置)，和返回后所指向的字节码的地址。其中64 位长度的long 和double 类型的数据会占用2个局部变量空间（Slot），其余的数据类型只占用1个。局部变量表所需的内存空间在编译期间完成分配，当进入一个方法时，这个方法需要在帧中分配多大的局部变量空间是完全确定的，在方法运行期间不会改变局部变量表的大小。当递归层次太深时，会引发java.lang.StackOverflowError，这是虚拟机栈抛出的异常。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;本地方法栈
+&lt;ol&gt;
+&lt;li&gt;native方法栈&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;程序计数器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;函数返回的时候，return语句的执行过程？&lt;/li&gt;
+&lt;li&gt;Java中有哪些类加载器
+&lt;ol&gt;
+&lt;li&gt;引导（Bootstrap）类加载器&lt;/li&gt;
+&lt;li&gt;扩展（Extensions）类加载器&lt;/li&gt;
+&lt;li&gt;Apps类加载器（也称系统类加载器）&lt;/li&gt;
+&lt;li&gt;自定义类加载器&lt;/li&gt;
+&lt;li&gt;类加载器之间的关系
+&lt;ol&gt;
+&lt;li&gt;启动类加载器，由C++实现，没有父类。&lt;/li&gt;
+&lt;li&gt;拓展类加载器(ExtClassLoader)，由Java语言实现，父类加载器为null&lt;/li&gt;
+&lt;li&gt;系统类加载器(AppClassLoader)，由Java语言实现，父类加载器为ExtClassLoader&lt;/li&gt;
+&lt;li&gt;自定义类加载器，父类加载器肯定为AppClassLoader。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;说说类加载器双亲委派模型
+&lt;ol&gt;
+&lt;li&gt;其工作原理的是：如果一个类加载器收到了类加载请求，它并不会自己先去加载，而是把这个请求委托给父类的加载器去执行，如果父类加载器还存在其父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器，如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式，即每个儿子都很懒，每次有活就丢给父亲去干，直到父亲说这件事我也干不了时，儿子自己想办法去完成。&lt;/li&gt;
+&lt;li&gt;作用：
+&lt;ol&gt;
+&lt;li&gt;避免类的重复加载；&lt;/li&gt;
+&lt;li&gt;防止核心API库被随意篡改&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;GC如何判断对象可以被回收
+&lt;ol&gt;
+&lt;li&gt;引用计数法
+&lt;ol&gt;
+&lt;li&gt;优点：引用计数收集器执行简单，判定效率高，交织在程序运行中。对程序不被长时间打断的实时环境比较有利。&lt;/li&gt;
+&lt;li&gt;缺点：难以检测出对象之间的循环引用。同时，引用计数器增加了程序执行的开销。所以Java语言并没有选择这种算法进行垃圾回收。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;可达性分析法
+&lt;ol&gt;
+&lt;li&gt;可达性分析是用来判断对象是否存活，通过&amp;quot;GC Roots&amp;quot;作为起点，从这个节点往下搜索，如果有有引用，则这个对象是存活的，如果没有则判定可回收的对象。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;垃圾回收算法
+&lt;ol&gt;
+&lt;li&gt;标记-清除算法
+&lt;ol&gt;
+&lt;li&gt;标记-清除算法对&lt;strong&gt;根集合&lt;/strong&gt;进行扫描，对&lt;strong&gt;存活&lt;/strong&gt;的对象进行标记。标记完成后，再对整个空间内&lt;strong&gt;未被标记&lt;/strong&gt;的对象扫描，进行回收。&lt;/li&gt;
+&lt;li&gt;优点：实现简单，不需要进行对象进行移动。&lt;/li&gt;
+&lt;li&gt;缺点：标记、清除过程效率低，产生大量不连续的内存碎片，提高了垃圾回收的频率。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;复制算法
+&lt;ol&gt;
+&lt;li&gt;它将内存区域划分成相同的两个&lt;strong&gt;内存块&lt;/strong&gt;。每次仅使用一半的空间，&lt;code&gt;JVM&lt;/code&gt;生成的新对象放在一半空间中。当一半空间用完时进行&lt;code&gt;GC&lt;/code&gt;，把可到达对象复制到另一半空间，然后把使用过的内存空间一次清理掉。&lt;/li&gt;
+&lt;li&gt;优点：按顺序分配内存即可，实现简单、运行高效，不用考虑内存碎片。&lt;/li&gt;
+&lt;li&gt;缺点：可用的内存大小缩小为原来的一半，对象存活率高时会频繁进行复制。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;标记-整理算法
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;标记-整理算法&lt;/strong&gt; 采用和 &lt;strong&gt;标记-清除算法&lt;/strong&gt; 一样的方式进行对象的标记，但后续不直接对可回收对象进行清理，而是将所有的&lt;strong&gt;存活对象&lt;/strong&gt;往一端&lt;strong&gt;空闲空间&lt;/strong&gt;移动，然后清理掉端边界以外的内存空间。&lt;/li&gt;
+&lt;li&gt;优点：解决了标记-清理算法存在的内存碎片问题。&lt;/li&gt;
+&lt;li&gt;缺点：仍需要进行局部对象移动，一定程度上降低了效率。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;分代收集算法&lt;/li&gt;
+&lt;li&gt;总结
+&lt;ol&gt;
+&lt;li&gt;JDK8堆内存一般是划分为年轻代和老年代，不同年代 根据自身特性采用不同的垃圾收集算法。&lt;/li&gt;
+&lt;li&gt;对于&lt;!-- raw HTML omitted --&gt;新生代&lt;!-- raw HTML omitted --&gt;，每次GC时都有大量的对象死亡，只有少量对象存活。考虑到复制成本低，适合采用&lt;!-- raw HTML omitted --&gt;复制算法&lt;!-- raw HTML omitted --&gt;。因此有了From Survivor和To Survivor区域。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对于老年代，因为对象存活率高&lt;/strong&gt;，没有额外的内存空间对它进行担保。因而适合采用&lt;!-- raw HTML omitted --&gt;标记-清理算法和标记-整理算法&lt;!-- raw HTML omitted --&gt;进行回收。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;JVM中哪些是线程共享区
+&lt;ol&gt;
+&lt;li&gt;堆区和⽅法区是所有线程共享的，栈、本地⽅法栈、程序计数器是每个线程独有的
+&lt;ol&gt;
+&lt;li&gt;堆: 不用多说了,放对象的地方&lt;/li&gt;
+&lt;li&gt;方法区: 类定义的成员变量丶常量丶静态变量丶方法都在这里&lt;/li&gt;
+&lt;li&gt;栈: 程序运行才有的,会把运行时的方法压入栈,里面有局部变量等东西&lt;/li&gt;
+&lt;li&gt;本地方法栈: 操作系统方法&lt;/li&gt;
+&lt;li&gt;程序计数器: 标记代码走到哪里了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;你们项目如何排查JVM问题&lt;/li&gt;
+&lt;li&gt;一个对象从加载到JVM，再到被GC清除，都经历了什么过程？&lt;/li&gt;
+&lt;li&gt;什么是三色标记？&lt;/li&gt;
+&lt;li&gt;CMS怎么进行垃圾回收的？
+&lt;ol&gt;
+&lt;li&gt;官方名称：最大-并发-标记-清除-垃圾收集器&lt;/li&gt;
+&lt;li&gt;作用范围：老年代&lt;/li&gt;
+&lt;li&gt;算法：并发标记清除算法。&lt;/li&gt;
+&lt;li&gt;阶段
+&lt;ol&gt;
+&lt;li&gt;初始标记（CMS initial mark）
+&lt;ol&gt;
+&lt;li&gt;STW&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;并发标记（CMS concurrent mark）&lt;/li&gt;
+&lt;li&gt;重新标记（CMS remark）&lt;/li&gt;
+&lt;li&gt;并发清除（CMS concurrent sweep）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;JVM参数有哪些？
+1. -Xms：设置初始分配大小，默认为物理内存的1/64 
+2. -Xmx：最大分配内存，默认为物理内存的1/4
+3. -XX:+PrintGCDetails：输出详细的GC处理日志 
+4. -XX:+PrintGCTimeStamps：输出GC的时间戳信息 
+5. -XX:+PrintGCDateStamps：输出GC的时间戳信息（以日期的形式）
+6. -XX:+PrintHeapAtGC：在GC进行处理的前后打印堆内存信息 
+7. -Xloggc:(SavePath)：设置日志信息保存文件 
+8. 在堆内存的调整策略中，基本上只要调整两个参数：-Xms和-Xmx &lt;/li&gt;
+&lt;li&gt;GC具体过程
+&lt;ol&gt;
+&lt;li&gt;当现在有一个新的对象产生，JvM需要为该对象进行内存空间的申请&lt;/li&gt;
+&lt;li&gt;先判断Eden区是否有内存空间，如果有，直接将新对象保存在Eden区&lt;/li&gt;
+&lt;li&gt;如果Eden区的内存空间不足，会自动执行一个&lt;!-- raw HTML omitted --&gt;MinorGC&lt;!-- raw HTML omitted --&gt;操作，将Eden区的无用内存空间进行清理&lt;/li&gt;
+&lt;li&gt;清理Eden区之后继续判断Eden区内存空间情况，如果充足，则将新对象直接保存在Eden区&lt;/li&gt;
+&lt;li&gt;如果执行了&lt;!-- raw HTML omitted --&gt;Minor GC之后发现Eden区的内存依然不足&lt;!-- raw HTML omitted --&gt;，那就判断&lt;!-- raw HTML omitted --&gt;存活区的内存空间&lt;!-- raw HTML omitted --&gt;，并将Eden区的部
+分活跃对象保存在存活区&lt;/li&gt;
+&lt;li&gt;活跃对象迁移到存活区后，继续判断Eden区内存空间情况，如果充足，则将新对象直接保存在Eden区&lt;/li&gt;
+&lt;li&gt;如果存活区也没有空间了，则继续判断老年区，如果老年区充足，则将存活区的部分活跃对象保存在老
+年区&lt;/li&gt;
+&lt;li&gt;存活区的活跃对象迁移到老年区后，则将Eden区的部分活跃对象保存在存活区&lt;/li&gt;
+&lt;li&gt;活跃对象迁移到存活区后，继续判断Eden区内存空间情况，如果充足，则将新对象直接保存在Eden区&lt;/li&gt;
+&lt;li&gt;如果&lt;!-- raw HTML omitted --&gt;老年区也满了，这时候产生Major GC (Ful GC)进行老年区的内存清理&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;li&gt;如果老年区执行了 &lt;!-- raw HTML omitted --&gt;Major GC&lt;!-- raw HTML omitted --&gt;之后发现无法进行对象保存，会产生&lt;!-- raw HTML omitted --&gt;OutofMemoryError异常&lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;GC的区别&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、部分收集（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Partial&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）：只针对部分区域进行垃圾收集。其中又分为：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;mf&#34;&gt;1.1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、新生代收集（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Minor&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Young&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）：只针对新生代的垃圾收集。具体点的是&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Eden&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;区满时触发&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;										&lt;span class=&#34;n&#34;&gt;Survivor&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;满不会触发&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Minor&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;mf&#34;&gt;1.2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、老年代收集（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Major&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Old&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）：只针对&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;老年代的垃圾收集。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;err&#34;&gt;目前，只有&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CMS&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;收集器会有单独收集老年代的行为。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;err&#34;&gt;注意，很多时候，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Major&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;会和&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Full&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;混淆使用，需要具体分辨是老年代的回收还是整堆回收。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;mf&#34;&gt;1.3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、混合收集（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Mixed&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）：指目标是收集整个新生代以及部分老年代的垃圾收集。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;err&#34;&gt;目前只有&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;G1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;收集器会有这种行为。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;、整堆收集（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Full&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GC&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）：收集整个&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;堆和方法区的垃圾收集。&lt;/span&gt;	
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

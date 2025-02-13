@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SpringBoot on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/springboot/</link>
+    <description>Recent content in SpringBoot on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 13 Aug 2024 16:08:47 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LogBack踩坑记录</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/spring/logback%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 13 Aug 2024 11:17:56 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/spring/logback%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文不是科普文，主要是一些LogBack和Springboot默认使用LogBack情况下遇到的一些问题以及对应解决方案&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;日志级别&#34;&gt;日志级别&lt;/h2&gt;
+&lt;p&gt;日志级别从低到高分为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TRACE &amp;lt; DEBUG &amp;lt; INFO  &amp;lt; WARN &amp;lt; ERROR &amp;lt; FATAL&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;LogBack会按照高于或等于当前配置的级别进行输出；例如日志级别设置为 WARN ，则低于 WARN 的信息都不会输出。&lt;/p&gt;
+&lt;h2 id=&#34;springboot中的默认使用&#34;&gt;SpringBoot中的默认使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Spring Boot中默认日志输出级别为INFO，因此只有ERROR、WARN和INFO级别的日志会输出到控制台&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;logback日志级别优先级&#34;&gt;LogBack日志级别优先级&lt;/h2&gt;
+&lt;p&gt;LogBack默认使用最小子级的日志级别，比如下面配置案例中，如果是com.lin.controller中的日志，则会按照error级别进行控制输出，如果是com.lin以外的日志内容，则按照info级别控制输出&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nl&#34;&gt;logging:&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;root&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;info&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;com&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;lin&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;controller&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;error&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;com&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;lin&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;debug&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意，如果设置root为debug，对于项目中实际日志不需要的且没有被限制输出的情况下，他们的debug日志也会被打印出来，例如：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813144749.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813144749.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+对于一个正常的大型项目来讲，强烈建议不要设置root为debug。&lt;/p&gt;
+&lt;h2 id=&#34;自定义日志输出&#34;&gt;自定义日志输出&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;conversionRule&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;conversionWord=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;clr&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;converterClass=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;org.springframework.boot.logging.logback.ColorConverter&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;conversionRule&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;conversionWord=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;wex&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;converterClass=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;conversionRule&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;conversionWord=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;wEx&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;converterClass=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;name=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;CONSOLE_LOG_PATTERN&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;value=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;name=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;FILE_LOG_PATTERN&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;value=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;${FILE_LOG_PATTERN:-%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- 输出到控制台 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;appender&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;name=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;CONSOLE-LOG&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;ch.qos.logback.core.ConsoleAppender&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;layout&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;ch.qos.logback.classic.PatternLayout&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;lt;pattern&amp;gt;&lt;/span&gt;${CONSOLE_LOG_PATTERN}&lt;span class=&#34;nt&#34;&gt;&amp;lt;/pattern&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;/layout&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;/appender&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- 异步输出 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;appender&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;name=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;ASYNC-INFO&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;ch.qos.logback.classic.AsyncAppender&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;discardingThreshold&amp;gt;&lt;/span&gt;8&lt;span class=&#34;nt&#34;&gt;&amp;lt;/discardingThreshold&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- 更改默认的队列的深度,该值会影响性能.默认值为256 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;queueSize&amp;gt;&lt;/span&gt;256&lt;span class=&#34;nt&#34;&gt;&amp;lt;/queueSize&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- 添加附加的appender,最多只能添加一个 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;appender-ref&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;CONSOLE-LOG&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;/appender&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c&#34;&gt;&amp;lt;!-- 指定最基础的日志输出级别 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;root&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;level=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;info&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;lt;appender-ref&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;ASYNC-INFO&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;/root&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;注意事项&#34;&gt;注意事项&lt;/h3&gt;
+&lt;p&gt;如果是自己自定义配置了日志输出，同时想要指定某些包下的日志级别调整，则尽量使用&lt;code&gt;additivity=&amp;quot;false&amp;quot;&lt;/code&gt;，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;logger&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;name=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;com.lin.controller&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;level=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;debug&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;additivity=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;nt&#34;&gt;&amp;lt;appender-ref&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;CONSOLE-LOG&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/logger&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;additivity&lt;/strong&gt;的作用在于当前logger是否使用上级logeer（一般是root logger）配置的appender进行输出。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;false：表示只用当前logger的appender-ref。&lt;/li&gt;
+&lt;li&gt;true：表示当前logger的appender-ref和rootLogger的appender-ref都有效。这个是默认值。
+如果当前logger设置了日志级别，但是没有设置additivity，则可能输出两次，此时需要使用&lt;code&gt;additivity=&amp;quot;false&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;日志过滤&#34;&gt;日志过滤&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;turboFilter&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;org.lin.boot.ctrl.log.LogFilter&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;public class LogFilter extends TurboFilter {
+	@Override  
+	public FilterReply decide(Marker marker, ch.qos.logback.classic.Logger logger, Level level, String format, Object[] params, Throwable t) {  
+		// 重写限制规则
+	    return FilterReply.NEUTRAL;  
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;配置加载优先级&#34;&gt;配置加载优先级&lt;/h2&gt;
+&lt;p&gt;Logback默认支持的配置文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Override&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getStandardConfigLocations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;logback-test.groovy&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;logback-test.xml&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;logback.groovy&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;s&#34;&gt;&amp;#34;logback.xml&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Springboot支持的配置文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getSpringConfigLocations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;locations&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getStandardConfigLocations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;locations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;extension&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StringUtils&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getFilenameExtension&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;locations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;n&#34;&gt;locations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;locations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;substring&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             &lt;span class=&#34;n&#34;&gt;locations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;extension&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;-spring.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;extension&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;locations&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;优先级为Logback默认配置&amp;gt;默认配置的前缀“-spring”.xml&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;logback-test.xml &amp;gt; logback.groovy &amp;gt; logback.xml &amp;gt; logback-spring.groovy &amp;gt; logback-spring.xml&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;原理&#34;&gt;原理&lt;/h3&gt;
+&lt;p&gt; logback 的初始化步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;logback 会在类路径下寻找名为 logback-test.xml 的文件。&lt;/li&gt;
+&lt;li&gt;如果没有找到，logback 会继续寻找名为 logback.groovy 的文件。&lt;/li&gt;
+&lt;li&gt;如果没有找到，logback 会继续寻找名为 logback.xml 的文件。&lt;/li&gt;
+&lt;li&gt;如果没有找到，将会通过 JDK 提供的 &lt;a href=&#34;https://docs.oracle.com/javase/6/docs/api/java/util/ServiceLoader.html&#34;&gt;ServiceLoader&lt;/a&gt; 工具在类路径下寻找文件 &lt;em&gt;META-INFO/services/ch.qos.logback.classic.spi.Configurator&lt;/em&gt;，该文件的内容为实现了 &lt;a href=&#34;https://logback.qos.ch/xref/ch/qos/logback/classic/spi/Configurator.html&#34;&gt;&lt;code&gt;Configurator&lt;/code&gt;&lt;/a&gt; 接口的实现类的全限定类名。&lt;/li&gt;
+&lt;li&gt;如果以上都没有成功，logback 会通过 &lt;a href=&#34;https://logback.qos.ch/xref/ch/qos/logback/classic/BasicConfigurator.html&#34;&gt;BasicConfigurator&lt;/a&gt; 为自己进行配置，并且日志将会全部在控制台打印出来。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Springboot在上述第3步后添加步骤：如果尝试寻找名为&lt;code&gt;logback.groovy&lt;/code&gt;、&lt;code&gt;logback-spring.xml&lt;/code&gt;的文件&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

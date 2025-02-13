@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>软件工程 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link>
+    <description>Recent content in 软件工程 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Dec 2024 16:23:28 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clean Code</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/clean-code/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/clean-code/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;把系统当作故事来写&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;有意义的命名&#34;&gt;有意义的命名&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;尽量避免误导，即使用类似命名表达完全不一样的意思。避免双关语，即同一个名称表达两种意思。&lt;/li&gt;
+&lt;li&gt;不需要使用a，the等前缀，使用单复数区分即可，对应数据结构使用数据结构后缀，比如List-&amp;gt;UserList&lt;/li&gt;
+&lt;li&gt;常量优于魔法值&lt;/li&gt;
+&lt;li&gt;添加有意义的语境，通过语境帮助解释功能作用；不要添加没用的语境，短名称足够清楚就可以了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;函数&#34;&gt;函数&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;函数内容尽可能短，一个函数完成一个功能&lt;/li&gt;
+&lt;li&gt;函数名尽可能描述清楚所完成的功能&lt;/li&gt;
+&lt;li&gt;函数入参越少越好&lt;/li&gt;
+&lt;li&gt;不要使用标记参数，比如向函数中传入布尔值，Assert()&lt;/li&gt;
+&lt;li&gt;【动词+名词】(名词)比【动词】(名称)更好理解&lt;/li&gt;
+&lt;li&gt;函数不要做多余的事情，避免产生副作用&lt;/li&gt;
+&lt;li&gt;函数要么做什么事，要么回答什么事，但二者不可兼得&lt;/li&gt;
+&lt;li&gt;编写函数初稿可以粗陋无序，冗长而复杂。可以通过分解函数，修改名称，消除重复，重新组装函数进行优化，并配合单元测试，确保程序的正确性。&lt;/li&gt;
+&lt;li&gt;永不被调用的方法应该丢弃。别害怕删除函数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;注释&#34;&gt;注释&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;对比注释，用代码来阐述系统才是更正确的事，因为程序员总是在维护代码，却不会同步维护注释。一些老的、坏的注释反而会误导程序员。&lt;/li&gt;
+&lt;li&gt;TODO注释是一种程序员认为要做，但是目前因为某些原因还没有做到的事情，但他们不是系统中留下糟糕的代码的借口。需要定期查看并清理TODO注释。&lt;/li&gt;
+&lt;li&gt;注释可以放大某些看起来&lt;strong&gt;不合理代码&lt;/strong&gt;的重要性&lt;/li&gt;
+&lt;li&gt;公共api中的javadoc十分重要，但是他们也可能会提供错误信息，误导程序员。代码更新时，同步更新javadoc十分重要。&lt;/li&gt;
+&lt;li&gt;在当前VCS(版本控制系统)中，注释归属和署名的注释是没有必要的，因为VCS会记住所有改动。&lt;/li&gt;
+&lt;li&gt;直接把代码注释掉是很糟糕的做法，仔细思考被注释的代码，为什么要注释掉？他们重要吗？是为了给未来的修改做提示吗？或者只是某人多年以前懒得清理的过时代码？如果代码可以被注释掉，那么他就可以被删除掉，在VCS中，他们丢不了。&lt;/li&gt;
+&lt;li&gt;不要使用HTML注释，如果注释将由工具（比如javaDoc）抽取出来，呈现到网页上，那么应该有该工具而不是程序员负责加上合适的HTML标签。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;尽可能避免使用注释，好的注释应该可以帮助其他人更好地理解系统，提高其他人读系统的时间，而不是花费更多的时间。糟糕的注释示例&lt;/p&gt;
+&lt;h3 id=&#34;格式&#34;&gt;格式&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;完整逻辑之间的空白行可以提高可读性。&lt;/li&gt;
+&lt;li&gt;关系紧密的代码应该在垂直距离上靠近&lt;/li&gt;
+&lt;li&gt;按照函数的前后调用逻辑自上向下编写函数&lt;/li&gt;
+&lt;li&gt;水平方向上的代码紧密代码逻辑关联性强，而空格代表互相隔离的逻辑&lt;/li&gt;
+&lt;li&gt;团队规则：&lt;strong&gt;遵循团队规则，绝对不要用各种不同的风格来编写源代码&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;对象与数据结构&#34;&gt;对象与数据结构&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;得墨忒耳律：模块不应了解他所操作对象得内部情形。类C的方法f只应该调用一下对象的方法：C；由f创造的对象；作为参数传递给f的对象；由C的实体变量持有的对象。&lt;/li&gt;
+&lt;li&gt;小结：对象暴露行为，隐藏数据。数据结构暴露数据，没有明显的行为。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;异常处理&#34;&gt;异常处理&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;使用异常而不是返回码&lt;/li&gt;
+&lt;li&gt;在大型系统的调用层级中，最底层函数添加throws时，所有上层函数都需要添加控制异常。不推荐！&lt;/li&gt;
+&lt;li&gt;不返回null，避免参数传入null&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;边界&#34;&gt;边界&lt;/h3&gt;
+&lt;p&gt;Map有着广阔的接口和丰富的功能，十分灵活，但是这种灵活也是要付出代价的，过多的暴露细节，可以考虑对Map接口进行隐藏，比如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Sensors&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Map&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sensors&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HashMap&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Sensor&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getById&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    	&lt;span class=&#34;n&#34;&gt;returen&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Sensor&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sensors&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用adapter模式转换接口，也可以清晰的确定边界&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>UML统一建模语言</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/uml-unified-modeling-language/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/uml-unified-modeling-language/</guid>
+      <description>&lt;h3 id=&#34;概述&#34;&gt;概述&lt;/h3&gt;
+&lt;h4 id=&#34;uml是什么&#34;&gt;UML是什么&lt;/h4&gt;
+&lt;p&gt;UML 是一种为面向对象开发系统的产品进行说明、可视化、和编制文档的标准语言；作为一种模型语言，它使开发人员专注于建立产品的模型和结构，而不是选用什么程序语言和算法实现；UML 是不同于其他常见的编程语言，如C + +，Java中，COBOL等，它是一种绘画语言，用来做软件蓝图；&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596731500473-4ed97ba9-5b3d-4a17-8b19-963f5ffa23ff.svg&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1596731500473-4ed97ba9-5b3d-4a17-8b19-963f5ffa23ff.svg&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;uml的目标&#34;&gt;UML的目标&lt;/h4&gt;
+&lt;p&gt;UML 的目标是定义一些通用的建模语言并对这些建模语言做出简单的说明，这样可以让建模者理解与使用。我们不将 UML 作为一个开发方法，而是随着流程做一个成功的系统。现在我们可以明确的了解 UML 的目标就是 UML 被定义为一个简单的建模机制，帮助我们按照实际情况或者按照我们需要的样式对系统进行可视化；提供一种详细说明系统的结构或行为的方法；给出一个指导系统构造的模板；对我们所做出的决策进行文档化。&lt;/p&gt;
+&lt;h3 id=&#34;用例图usecase-diagrams&#34;&gt;用例图（UseCase Diagrams）&lt;/h3&gt;
+&lt;p&gt;用例图主要回答了两个问题：1、是谁用软件。2、软件的功能。从用户的角度描述了系统的功能，并指出各个功能的执行者，强调用户的使用者，系统为执行者完成哪些功能。&lt;/p&gt;
+&lt;h3 id=&#34;类图class-diagrams&#34;&gt;类图（Class Diagrams）&lt;/h3&gt;
+&lt;p&gt;用户根据用例图抽象成类，描述类的内部结构和类与类之间的关系，是一种静态结构图。 在UML类图中，常见的有以下几种关系: 泛化（Generalization）, 实现（Realization），关联（Association)，聚合（Aggregation），组合(Composition)，依赖(Dependency)。　　　各种关系的强弱顺序： 泛化 = 实现 &amp;gt; 组合 &amp;gt; 聚合 &amp;gt; 关联 &amp;gt; 依赖&lt;/p&gt;
+&lt;h3 id=&#34;对象图object-diagrams&#34;&gt;对象图（Object Diagrams）&lt;/h3&gt;
+&lt;p&gt;描述的是参与交互的各个对象在交互过程中某一时刻的状态。对象图可以被看作是类图在某一时刻的实例。&lt;/p&gt;
+&lt;h3 id=&#34;状态图statechart-diagrams&#34;&gt;状态图（Statechart Diagrams）&lt;/h3&gt;
+&lt;p&gt;是一种由状态、变迁、事件和活动组成的状态机，用来描述类的对象所有可能的状态以及时间发生时状态的转移条件。&lt;/p&gt;
+&lt;h3 id=&#34;活动图activity-diagrams&#34;&gt;活动图（Activity Diagrams）&lt;/h3&gt;
+&lt;p&gt;是状态图的一种特殊情况，这些状态大都处于活动状态。本质是一种流程图，它描述了活动到活动的控制流。　　　　交互图强调的是对象到对象的控制流，而活动图则强调的是从活动到活动的控制流。活动图是一种表述过程基理、业务过程以及工作流的技术。它可以用来对业务过程、工作流建模，也可以对用例实现甚至是程序实现来建模。&lt;/p&gt;
+&lt;h3 id=&#34;序列图-时序图sequence-diagrams&#34;&gt;序列图-时序图（Sequence Diagrams）&lt;/h3&gt;
+&lt;p&gt; 交互图的一种，描述了对象之间消息发送的先后顺序，强调时间顺序。　　序列图的主要用途是把用例表达的需求，转化为进一步、更加正式层次的精细表达。用例常常被细化为一个或者更多的序列图。同时序列图更有效地描述如何分配各个类的职责以及各类具有相应职责的原因。&lt;/p&gt;
+&lt;h3 id=&#34;协作图collaboration-diagrams&#34;&gt;协作图（Collaboration Diagrams）&lt;/h3&gt;
+&lt;p&gt;交互图的一种，描述了收发消息的对象的组织关系，强调对象之间的合作关系。时序图按照时间顺序布图，而写作图按照空间结构布图&lt;/p&gt;
+&lt;h3 id=&#34;构件图component-diagrams&#34;&gt;构件图（Component Diagrams）&lt;/h3&gt;
+&lt;p&gt;构件图是用来表示系统中构件与构件之间，类或接口与构件之间的关系图。其中，构建图之间的关系表现为依赖关系，定义的类或接口与类之间的关系表现为依赖关系或实现关系。&lt;/p&gt;
+&lt;h3 id=&#34;部署图deployment-diagrams&#34;&gt;部署图（Deployment Diagrams）&lt;/h3&gt;
+&lt;p&gt;描述了系统运行时进行处理的结点以及在结点上活动的构件的配置。强调了物理设备以及之间的连接关系。部署模型的目的：描述一个具体应用的主要部署结构，通过对各种硬件，在硬件中的软件以及各种连接协议的显示，可以很好的描述系统是如何部署的；平衡系统运行时的计算资源分布；可以通过连接描述组织的硬件网络结构或者是嵌入式系统等具有多种硬件和软件相关的系统运行模型。&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

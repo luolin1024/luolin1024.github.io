@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>开源协议 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/</link>
+    <description>Recent content in 开源协议 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Dec 2024 16:21:35 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开源协议</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%85%B6%E4%BB%96/open-source-protocol/</link>
+      <pubDate>Wed, 03 Apr 2024 12:48:33 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%85%B6%E4%BB%96/open-source-protocol/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;协议&lt;/th&gt;
+&lt;th&gt;商业用途&lt;/th&gt;
+&lt;th&gt;修改&lt;/th&gt;
+&lt;th&gt;分发&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GPL&lt;/td&gt;
+&lt;td&gt;限制&lt;/td&gt;
+&lt;td&gt;要求公开&lt;/td&gt;
+&lt;td&gt;要求开源&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LGPL&lt;/td&gt;
+&lt;td&gt;允许&lt;/td&gt;
+&lt;td&gt;要求公开&lt;/td&gt;
+&lt;td&gt;允许分发修改版本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MPL&lt;/td&gt;
+&lt;td&gt;允许&lt;/td&gt;
+&lt;td&gt;不要求&lt;/td&gt;
+&lt;td&gt;要求修改版本开源&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MIT&lt;/td&gt;
+&lt;td&gt;允许&lt;/td&gt;
+&lt;td&gt;不要求&lt;/td&gt;
+&lt;td&gt;允许分发修改版本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Apache 2.0&lt;/td&gt;
+&lt;td&gt;允许&lt;/td&gt;
+&lt;td&gt;不要求&lt;/td&gt;
+&lt;td&gt;允许分发修改版本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;取自阮一峰老师的图：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/bg2011050101.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/bg2011050101.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

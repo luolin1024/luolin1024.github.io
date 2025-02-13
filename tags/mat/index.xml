@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mat on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/mat/</link>
+    <description>Recent content in Mat on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 13 Aug 2024 17:04:19 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/mat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac M1好用软件列表与破解</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/mac-m1%E5%A5%BD%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E4%B8%8E%E7%A0%B4%E8%A7%A3/</link>
+      <pubDate>Wed, 07 Aug 2024 00:49:06 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/mac-m1%E5%A5%BD%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E4%B8%8E%E7%A0%B4%E8%A7%A3/</guid>
+      <description>&lt;h2 id=&#34;m1-安装mat&#34;&gt;M1 安装mat&lt;/h2&gt;
+&lt;p&gt;下载arm架构的jdk11：&lt;a href=&#34;https://www.azul.com/downloads/?version=java-11-lts&amp;amp;os=macos&amp;amp;architecture=arm-64-bit&amp;amp;package=jdk&#34;&gt;https://www.azul.com/downloads/?version=java-11-lts&amp;amp;os=macos&amp;amp;architecture=arm-64-bit&amp;amp;package=jdk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载arm架构的mat：&lt;a href=&#34;https://www.eclipse.org/mat/downloads.php&#34;&gt;https://www.eclipse.org/mat/downloads.php&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;m1安装viscosity-191&#34;&gt;M1安装Viscosity 1.9.1&lt;/h2&gt;
+&lt;p&gt;Viscosity：Mac端个人认为最好用的vpn，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;use Little Snitch block Outgoing Connections
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Name: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Black Flag  &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Email: random@user.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Serial: VM1U-QY3G41-XN5IYG-WIOCN2-RX7ZDS-UCHA4Y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mac-m1通过jenv配置多版本jdk且可以主动切换&#34;&gt;Mac M1通过jenv配置多版本jdk且可以主动切换&lt;/h2&gt;
+&lt;p&gt;通过brew安装jenv&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install jenv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过命令查看你所使用的 shell&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo $0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果是 bash 配置文件则为&lt;code&gt;~/.bash_profile&lt;/code&gt;，按照方式一执行命令&lt;/p&gt;
+&lt;p&gt;如果是 zsh，则配置文件为&lt;code&gt;~/.zshrc&lt;/code&gt;，按照方式二执行命令&lt;/p&gt;
+&lt;h3 id=&#34;方式一&#34;&gt;方式一&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#39;export PATH=&amp;#34;$HOME/.jenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile
+echo &amp;#39;eval &amp;#34;$(jenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.bash_profile
+source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;方式二&#34;&gt;方式二&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#39;export PATH=&amp;#34;$HOME/.jenv/bin:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zshrc
+echo &amp;#39;eval &amp;#34;$(jenv init -)&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zshrc
+source ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时jenv中没有管理任何java包，执行以下命令无结果&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;jenv versions
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;还需要像jenv中添加java包：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;jenv add /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+jenv add /Library/Java/JavaVirtualMachines/graalvm-ee-java17-22.3.1/Contents/Home
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;设置全局默认使用jdk1.8&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;jenv global 1.8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://icode.best/i/40028344746976&#34;&gt;https://icode.best/i/40028344746976&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_52911459/article/details/128063285&#34;&gt;https://blog.csdn.net/weixin_52911459/article/details/128063285&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;macunderstand破解&#34;&gt;Mac：Understand破解&lt;/h2&gt;
+&lt;p&gt;下载链接: &lt;a href=&#34;https://pan.baidu.com/s/19H5qVc6kRSg9Jbmpm4grkA&#34;&gt;https://pan.baidu.com/s/19H5qVc6kRSg9Jbmpm4grkA&lt;/a&gt; 提取码: 1nnv&lt;/p&gt;
+&lt;p&gt;打开软件，开始激活，点击enter License Code&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170241.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170241.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;点击“use legacy licenseing”&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170255.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170255.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;点击“ADD A license”&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170304.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170304.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;出现如下图，请选择“Add Eval SDL (RegCode)”
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170319.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170319.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;弹出注册界面，输入license code，邮箱任意输入
+license code：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;185F996AEEC2
+7808F4308398
+F38075B00218
+EBF578C60F6E
+00479F7EE8D6
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170332.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170332.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;软件“Understand”破解成功！&lt;/p&gt;
+&lt;h2 id=&#34;axure9激活&#34;&gt;Axure9激活&lt;/h2&gt;
+&lt;p&gt;Licensee:Freecrackdownload.comKey:5vYpJgQZ431X/G5kp6jpOO8Vi3TySCBnAslTcNcKkszfPH7jaM4eKM8CrALBcEC1&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

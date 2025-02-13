@@ -1,0 +1,81 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Linux通过ln命令建立文件&目录链接 | luolin1024</title><meta name=keywords content="Linux"><meta name=description content="使用方式：ln [option] source_file dist_file -f 建立时，将同档案名删除. -i 删除前进行询问. ln -s abc cde 建立abc 的软连接 ln abc cde 建立abc的硬连接， 软链接与硬链接的区别（通"><meta name=author content="luolin"><link rel=canonical href=https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/><script defer src=https://blogcounter.luolin.us.kg/script.js data-website-id=c8850e2c-16aa-465e-aa6f-5392c9397317></script>
+<script src=/js/umami-stats.js></script>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css><script src=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=https://luolin1024.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://luolin1024.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://luolin1024.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://luolin1024.github.io/apple-touch-icon.png><link rel=mask-icon href=https://luolin1024.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><html><head><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css><link rel=stylesheet href=https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/style.css><style>body{font-family:lxgw wenkai lite,sans-serif;font-family:lxgw wenkai screen,sans-serif}</style></head></html><meta property="og:title" content="Linux通过ln命令建立文件&目录链接"><meta property="og:description" content="使用方式：ln [option] source_file dist_file -f 建立时，将同档案名删除. -i 删除前进行询问. ln -s abc cde 建立abc 的软连接 ln abc cde 建立abc的硬连接， 软链接与硬链接的区别（通"><meta property="og:type" content="article"><meta property="og:url" content="https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/"><meta property="article:section" content="blog_prepublish"><meta property="article:published_time" content="2024-04-09T13:07:58+08:00"><meta property="article:modified_time" content="2024-05-11T14:31:31+08:00"><meta property="og:site_name" content="luolin的博客"><meta name=twitter:card content="summary"><meta name=twitter:title content="Linux通过ln命令建立文件&目录链接"><meta name=twitter:description content="使用方式：ln [option] source_file dist_file -f 建立时，将同档案名删除. -i 删除前进行询问. ln -s abc cde 建立abc 的软连接 ln abc cde 建立abc的硬连接， 软链接与硬链接的区别（通"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog_prepublishes","item":"https://luolin1024.github.io/blog_prepublish/"},{"@type":"ListItem","position":2,"name":"Linux通过ln命令建立文件\u0026目录链接","item":"https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Linux通过ln命令建立文件\u0026目录链接","name":"Linux通过ln命令建立文件\u0026目录链接","description":"使用方式：ln [option] source_file dist_file -f 建立时，将同档案名删除. -i 删除前进行询问. ln -s abc cde 建立abc 的软连接 ln abc cde 建立abc的硬连接， 软链接与硬链接的区别（通","keywords":["Linux"],"articleBody":" 使用方式：ln [option] source_file dist_file -f 建立时，将同档案名删除.\n-i 删除前进行询问.\nln -s abc cde 建立abc 的软连接\nln abc cde 建立abc的硬连接， 软链接与硬链接的区别（通俗）： 硬链接可认为是一个文件拥有两个文件名;而软链接则是系统新建一个链接文件，此文件指向其所要指的文件\nln -s /root/lntest/source/ /root/lntest/dist/\n软链接与硬链接的区别（讲解）： Linux 软连接与硬连接\n对于一个文件来说，有唯一的索引接点与之对应，而、对于一个索引接点号，却可以有多个文件名与之对应。因此，在磁盘上的同一个文件可以通过不同的路径去访问该文件。注意在Linux下是一切皆文件的啊，文件夹、新加的硬盘 …都可以看着文件来处理的啊。\n连接有软连接和硬连接(hard link)之分的，软连接(symbolic link)又叫符号连接。符号连接相当于Windows下的快捷方式。\n不可以对文件夹建立硬连接的，我们通常用的还是软连接比较多。\neg:\nln -s source dist # 建立软连接\nln -s /mnt/hgfs/ /home/luo/ 注意后面的“/” 是将目录里所有的文件链接过去，必须加上，否则，建立的目录显示颜色异常，还不能正常访问，如cd 进不去\nln source dist # 建立硬连接\n软链接实际上只是一段文字，里面包含着它所指向的文件的名字，系统看到软链接后自动跳到对应的文件位置处进行处理；相反，硬联接为文件开设一个新的目录项，硬链接与文件原有的名字是平权的，在Linux看来它们是等价的。由于这个原因，硬链接不能连接两个不同文件系统上的文件。\n（1）软连接可以 跨文件系统 ，硬连接不可以 。实践的方法就是用共享文件把windows下的 aa.txt文本文档连接到linux下/root目录 下 bb,cc . ln -s aa.txt /root/bb 连接成功 。ln aa.txt /root/bb 失败 。\n（2）关于 I节点的问题 。硬连接不管有多少个，都指向的是同一个I节点，会把 结点连接数增加，只要结点的连接数不是 0，文件就一直存在，不管你删除的是源文件还是 连接的文件 。只要有一个存在 ，文件就 存在 （其实也不分什么源文件连接文件的 ，因为他们指向都是同一个 I节点）。 当你修改源文件或者连接文件任何一个的时候 ，其他的文件都会做同步的修改。软链接不直接使用i节点号作为文件指针,而是使用文件路径名作为指针。所以 删除连接文件 对源文件无影响，但是删除源文件，连接文件就会找不到要指向的文件 。软链接有自己的inode,并在磁盘上有一小片空间存放路径名.\n（3）软连接可以对一个不存在的文件名进行连接 。\n（4）软连接可以对目录进行连接。\n备注：I节点 :它是UNIX内部用于描述文件特性的数据结构.我们通常称I节点为文件索引结点(信息结点).i节点含有关于文件的大部分的重要信息,包括文件数据块在磁盘上的地址.每一个I节点有它自己的标志号,我们称为文件顺序号.I节点包含的信息 1.文件类型 2.文件属主关系 3.文件的访问权限 4.文件的时间截.\n","wordCount":"1126","inLanguage":"en","datePublished":"2024-04-09T13:07:58+08:00","dateModified":"2024-05-11T14:31:31+08:00","author":{"@type":"Person","name":"luolin"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E9%80%9A%E8%BF%87ln%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E9%93%BE%E6%8E%A5/"},"publisher":{"@type":"Organization","name":"luolin1024","logo":{"@type":"ImageObject","url":"https://luolin1024.github.io/favicon.ico"}}}</script></head><body id=top><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://luolin1024.github.io accesskey=h title="luolin的博客 (Alt + H)">luolin的博客</a><div class=logo-switches></div></div><ul id=menu><li><a href=https://luolin1024.github.io/posts title=📚文章><span>📚文章</span></a></li><li><a href=https://luolin1024.github.io/archives/ title=⏱时间轴><span>⏱时间轴</span></a></li><li><a href=https://luolin1024.github.io/search/ title="🔍搜索 (Alt + /)" accesskey=/><span>🔍搜索</span></a></li><li><a href=https://luolin1024.github.io/tags title=🔖标签><span>🔖标签</span></a></li><li><a href=https://luolin1024.github.io/about title=🙋🏻‍♂️关于><span>🙋🏻‍♂️关于</span></a></li><li><a href=https://luolin1024.github.io/links title=🤝友链><span>🤝友链</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://luolin1024.github.io>Home</a>&nbsp;»&nbsp;<a href=https://luolin1024.github.io/blog_prepublish/>Blog_prepublishes</a></div><h1 class="post-title entry-hint-parent">Linux通过ln命令建立文件&目录链接</h1><div class=post-meta><span title='2024-04-09 13:07:58 +0800 +0800'>2024-04-09</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;1126 words&nbsp;·&nbsp;luolin
+本文总阅读量 <span id=umami_value_page_pv></span> 次
+本文总访客量 <span id=umami_value_page_uv></span> 人</div></header><div class=post-content><ol><li>使用方式：ln [option] source_file dist_file <br>                    -f 建立时，将同档案名删除.<br>                    -i 删除前进行询问.<br>                    ln -s abc cde 建立abc 的软连接<br>                    ln abc cde 建立abc的硬连接，</li><li>软链接与硬链接的区别（通俗）：</li></ol><p>硬链接可认为是一个文件拥有两个文件名;而软链接则是系统新建一个链接文件，此文件指向其所要指的文件</p><p>ln -s /root/lntest/source/ /root/lntest/dist/</p><ol start=3><li>软链接与硬链接的区别（讲解）：</li></ol><p>Linux 软连接与硬连接</p><p>对于一个文件来说，有唯一的索引接点与之对应，而、对于一个索引接点号，却可以有多个文件名与之对应。因此，在磁盘上的同一个文件可以通过不同的路径去访问该文件。注意在Linux下是一切皆文件的啊，文件夹、新加的硬盘 &mldr;都可以看着文件来处理的啊。</p><p>连接有软连接和硬连接(hard link)之分的，软连接(symbolic link)又叫符号连接。符号连接相当于Windows下的快捷方式。</p><p>不可以对文件夹建立硬连接的，我们通常用的还是软连接比较多。</p><p>eg:</p><p>ln -s source dist        # 建立软连接</p><p>ln -s /mnt/hgfs/ /home/luo/    注意后面的“/” 是将目录里所有的文件链接过去，必须加上，否则，建立的目录显示颜色异常，还不能正常访问，如cd 进不去</p><p>ln source dist            # 建立硬连接</p><p>软链接实际上只是一段文字，里面包含着它所指向的文件的名字，系统看到软链接后自动跳到对应的文件位置处进行处理；相反，硬联接为文件开设一个新的目录项，硬链接与文件原有的名字是平权的，在Linux看来它们是等价的。由于这个原因，硬链接不能连接两个不同文件系统上的文件。</p><p>（1）软连接可以 跨文件系统 ，硬连接不可以 。实践的方法就是用共享文件把windows下的 aa.txt文本文档连接到linux下/root目录 下 bb,cc . ln -s aa.txt /root/bb 连接成功 。ln aa.txt /root/bb 失败 。</p><p>（2）关于 I节点的问题 。硬连接不管有多少个，都指向的是同一个I节点，会把 结点连接数增加，只要结点的连接数不是 0，文件就一直存在，不管你删除的是源文件还是 连接的文件 。只要有一个存在 ，文件就 存在 （其实也不分什么源文件连接文件的 ，因为他们指向都是同一个 I节点）。 当你修改源文件或者连接文件任何一个的时候 ，其他的文件都会做同步的修改。软链接不直接使用i节点号作为文件指针,而是使用文件路径名作为指针。所以 删除连接文件 对源文件无影响，但是删除源文件，连接文件就会找不到要指向的文件 。软链接有自己的inode,并在磁盘上有一小片空间存放路径名.</p><p>（3）软连接可以对一个不存在的文件名进行连接 。</p><p>（4）软连接可以对目录进行连接。</p><p>备注：I节点 :它是UNIX内部用于描述文件特性的数据结构.我们通常称I节点为文件索引结点(信息结点).i节点含有关于文件的大部分的重要信息,包括文件数据块在磁盘上的地址.每一个I节点有它自己的标志号,我们称为文件顺序号.I节点包含的信息 1.文件类型 2.文件属主关系 3.文件的访问权限 4.文件的时间截.</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://luolin1024.github.io/tags/linux/>Linux</a></li></ul><nav class=paginav><a class=prev href=https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E4%B8%8A%E9%85%8D%E7%BD%AEspringboot%E4%BD%9C%E4%B8%BAsystemd-%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83/><span class=title>« Prev</span><br><span>Linux上配置springboot作为Systemd 服务单元</span></a>
+<a class=next href=https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/><span class=title>Next »</span><br><span>ubuntu22 添加用户并赋sudo权限</span></a></nav><div class=related-posts><h2>相关文章</h2><ul><li>· <a href=/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E4%B8%8A%E9%85%8D%E7%BD%AEspringboot%E4%BD%9C%E4%B8%BAsystemd-%E6%9C%8D%E5%8A%A1%E5%8D%95%E5%85%83/>Linux上配置springboot作为Systemd 服务单元</a></li><li>· <a href=/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/ubuntu22-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E5%B9%B6%E8%B5%8Bsudo%E6%9D%83%E9%99%90/>ubuntu22 添加用户并赋sudo权限</a></li><li>· <a href=/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/linux/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/>Linux常用命令记录</a></li></ul></div></footer><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=waline></div><script type=module>
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+    const locale = {
+        nick: '昵称',
+        nickError: '请填写昵称',
+        mail: '邮箱',
+        mailError: '请填写正确的邮件地址',
+        link: '网址',
+        optional: '可选',
+        placeholder: '仅填写昵称即可发表回复。\n填写邮箱可收到回复提醒。\n评论区支持 Markdown 语法及预览。\n',
+        sofa: '来发评论吧~',
+        submit: '提交',
+        like: '喜欢',
+        cancelLike: '取消喜欢',
+        reply: '回复',
+        cancelReply: '取消回复',
+        comment: '评论',
+        refresh: '刷新',
+        more: '加载更多...',
+        preview: '预览',
+        emoji: '表情',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '管理',
+        logout: '退出',
+        admin: '博主',
+        sticky: '置顶',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+        anonymous: '匿名',
+        level0: '潜水',
+        level1: '冒泡',
+        level2: '吐槽',
+        level3: '活跃',
+        level4: '话痨',
+        level5: '传说',
+        gif: '表情包',
+        gifSearchPlaceholder: '搜索表情包',
+        profile: '个人资料',
+        approved: '通过',
+        waiting: '待审核',
+        spam: '垃圾',
+        unsticky: '取消置顶',
+        oldest: '按倒序',
+        latest: '按正序',
+        hottest: '按热度',
+        reactionTitle: '你认为这篇文章怎么样？',
+    };
+    init({
+        
+        el: '#waline',
+        serverURL: 'https://blogcomments.luolin.online',
+        locale,
+        emoji: false,     
+        search: false,    
+        reaction: false,  
+        requiredMeta: ['nick'],
+        pageSize: 10,
+        imageUploader: false,
+        copyright: true,
+        pageview: true,
+        like: false,
+    });
+</script></article></main><footer class=footer><span>&copy; 2025 <a href=https://luolin1024.github.io>luolin1024</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span><div>本站总访问量 <span id=umami_value_site_pv></span> 次
+本站总访客数 <span id=umami_value_site_uv></span> 人
+当前在线访客 <span id=umami_value_active_uv></span> 人</div><a href="https://icp.gov.moe/?keyword=20248618" target=_blank>萌ICP备20248618号</a></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

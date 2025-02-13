@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>windows on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/windows/</link>
+    <description>Recent content in windows on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Dec 2024 16:17:28 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>win10软件使用</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/windows-sofrware/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E5%B7%A5%E5%85%B7/windows-sofrware/</guid>
+      <description>&lt;h2 id=&#34;axure9激活&#34;&gt;Axure9激活&lt;/h2&gt;
+&lt;p&gt;Licensee:Freecrackdownload.comKey:5vYpJgQZ431X/G5kp6jpOO8Vi3TySCBnAslTcNcKkszfPH7jaM4eKM8CrALBcEC1&lt;/p&gt;
+&lt;h2 id=&#34;windows通过cmd查看网络端口占用情况&#34;&gt;Windows通过cmd查看网络端口占用情况&lt;/h2&gt;
+&lt;p&gt;对于一些使用java后端服务在没有关闭端口的情况下被关闭，则可能导致端口一直占用，处理方案：
+一、列出所有端口的情况，找到被占用的端口 ：netstat -ano
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987699392-8a40f5df-ee76-485e-8ff5-bdd4ddfffa57.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987699392-8a40f5df-ee76-485e-8ff5-bdd4ddfffa57.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+二、找对应的PID： netstat -aon|findstr &amp;ldquo;8440&amp;rdquo; 
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987720307-a75ab886-eab5-4045-8c02-a7a9dd0e1e8f.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987720307-a75ab886-eab5-4045-8c02-a7a9dd0e1e8f.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+三、查找具体的占用进程：tasklist|findstr &amp;ldquo;28712&amp;rdquo;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987731127-906c40ed-6227-4176-98a0-0b4aa49a931c.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1595987731127-906c40ed-6227-4176-98a0-0b4aa49a931c.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+四、结束进程：taskkill /f /t /im java.exe&lt;/p&gt;
+&lt;h2 id=&#34;win10下idea终端中使用git中文乱码解决方案&#34;&gt;win10下idea终端中使用git中文乱码解决方案&lt;/h2&gt;
+&lt;h4 id=&#34;方案一-系统变量中添加lesscharsetutf-8&#34;&gt;方案一 系统变量中添加LESSCHARSET=utf-8&lt;/h4&gt;
+&lt;p&gt;在idea中使用powershell/cmd终端做git操作的时候，git log会显示中文乱码，查阅网上资料后发现是因为git log 默认使用 less 分页，需要 bash 对 less 命令进行 utf-8 编码 ，可以通过在系统环境变量中添加LESSCHARSET=utf-8，如下：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598572459312-edc56a59-6e4e-4dc8-9d0d-d04de28f0c29.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598572459312-edc56a59-6e4e-4dc8-9d0d-d04de28f0c29.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;此时再使用idea终端中的powershell进行git log操作，结果如下：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598572889940-2e3a1377-aef3-4989-ae3a-cc76d2b0462c.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598572889940-2e3a1377-aef3-4989-ae3a-cc76d2b0462c.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;方案二-idea-中使用git-bash&#34;&gt;方案二 idea 中使用git bash&lt;/h4&gt;
+&lt;p&gt;这个方法比较粗暴，直接在idea的设置中设置终端为git bash即可
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598573087612-5dc77ca0-1cce-4f09-8f47-8af67f5c169d.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/1598573087612-5dc77ca0-1cce-4f09-8f47-8af67f5c169d.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

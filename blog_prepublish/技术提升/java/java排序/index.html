@@ -1,0 +1,237 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Java排序 | luolin1024</title><meta name=keywords content="Java/Java基础"><meta name=description content="在java中经常会使用到排序，通常使用的java内置提供的排序方式： Arrays.sort（） Collection.sort() Collections.sort() Stream中使用sort 对一批对象进行排"><meta name=author content="luolin"><link rel=canonical href=https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java%E6%8E%92%E5%BA%8F/><script defer src=https://blogcounter.luolin.us.kg/script.js data-website-id=c8850e2c-16aa-465e-aa6f-5392c9397317></script>
+<script src=/js/umami-stats.js></script>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css><script src=https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js></script>
+<link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style><link rel=icon href=https://luolin1024.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://luolin1024.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://luolin1024.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://luolin1024.github.io/apple-touch-icon.png><link rel=mask-icon href=https://luolin1024.github.io/favicon.ico><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><html><head><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css><link rel=stylesheet href=https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/style.css><style>body{font-family:lxgw wenkai lite,sans-serif;font-family:lxgw wenkai screen,sans-serif}</style></head></html><meta property="og:title" content="Java排序"><meta property="og:description" content="在java中经常会使用到排序，通常使用的java内置提供的排序方式： Arrays.sort（） Collection.sort() Collections.sort() Stream中使用sort 对一批对象进行排"><meta property="og:type" content="article"><meta property="og:url" content="https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java%E6%8E%92%E5%BA%8F/"><meta property="article:section" content="blog_prepublish"><meta property="article:published_time" content="2023-02-11T00:32:19+08:00"><meta property="article:modified_time" content="2024-03-21T00:56:10+08:00"><meta property="og:site_name" content="luolin的博客"><meta name=twitter:card content="summary"><meta name=twitter:title content="Java排序"><meta name=twitter:description content="在java中经常会使用到排序，通常使用的java内置提供的排序方式： Arrays.sort（） Collection.sort() Collections.sort() Stream中使用sort 对一批对象进行排"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog_prepublishes","item":"https://luolin1024.github.io/blog_prepublish/"},{"@type":"ListItem","position":2,"name":"Java排序","item":"https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java%E6%8E%92%E5%BA%8F/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Java排序","name":"Java排序","description":"在java中经常会使用到排序，通常使用的java内置提供的排序方式： Arrays.sort（） Collection.sort() Collections.sort() Stream中使用sort 对一批对象进行排","keywords":["Java/Java基础"],"articleBody":"在java中经常会使用到排序，通常使用的java内置提供的排序方式：\nArrays.sort（） Collection.sort() Collections.sort() Stream中使用sort 对一批对象进行排序的方式：（ps：对对象的多个属性进行排序则多次使用排序方法即可，比如先对Person的age排序，再对name排序，则需要使用两次排序）\n/** * java排序方法： * 1. Arrays.sort（） * 2. Collection.sort() * 3. Collections.sort() * 4. Stream中使用sort */ public class Sort { public static void main(String[] args) { List\u003cPerson\u003e list = new ArrayList\u003c\u003e(); Person[] people = new Person[10]; for (int i = 0; i \u003c 10; i++) { Person person = new Person(i / 2, \"l\" + i); people[i] = person; list.add(person); } // Arrays.sort（） System.out.println(\"-------begin Arrays.sort()\"); Arrays.sort(people, (o1, o2) -\u003e { if (o1.age \u003e o2.age) { return -1; } else if (o1.age \u003c o2.age) { return 1; } else { return 0; } }); for (Person person : people) { System.out.println(person); } System.out.println(\"------\"); for (Person person : list) { System.out.println(person); } System.out.println(\"-----\"); list.sort((o1, o2) -\u003e { if (o1.age \u003e o2.age) { return -1; } else if (o1.age \u003c o2.age) { return 1; } else { return 0; } }); for (Person person : list) { System.out.println(person); } System.out.println(\"-----\"); Collections.sort(list, (o1, o2) -\u003e { if (o1.age \u003e o2.age) { return 1; } else if (o1.age \u003c o2.age) { return -1; } else { return 0; } }); for (Person person : list) { System.out.println(person); } System.out.println(\"-----\"); list.stream().sorted(Comparator.comparing(Person::getAge).reversed()).forEach(System.out::println); } } class Person { int age; String name; public Person() { } public Person(int age, String name) { this.age = age; this.name = name; } public int getAge() { return age; } public void setAge(int age) { this.age = age; } public String getName() { return name; } public void setName(String name) { this.name = name; } @Override public String toString() { return \"Person{\" + \"age=\" + age + \", name='\" + name + '\\'' + '}'; } } 打印结果：\n-------begin Arrays.sort() Person{age=4, name='l8'} Person{age=4, name='l9'} Person{age=3, name='l6'} Person{age=3, name='l7'} Person{age=2, name='l4'} Person{age=2, name='l5'} Person{age=1, name='l2'} Person{age=1, name='l3'} Person{age=0, name='l0'} Person{age=0, name='l1'} ------ Person{age=0, name='l0'} Person{age=0, name='l1'} Person{age=1, name='l2'} Person{age=1, name='l3'} Person{age=2, name='l4'} Person{age=2, name='l5'} Person{age=3, name='l6'} Person{age=3, name='l7'} Person{age=4, name='l8'} Person{age=4, name='l9'} ----- Person{age=4, name='l8'} Person{age=4, name='l9'} Person{age=3, name='l6'} Person{age=3, name='l7'} Person{age=2, name='l4'} Person{age=2, name='l5'} Person{age=1, name='l2'} Person{age=1, name='l3'} Person{age=0, name='l0'} Person{age=0, name='l1'} ----- Person{age=0, name='l0'} Person{age=0, name='l1'} Person{age=1, name='l2'} Person{age=1, name='l3'} Person{age=2, name='l4'} Person{age=2, name='l5'} Person{age=3, name='l6'} Person{age=3, name='l7'} Person{age=4, name='l8'} Person{age=4, name='l9'} ----- Person{age=4, name='l8'} Person{age=4, name='l9'} Person{age=3, name='l6'} Person{age=3, name='l7'} Person{age=2, name='l4'} Person{age=2, name='l5'} Person{age=1, name='l2'} Person{age=1, name='l3'} Person{age=0, name='l0'} Person{age=0, name='l1'} ","wordCount":"559","inLanguage":"en","datePublished":"2023-02-11T00:32:19+08:00","dateModified":"2024-03-21T00:56:10+08:00","author":{"@type":"Person","name":"luolin"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java%E6%8E%92%E5%BA%8F/"},"publisher":{"@type":"Organization","name":"luolin1024","logo":{"@type":"ImageObject","url":"https://luolin1024.github.io/favicon.ico"}}}</script></head><body id=top><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://luolin1024.github.io accesskey=h title="luolin的博客 (Alt + H)">luolin的博客</a><div class=logo-switches></div></div><ul id=menu><li><a href=https://luolin1024.github.io/posts title=📚文章><span>📚文章</span></a></li><li><a href=https://luolin1024.github.io/archives/ title=⏱时间轴><span>⏱时间轴</span></a></li><li><a href=https://luolin1024.github.io/search/ title="🔍搜索 (Alt + /)" accesskey=/><span>🔍搜索</span></a></li><li><a href=https://luolin1024.github.io/tags title=🔖标签><span>🔖标签</span></a></li><li><a href=https://luolin1024.github.io/about title=🙋🏻‍♂️关于><span>🙋🏻‍♂️关于</span></a></li><li><a href=https://luolin1024.github.io/links title=🤝友链><span>🤝友链</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://luolin1024.github.io>Home</a>&nbsp;»&nbsp;<a href=https://luolin1024.github.io/blog_prepublish/>Blog_prepublishes</a></div><h1 class="post-title entry-hint-parent">Java排序</h1><div class=post-meta><span title='2023-02-11 00:32:19 +0800 +0800'>2023-02-11</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;559 words&nbsp;·&nbsp;luolin
+本文总阅读量 <span id=umami_value_page_pv></span> 次
+本文总访客量 <span id=umami_value_page_uv></span> 人</div></header><div class=post-content><p>在java中经常会使用到排序，通常使用的java内置提供的排序方式：</p><ol><li>Arrays.sort（）</li><li>Collection.sort()</li><li>Collections.sort()</li><li>Stream中使用sort</li></ol><p>对一批对象进行排序的方式：（ps：对对象的多个属性进行排序则多次使用排序方法即可，比如先对Person的age排序，再对name排序，则需要使用两次排序）</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * java排序方法：
+</span></span></span><span class=line><span class=cl><span class=cm> * 1. Arrays.sort（）
+</span></span></span><span class=line><span class=cl><span class=cm> * 2. Collection.sort()
+</span></span></span><span class=line><span class=cl><span class=cm> * 3. Collections.sort()
+</span></span></span><span class=line><span class=cl><span class=cm> * 4. Stream中使用sort
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Sort</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=n>List</span><span class=o>&lt;</span><span class=n>Person</span><span class=o>&gt;</span> <span class=n>list</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ArrayList</span><span class=o>&lt;&gt;();</span>
+</span></span><span class=line><span class=cl>        <span class=n>Person</span><span class=o>[]</span> <span class=n>people</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Person</span><span class=o>[</span><span class=mi>10</span><span class=o>];</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>Person</span> <span class=n>person</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Person</span><span class=o>(</span><span class=n>i</span> <span class=o>/</span> <span class=mi>2</span><span class=o>,</span> <span class=s>&#34;l&#34;</span> <span class=o>+</span> <span class=n>i</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>            <span class=n>people</span><span class=o>[</span><span class=n>i</span><span class=o>]</span> <span class=o>=</span> <span class=n>person</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>list</span><span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>person</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// Arrays.sort（）
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;-------begin Arrays.sort()&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>Arrays</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>people</span><span class=o>,</span> <span class=o>(</span><span class=n>o1</span><span class=o>,</span> <span class=n>o2</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>o1</span><span class=o>.</span><span class=na>age</span> <span class=o>&gt;</span> <span class=n>o2</span><span class=o>.</span><span class=na>age</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=o>-</span><span class=mi>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>o1</span><span class=o>.</span><span class=na>age</span> <span class=o>&lt;</span> <span class=n>o2</span><span class=o>.</span><span class=na>age</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=mi>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=mi>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>});</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=n>Person</span> <span class=n>person</span> <span class=o>:</span> <span class=n>people</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>person</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;------&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=n>Person</span> <span class=n>person</span> <span class=o>:</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>person</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;-----&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>sort</span><span class=o>((</span><span class=n>o1</span><span class=o>,</span> <span class=n>o2</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>o1</span><span class=o>.</span><span class=na>age</span> <span class=o>&gt;</span> <span class=n>o2</span><span class=o>.</span><span class=na>age</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=o>-</span><span class=mi>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>o1</span><span class=o>.</span><span class=na>age</span> <span class=o>&lt;</span> <span class=n>o2</span><span class=o>.</span><span class=na>age</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=mi>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=mi>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>});</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=n>Person</span> <span class=n>person</span> <span class=o>:</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>person</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;-----&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>Collections</span><span class=o>.</span><span class=na>sort</span><span class=o>(</span><span class=n>list</span><span class=o>,</span> <span class=o>(</span><span class=n>o1</span><span class=o>,</span> <span class=n>o2</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=o>(</span><span class=n>o1</span><span class=o>.</span><span class=na>age</span> <span class=o>&gt;</span> <span class=n>o2</span><span class=o>.</span><span class=na>age</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=mi>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=k>if</span> <span class=o>(</span><span class=n>o1</span><span class=o>.</span><span class=na>age</span> <span class=o>&lt;</span> <span class=n>o2</span><span class=o>.</span><span class=na>age</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=o>-</span><span class=mi>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>return</span> <span class=mi>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>});</span>
+</span></span><span class=line><span class=cl>        <span class=k>for</span> <span class=o>(</span><span class=n>Person</span> <span class=n>person</span> <span class=o>:</span> <span class=n>list</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>person</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=s>&#34;-----&#34;</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>list</span><span class=o>.</span><span class=na>stream</span><span class=o>().</span><span class=na>sorted</span><span class=o>(</span><span class=n>Comparator</span><span class=o>.</span><span class=na>comparing</span><span class=o>(</span><span class=n>Person</span><span class=o>::</span><span class=n>getAge</span><span class=o>).</span><span class=na>reversed</span><span class=o>()).</span><span class=na>forEach</span><span class=o>(</span><span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>::</span><span class=n>println</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Person</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>age</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>String</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=nf>Person</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=nf>Person</span><span class=o>(</span><span class=kt>int</span> <span class=n>age</span><span class=o>,</span> <span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>age</span> <span class=o>=</span> <span class=n>age</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>name</span> <span class=o>=</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>int</span> <span class=nf>getAge</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>age</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>setAge</span><span class=o>(</span><span class=kt>int</span> <span class=n>age</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>age</span> <span class=o>=</span> <span class=n>age</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>String</span> <span class=nf>getName</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>setName</span><span class=o>(</span><span class=n>String</span> <span class=n>name</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>.</span><span class=na>name</span> <span class=o>=</span> <span class=n>name</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nd>@Override</span>
+</span></span><span class=line><span class=cl>    <span class=kd>public</span> <span class=n>String</span> <span class=nf>toString</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=s>&#34;Person{&#34;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;age=&#34;</span> <span class=o>+</span> <span class=n>age</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;, name=&#39;&#34;</span> <span class=o>+</span> <span class=n>name</span> <span class=o>+</span> <span class=sc>&#39;\&#39;&#39;</span> <span class=o>+</span>
+</span></span><span class=line><span class=cl>                <span class=sc>&#39;}&#39;</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></div><p>打印结果：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>-------begin Arrays.sort<span class=o>()</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l8&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l9&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l6&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l7&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l4&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l5&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l2&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l3&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l0&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l1&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>------
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l0&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l1&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l2&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l3&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l4&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l5&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l6&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l7&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l8&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l9&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>-----
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l8&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l9&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l6&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l7&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l4&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l5&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l2&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l3&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l0&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l1&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>-----
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l0&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l1&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l2&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l3&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l4&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l5&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l6&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l7&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l8&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l9&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>-----
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l8&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>4, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l9&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l6&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>3, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l7&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l4&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>2, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l5&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l2&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>1, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l3&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l0&#39;</span><span class=o>}</span>
+</span></span><span class=line><span class=cl>Person<span class=o>{</span><span class=nv>age</span><span class=o>=</span>0, <span class=nv>name</span><span class=o>=</span><span class=s1>&#39;l1&#39;</span><span class=o>}</span>
+</span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://luolin1024.github.io/tags/java/java%E5%9F%BA%E7%A1%80/>Java/Java基础</a></li></ul><nav class=paginav><a class=prev href=https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java%E5%BC%82%E5%B8%B8/><span class=title>« Prev</span><br><span>Java异常</span></a>
+<a class=next href=https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/><span class=title>Next »</span><br><span>Java日期处理</span></a></nav><div class=related-posts><h2>相关文章</h2><ul><li>· <a href=/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%BB%93%E5%90%88threadlocal%E7%9A%84%E7%94%A8%E6%B3%95%E5%AE%9E%E4%BE%8B/>Java线程池结合ThreadLocal的用法实例</a></li><li>· <a href=/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/object%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/>Object源码分析</a></li><li>· <a href=/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/threadlocal%E5%92%8Cinheritablethreadlocal%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/>ThreadLocal和InheritableThreadLocal源码分析</a></li><li>· <a href=/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java-%E5%8F%8D%E5%B0%84/>Java-反射</a></li><li>· <a href=/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/java8-stream/>Java8 Stream</a></li></ul></div></footer><link rel=stylesheet href=https://unpkg.com/@waline/client@v2/dist/waline.css><div id=waline></div><script type=module>
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+    const locale = {
+        nick: '昵称',
+        nickError: '请填写昵称',
+        mail: '邮箱',
+        mailError: '请填写正确的邮件地址',
+        link: '网址',
+        optional: '可选',
+        placeholder: '仅填写昵称即可发表回复。\n填写邮箱可收到回复提醒。\n评论区支持 Markdown 语法及预览。\n',
+        sofa: '来发评论吧~',
+        submit: '提交',
+        like: '喜欢',
+        cancelLike: '取消喜欢',
+        reply: '回复',
+        cancelReply: '取消回复',
+        comment: '评论',
+        refresh: '刷新',
+        more: '加载更多...',
+        preview: '预览',
+        emoji: '表情',
+        uploadImage: '上传图片',
+        seconds: '秒前',
+        minutes: '分钟前',
+        hours: '小时前',
+        days: '天前',
+        now: '刚刚',
+        uploading: '正在上传',
+        login: '管理',
+        logout: '退出',
+        admin: '博主',
+        sticky: '置顶',
+        word: '字',
+        wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+        anonymous: '匿名',
+        level0: '潜水',
+        level1: '冒泡',
+        level2: '吐槽',
+        level3: '活跃',
+        level4: '话痨',
+        level5: '传说',
+        gif: '表情包',
+        gifSearchPlaceholder: '搜索表情包',
+        profile: '个人资料',
+        approved: '通过',
+        waiting: '待审核',
+        spam: '垃圾',
+        unsticky: '取消置顶',
+        oldest: '按倒序',
+        latest: '按正序',
+        hottest: '按热度',
+        reactionTitle: '你认为这篇文章怎么样？',
+    };
+    init({
+        
+        el: '#waline',
+        serverURL: 'https://blogcomments.luolin.online',
+        locale,
+        emoji: false,     
+        search: false,    
+        reaction: false,  
+        requiredMeta: ['nick'],
+        pageSize: 10,
+        imageUploader: false,
+        copyright: true,
+        pageview: true,
+        like: false,
+    });
+</script></article></main><footer class=footer><span>&copy; 2025 <a href=https://luolin1024.github.io>luolin1024</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span><div>本站总访问量 <span id=umami_value_site_pv></span> 次
+本站总访客数 <span id=umami_value_site_uv></span> 人
+当前在线访客 <span id=umami_value_active_uv></span> 人</div><a href="https://icp.gov.moe/?keyword=20248618" target=_blank>萌ICP备20248618号</a></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

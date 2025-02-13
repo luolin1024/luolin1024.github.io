@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>系统设计 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</link>
+    <description>Recent content in 系统设计 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 12 Feb 2025 00:18:22 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DDD领域驱动模型落地</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/spring/ddd%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9E%8B%E8%90%BD%E5%9C%B0/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/java/spring/ddd%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9E%8B%E8%90%BD%E5%9C%B0/</guid>
+      <description>&lt;p&gt;DDD领域驱动模型是当前业内通用的一套软件设计思路，也是目前我所在公司的软件设计方案。
+首先介绍一下DDD领域驱动设计出现的背景，在现代化公司的模式下，现代化软件系统也来越大，业务场景越来越复杂的情况下，而公司中的人员变更也十分频繁，那么怎么设计一套高内聚、低耦合且能够将大的业务场景拆分更小的业务场景技术方案就变得十分重要，DDD领域驱动设计模型就随之诞生了。DDD的核心思想是业务和技术相结合的一种过程，即强调业务的理解，又强调应用领域建模方法的使用。
+DDD的核心思想就是明确面向对象的范围以及范围内&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/luolin1024/DDD&#34;&gt;luolin1024/DDD: DDD领域模型设计实现 (github.com)&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>缓存穿透，缓存击穿和缓存雪崩的区别以及解决方案</title>
+      <link>https://luolin1024.github.io/2024/02/cache-penetration-and-cache-breakdown-and-cache-avalanche-and-the-solution/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/2024/02/cache-penetration-and-cache-breakdown-and-cache-avalanche-and-the-solution/</guid>
+      <description>&lt;h2 id=&#34;1-概述&#34;&gt;1. 概述&lt;/h2&gt;
+&lt;p&gt;在高并发系统中，缓存是提升性能、降低数据库压力的重要组件。然而，在实际应用中，缓存可能会遇到三种典型问题：&lt;strong&gt;缓存穿透&lt;/strong&gt;、&lt;strong&gt;缓存击穿&lt;/strong&gt;和&lt;strong&gt;缓存雪崩&lt;/strong&gt;。这些问题如果不加以妥善处理，可能会导致数据库负载激增，甚至影响整个系统的稳定性。本文将详细介绍这三种问题的区别，并探讨相应的解决方案。&lt;/p&gt;
+&lt;h2 id=&#34;2-什么是缓存穿透缓存击穿和缓存雪崩&#34;&gt;2. 什么是缓存穿透、缓存击穿和缓存雪崩？&lt;/h2&gt;
+&lt;h3 id=&#34;21-缓存穿透cache-penetration&#34;&gt;2.1 缓存穿透（Cache Penetration）&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;现象&lt;/strong&gt;：指的是缓存和数据库中都没有的数据，但却被&lt;strong&gt;大量请求&lt;/strong&gt;访问，导致请求直接落到数据库上，增加数据库的压力。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;速记口诀&lt;/strong&gt;：&lt;strong&gt;恶意请求绕过缓存，访问数据库中不存在的数据，导致数据库负载增加。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;22-缓存击穿cache-breakdown&#34;&gt;2.2 缓存击穿（Cache Breakdown）&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;现象&lt;/strong&gt;：某个&lt;strong&gt;热点数据&lt;/strong&gt;在缓存中过期的瞬间，刚好有&lt;strong&gt;大量请求&lt;/strong&gt;同时到达，此时所有请求都会直接访问数据库，可能会导致数据库压力激增。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;速记口诀&lt;/strong&gt;：&lt;strong&gt;缓存数据突然失效，大量请求瞬间涌向数据库。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;23-缓存雪崩cache-avalanche&#34;&gt;2.3 缓存雪崩（Cache Avalanche）&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;现象&lt;/strong&gt;：&lt;strong&gt;大量缓存&lt;/strong&gt;在同一时间过期，使得所有原本应命中缓存的请求都直接访问数据库，造成数据库负载飙升，甚至引发全局性故障。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;速记口诀&lt;/strong&gt;：&lt;strong&gt;大量缓存同时失效，流量直击数据库，引发系统风险。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-解决方案&#34;&gt;3. 解决方案&lt;/h2&gt;
+&lt;h3 id=&#34;31-缓存穿透解决方案&#34;&gt;3.1 缓存穿透解决方案&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;方案 1：使用布隆过滤器（Bloom Filter）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在缓存层引入布隆过滤器，提前存储可能存在的数据标识，对于不存在的数据，直接拦截请求，避免打到数据库。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;方案 2：缓存空值&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;针对数据库和缓存均不存在的数据，可以在缓存中存储一个&lt;strong&gt;短时间有效&lt;/strong&gt;的空值（如 &lt;code&gt;5 分钟&lt;/code&gt;），减少对数据库的冲击。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;32-缓存击穿解决方案&#34;&gt;3.2 缓存击穿解决方案&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;方案 1：设置热点数据永不过期&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于高频访问的热点数据，可以设置&lt;strong&gt;永不过期&lt;/strong&gt;，确保缓存始终存在，避免瞬间失效造成数据库负载激增。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;方案 2：互斥锁机制&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在缓存数据为空时，采用互斥锁（如 &lt;code&gt;setnx&lt;/code&gt; 方式），确保只有一个请求能查询数据库并更新缓存，其他请求需等待或短暂休眠后重试。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;public static String getProductDescById(String id) {
+    String desc = redis.get(id);
+    if (desc == null) {
+        if (redis.setnx(&amp;#34;lock_id&amp;#34;, 1, 60) == 1) {
+            try {
+                desc = getFromDB(id);
+                redis.set(id, desc, 60 * 60 * 24);
+            } catch (Exception ex) {
+                LogHelper.error(ex);
+            } finally {
+                redis.del(&amp;#34;lock_id&amp;#34;);
+                return desc;
+            }
+        } else {
+            Thread.sleep(200);
+            return getProductDescById(id);
+        }
+    }
+    return desc;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;33-缓存雪崩解决方案&#34;&gt;3.3 缓存雪崩解决方案&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;方案 1：设置缓存过期时间随机化&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;避免大量缓存同时过期，可以在设定缓存时增加一个随机波动值。例如，原定 &lt;code&gt;10 分钟&lt;/code&gt; 过期的缓存，可以随机增加 &lt;code&gt;1~3 分钟&lt;/code&gt;，使过期时间分布在 &lt;code&gt;7~13 分钟&lt;/code&gt; 之间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;redis.set(id, value, 60 * 60 + Math.random() * 1000);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;方案 2：热点数据分片存储&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过&lt;strong&gt;分布式缓存架构&lt;/strong&gt;（如 Redis Cluster），将不同热点数据分布存储在&lt;strong&gt;不同的节点/机房&lt;/strong&gt;，防止单点故障引发缓存雪崩。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;方案 3：双层缓存机制（A/B 缓存）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;维护两层缓存：&lt;strong&gt;A 缓存（正常过期）&lt;/strong&gt; 和 &lt;strong&gt;B 缓存（不过期）&lt;/strong&gt;。当 &lt;code&gt;A&lt;/code&gt; 缓存失效时，读取 &lt;code&gt;B&lt;/code&gt; 缓存，并&lt;strong&gt;异步更新&lt;/strong&gt; &lt;code&gt;**A**&lt;/code&gt; &lt;strong&gt;缓存&lt;/strong&gt;，确保数据一致性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-总结&#34;&gt;4. 总结&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;定义&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;触发条件&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;影响&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;解决方案&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;缓存穿透&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;访问数据库中不存在的数据，导致所有请求直接打到数据库&lt;/td&gt;
+&lt;td&gt;缓存和数据库都无数据&lt;/td&gt;
+&lt;td&gt;数据库负载增加&lt;/td&gt;
+&lt;td&gt;布隆过滤器、缓存空值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;缓存击穿&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;热点数据过期的瞬间，大量请求同时访问数据库&lt;/td&gt;
+&lt;td&gt;高并发下，某个热点数据突然失效&lt;/td&gt;
+&lt;td&gt;数据库瞬时压力飙升&lt;/td&gt;
+&lt;td&gt;设置永不过期、互斥锁机制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;缓存雪崩&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;大量缓存数据同时过期，导致数据库负载剧增&lt;/td&gt;
+&lt;td&gt;大量缓存数据设定相同的过期时间&lt;/td&gt;
+&lt;td&gt;可能影响整个系统&lt;/td&gt;
+&lt;td&gt;随机化过期时间、热点数据分片、双层缓存&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;缓存作为高并发架构中的重要组成部分，合理的缓存设计可以极大提升系统的性能，降低数据库负载。然而，面对缓存穿透、缓存击穿和缓存雪崩等问题，我们需要根据具体场景采取相应的防范措施，确保系统的稳定性和可靠性。&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

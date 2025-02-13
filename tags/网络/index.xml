@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>网络 on luolin1024</title>
+    <link>https://luolin1024.github.io/tags/%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 网络 on luolin1024</description>
+    <generator>Hugo -- 0.114.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Dec 2024 14:42:53 +0800</lastBuildDate>
+    <atom:link href="https://luolin1024.github.io/tags/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>eu.org申请免费域名</title>
+      <link>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/free-domain-name/</link>
+      <pubDate>Wed, 21 Feb 2024 11:30:51 +0800</pubDate>
+      <guid>https://luolin1024.github.io/blog_prepublish/%E6%8A%80%E6%9C%AF%E6%8F%90%E5%8D%87/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/free-domain-name/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文目的：记录如何在eu.org申请免费域名&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;域名官网：&lt;a href=&#34;https://nic.eu.org/&#34;&gt;https://nic.eu.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;注册账号&#34;&gt;注册账号&lt;/h3&gt;
+&lt;p&gt;注册链接：&lt;a href=&#34;https://nic.eu.org/arf/en/contact/create/&#34;&gt;https://nic.eu.org/arf/en/contact/create/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注册之前先看一下他们的Policy：&lt;a href=&#34;https://nic.eu.org/policy.html&#34;&gt;https://nic.eu.org/policy.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注册页面如下所示：&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165847.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165847.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;注意，这些信息可能有人工审核，因此不要填得太随便了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name：填英文，建议填人名而不是ID。&lt;/li&gt;
+&lt;li&gt;E-mail：填写一个常用邮箱。之后接收申请通知就是用这个邮箱。首选的还是gmail和outlook，我填的是163，实测也能用。qq还是尽量避免吧。&lt;/li&gt;
+&lt;li&gt;然后是5行地址，填英文。不需要全填，可按照从小地址到大地址的顺序填入。地址应该不太重要，但是也不要填一看就有问题的地址。&lt;/li&gt;
+&lt;li&gt;Country，建议如实选择。China是没问题的，不影响申请。&lt;/li&gt;
+&lt;li&gt;Phone和Fax，都可以不填。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;建议勾选Private选项，否则你上面填写的信息能够被WHOIS查到。&lt;/p&gt;
+&lt;p&gt;勾选 accept the domain policy，输两遍密码，然后点 Create。&lt;/p&gt;
+&lt;p&gt;随后，会有一封主题为“&lt;strong&gt;new EU.org contact XXXX-FREE&lt;/strong&gt;”的邮件送到你填入的邮箱中，其正文大致如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hello,&lt;/p&gt;
+&lt;p&gt;Your contact record has been successfully created with the following&lt;br&gt;
+data. You still need to activate it, by going to the following page:&lt;br&gt;
+&lt;a href=&#34;https://nic.eu.org/arf/en/contact/validate/xxxxx/xxxxxx&#34;&gt;https://nic.eu.org/arf/en/contact/validate/xxxxx/xxxxxx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;person: [你填的名字]&lt;br&gt;
+nic-hdl: [以FREE结尾的、分配给你的用户名，需要记一下，之后就用这个登陆]&lt;br&gt;
+address: [你填入的地址，下同]&lt;br&gt;
+address: xxxx&lt;br&gt;
+address: xxxx&lt;br&gt;
+address: China&lt;br&gt;
+e-mail: [你填的邮箱]&lt;br&gt;
+changed: [时间]&lt;/p&gt;
+&lt;p&gt;Best Regards,&lt;br&gt;
+The EU.org team&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;点击邮件中的链接来确认。确认完毕后使用分配给你的用户名和刚刚填入的密码来登录。&lt;/p&gt;
+&lt;h3 id=&#34;申请新域名&#34;&gt;申请新域名&lt;/h3&gt;
+&lt;p&gt;你的主页大致是这个样子：
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240203114726.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240203114726.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;上面被黑色掩盖的区域是你的用户名，点击“New Domain”按钮，申请一个新域名。&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165916.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165916.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在“Complete domain name”栏填入你要申请的完整域名，需要带有eu.org后缀。如example.eu.org。
+&lt;ul&gt;
+&lt;li&gt;你可以直接申请eu.org域名，也可以申请一些子域，如example.cn.eu.org（表示中国）。完整的列表可以看&lt;a href=&#34;https://nic.eu.org/opendomains.html&#34;&gt;这里&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Organization栏，是你先前注册时就填好的，一般不动就行。&lt;/li&gt;
+&lt;li&gt;Administrative contact，域名的管理联系人，是自己，且申请时不可更改，申请成功后可以转让给其他用户。&lt;/li&gt;
+&lt;li&gt;Technical contact，域名的技术联系人，默认是自己，可以填入他人的ID，也可以新注册一个账户。一般也是不动的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165929.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165929.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;域名服务器。eu.org组织不提供DNS服务，因此你需要选择别家。需要简单验证你提供的DNS服务是否可用。可以选择不同的验证级别。&lt;/p&gt;
+&lt;p&gt;这部分是eu.org域名申请的最关键环节，一般的不通过风险都是这里产生的。我这里以DNSPod为例说明操作过程。&lt;/p&gt;
+&lt;p&gt;先在这个申请页上点选第一个选项（Check for correctness of &lt;strong&gt;server names&lt;/strong&gt;）。这三个选项从前到后，验证的内容越来越多，第一个是最简单的。DNSPod会在SOA验证那步失败，因此我们不做SOA验证就可以了。实测选择第一个选项是不会影响审核的。&lt;/p&gt;
+&lt;p&gt;然后登陆DNSPod，转到控制台“我的域名”：&lt;a href=&#34;https://console.dnspod.cn/dns/list&#34;&gt;https://console.dnspod.cn/dns/list&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165946.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165946.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;点击“添加域名”。&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165954.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813165954.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;输入你要申请的eu.org域名，然后点“验证”。一般来说，一个未被申请的eu.org域名是没有任何解析记录的，如果你输入的域名搜索到了解析记录，那么可能是该域名被人申请过了。如果没有解析记录，点击下一步即可。&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170133.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170133.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;这里会出现一些失败信息，没有关系。将给出的两个DNS服务器地址复制，然后回到eu.org申请页，分别粘贴在“Name1”和“Name2”栏中。其他Name栏和所有的IP栏都留空即可。记得点选第一个选项。
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170154.png&#34;&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/luolin1024/image@main/img/20240813170154.png&#34; alt=&#34;image.png&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;然后点Submit。&lt;/p&gt;
+&lt;p&gt;eu.org网站会验证给出的DNS服务器地址是否正常指向IP，如果没问题，就将你的请求保存下来等待人工审核了。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---- Servers and domain names check
+
+Getting IP for FAITHE.DNSPOD.NET: 117.89.178.173 129.211.176.209 120.241.130.98 112.80.181.45 1.12.0.4
+Getting IP for FAITHE.DNSPOD.NET: 2402:4e00:1430:1102:0:9136:2b30:e554
+Getting IP for MOCCASIN.DNSPOD.NET: 129.211.176.239 36.155.149.176 112.80.181.111 117.89.178.184 1.12.0.1
+Getting IP for MOCCASIN.DNSPOD.NET: 2402:4e00:111:fff::c
+
+
+No error, storing for validation...
+Saved as request 20240202174323-arf-27446
+
+Done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;看到“Done”，表示申请完成，然后等邮件通知就可以了。&lt;/p&gt;
+&lt;h3 id=&#34;申请通过&#34;&gt;申请通过&lt;/h3&gt;
+&lt;p&gt;等待的时间很随机，短的可能有数小时，长的可能有半年。我申请的第一个域名等了一个月，第二个域名等了40天。&lt;/p&gt;
+&lt;p&gt;会有一封主题为“&lt;strong&gt;request [[申请时间]-arf-xxxxx] (domain [你申请的域名]) accepted&lt;/strong&gt;”的邮件送到你的注册邮箱，其正文大致如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hello,&lt;/p&gt;
+&lt;p&gt;Your request [[申请时间]-arf-xxxxx] for creation of domain [你申请的域名]&lt;br&gt;
+has been accepted.&lt;/p&gt;
+&lt;p&gt;The following records will be inserted in the zone file:&lt;br&gt;
+[你填入的DNS服务器地址]&lt;/p&gt;
+&lt;p&gt;The following records will be inserted in the WHOIS base:&lt;br&gt;
+Object created:&lt;br&gt;
+domain: [你申请的域名]&lt;br&gt;
+address: [你注册时填写的Name]&lt;br&gt;
+address: [你注册时填写的地址，下同]&lt;br&gt;
+address: xxx&lt;br&gt;
+address: xxx&lt;br&gt;
+address: China&lt;br&gt;
+changed: [通过审核的时间]&lt;br&gt;
+tech-c: [你申请域名时的技术联系人，默认是自己]&lt;br&gt;
+admin-c: [你申请域名时的管理联系人，是自己]&lt;/p&gt;
+&lt;p&gt;Domains: 1&lt;br&gt;
+Persons: 0&lt;/p&gt;
+&lt;p&gt;Please allow about half a day for propagation.&lt;/p&gt;
+&lt;p&gt;Best Regards,&lt;br&gt;
+The EU.org team&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此时DNSPod那边可能已经过期很久，以至于把你申请时填的域名给删了。没有关系，进入 &lt;a href=&#34;https://nic.eu.org/arf/en/&#34;&gt;https://nic.eu.org/arf/en/&lt;/a&gt; ，申请通过的域名会出现在列表中，点击域名进入设置，再点“Nameservers”按钮，可以重新编辑DNS服务器。按照之前的方法去DNSPod重复一遍即可。你还可以在设置页变更管理联系人和技术联系人。你也可以删除这个域名，这样该域名就重新进入eu.org的公共空间了。&lt;/p&gt;
+&lt;p&gt;之后，你就可以在DNSPod上为域名添加解析记录了。&lt;/p&gt;
+&lt;h2 id=&#34;新增白嫖域名&#34;&gt;新增白嫖域名&lt;/h2&gt;
+&lt;p&gt;目前eu.org申请之后，审批时间很长（我上一个已经申请了半年多了，还是没有响应），建议可以按照下面的链接申请eu.org的域名：
+&lt;a href=&#34;https://wp.gxnas.com/14456.html&#34;&gt;又一个永久免费的域名可以撸，可托管至CloudFlare - GXNAS博客&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>
